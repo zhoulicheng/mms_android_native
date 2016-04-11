@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+
+
+    <FrameLayout
+        android:id="@+id/tab_content"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.0"
+        android:background="@android:color/white" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radioButtonMain"
+            style="@style/RadioButtonTheme"
+            android:checked="true"
+            android:text="选哪儿"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonXiangmu"
+            style="@style/RadioButtonTheme"
+            android:text="项目"
+
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonZaiti"
+            style="@style/RadioButtonTheme"
+            android:text="载体"
+
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonMy"
+            style="@style/RadioButtonTheme"
+            android:text="我"
+
+            android:textSize="16sp" />
+    </RadioGroup>
+
+</LinearLayout>

@@ -1,6 +1,7 @@
 package com.mms.activity;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
@@ -46,9 +47,11 @@ public class ActivityMain extends RoboFragmentActivity {
         fragments.add(new FragmentMain());
         fragments.add(new FragmentMain());
         fragments.add(new FragmentMain());
-        fragments.add(new FragmentMain());
+        fragments.add(new FragmentMy());
 
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
+
+
 
         new FragmentTabAdapter(this, fragments, R.id.tab_content, radioGroup);
 

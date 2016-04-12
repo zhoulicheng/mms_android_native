@@ -5,7 +5,6 @@
     android:orientation="vertical">
 
 
-
     <FrameLayout
         android:id="@+id/tab_content"
         android:layout_width="fill_parent"
@@ -21,32 +20,57 @@
         android:orientation="horizontal">
 
         <RadioButton
-            android:id="@+id/radioButtonMain"
-            style="@style/RadioButtonTheme"
+            android:id="@+id/radioButtonHome"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:button="@null"
             android:checked="true"
+            android:drawableTop="@drawable/homeselector"
+            android:gravity="center_horizontal"
+            android:paddingTop="8dp"
             android:text="选哪儿"
-            android:textSize="16sp" />
+            android:textColor="@color/textGray"
+            android:textSize="12sp" />
 
         <RadioButton
-            android:id="@+id/radioButtonXiangmu"
-            style="@style/RadioButtonTheme"
+            android:id="@+id/radioButtonItem"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/itemselector"
+            android:gravity="center_horizontal"
+            android:paddingTop="8dp"
             android:text="项目"
-
-            android:textSize="16sp" />
+            android:textColor="@color/textGray"
+            android:textSize="12sp" />
 
         <RadioButton
-            android:id="@+id/radioButtonZaiti"
-            style="@style/RadioButtonTheme"
+            android:id="@+id/radioButtonCarrier"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/carrierselector"
+            android:gravity="center_horizontal"
+            android:paddingTop="8dp"
             android:text="载体"
-
-            android:textSize="16sp" />
+            android:textColor="@color/textGray"
+            android:textSize="12sp" />
 
         <RadioButton
             android:id="@+id/radioButtonMy"
-            style="@style/RadioButtonTheme"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/myselector"
+            android:gravity="center_horizontal"
+            android:paddingTop="8dp"
             android:text="我"
-
-            android:textSize="16sp" />
+            android:textColor="@color/textGray"
+            android:textSize="12sp" />
     </RadioGroup>
 
 </LinearLayout>

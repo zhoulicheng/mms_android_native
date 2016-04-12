@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -14,7 +16,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="工作站"
+            android:text="关于选哪儿"
             android:textSize="20sp"
             android:layout_centerHorizontal="true"
             android:textColor="@color/white"
@@ -25,12 +27,28 @@
             android:id="@+id/btn_fragment_main_add"
             android:layout_width="18dp"
             android:layout_height="18dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="15dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="15dp"
             android:layout_centerVertical="true"
-            android:background="@drawable/rightbackarrowselector"
+            android:background="@drawable/backarrowselector"
             />
 
     </RelativeLayout>
+    
+    <ImageView
+        android:layout_marginTop="8dp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:background="@drawable/xuannaer"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:text="选哪儿6.4.0"
+        android:layout_marginTop="5dp"
+        />
 
 </LinearLayout>

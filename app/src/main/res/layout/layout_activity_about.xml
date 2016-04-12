@@ -1,54 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal"
+
     >
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:orientation="horizontal"
-        android:background="@color/titleBarColor"
-        android:gravity="center_vertical"
-        >
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/titleBarColor"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="关于选哪儿"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btn_activity_about_back"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/backarrowselector" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/xuannaer" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="关于选哪儿"
-            android:textSize="20sp"
-            android:layout_centerHorizontal="true"
-            android:textColor="@color/white"
-            android:layout_centerVertical="true"
-            />
+            android:layout_marginTop="5dp"
+            android:text="选哪儿6.4.0"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
 
-        <Button
-            android:id="@+id/btn_fragment_main_add"
-            android:layout_width="18dp"
-            android:layout_height="18dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginLeft="15dp"
-            android:layout_centerVertical="true"
-            android:background="@drawable/backarrowselector"
-            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:lineSpacingExtra="15dp"
+            android:text="@string/aboutintro1"
+            android:textColor="@color/textGray"
+            android:textSize="16sp" />
 
-    </RelativeLayout>
-    
-    <ImageView
-        android:layout_marginTop="8dp"
-        android:layout_width="55dp"
-        android:layout_height="55dp"
-        android:background="@drawable/xuannaer"
-        />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:lineSpacingExtra="15dp"
+            android:text="@string/aboutintro2"
+            android:textColor="@color/textGray"
+            android:textSize="16sp" />
+    </LinearLayout>
 
-    <TextView
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:text="选哪儿6.4.0"
-        android:layout_marginTop="5dp"
-        />
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_centerHorizontal="true">
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:clickable="true"
+                android:id="@+id/tv_activity_about_agreement"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="使用条款和隐私政策"
+                android:textColor="@color/url_text_color_selector"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/copyright1"
+                android:textColor="@color/textGray" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/copyright2"
+                android:textColor="@color/textGray" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/copyright3"
+                android:textColor="@color/textGray" />
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

@@ -6,10 +6,13 @@
     <color name="black">#000000</color>
     <color name="titleBarColor">#2768AC</color>
     <color name="textGray">#8F8F94</color>
+    <color name="textBlue">#56abe4</color>
     <color name="backGray">#EFEFF4</color>
     <color name="buttonSelectorGray">#CCCCCC</color>
     <color name="divideLineGray">#C8C7CC</color>
     <color name="myRed">#E73333</color>
+
+    <color name="filterTextGray">#333333</color>
 
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>

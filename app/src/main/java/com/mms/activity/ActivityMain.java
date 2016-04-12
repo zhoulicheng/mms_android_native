@@ -7,6 +7,7 @@ import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -19,12 +20,29 @@ import java.util.List;
 
 import roboguice.activity.RoboActivity;
 import roboguice.activity.RoboFragmentActivity;
+import roboguice.inject.InjectView;
 
 public class ActivityMain extends RoboFragmentActivity {
 
     private List<BaseFragment> fragments = null;
 
     private RadioGroup radioGroup;
+
+    @InjectView(R.id.radioButtonHome)
+    private RadioButton rb1;
+    private Drawable drawable1;
+
+    @InjectView(R.id.radioButtonItem)
+    private RadioButton rb2;
+    private Drawable drawable2;
+
+    @InjectView(R.id.radioButtonCarrier)
+    private RadioButton rb3;
+    private Drawable drawable3;
+
+    @InjectView(R.id.radioButtonMy)
+    private RadioButton rb4;
+    private Drawable drawable4;
 
     private static Boolean isExit = false;
     private static Handler mHandler = new Handler() {
@@ -45,12 +63,28 @@ public class ActivityMain extends RoboFragmentActivity {
         // TODO Auto-generated method stub
         fragments = new ArrayList<BaseFragment>();
         fragments.add(new FragmentMain());
-        fragments.add(new FragmentMain());
+        fragments.add(new FragmentItem());
         fragments.add(new FragmentMain());
         fragments.add(new FragmentMy());
 
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
 
+
+        drawable1 = getResources().getDrawable(R.drawable.homeselector);
+        drawable1.setBounds(0,0,65,65);
+        rb1.setCompoundDrawables(null,drawable1,null,null);
+
+        drawable2 = getResources().getDrawable(R.drawable.itemselector);
+        drawable2.setBounds(0,0,65,65);
+        rb2.setCompoundDrawables(null,drawable2,null,null);
+
+        drawable3 = getResources().getDrawable(R.drawable.carrierselector);
+        drawable3.setBounds(0,0,65,65);
+        rb3.setCompoundDrawables(null,drawable3,null,null);
+
+        drawable4 = getResources().getDrawable(R.drawable.myselector);
+        drawable4.setBounds(0,0,65,65);
+        rb4.setCompoundDrawables(null,drawable4,null,null);
 
 
         new FragmentTabAdapter(this, fragments, R.id.tab_content, radioGroup);

@@ -30,7 +30,7 @@
             android:gravity="center_horizontal"
             android:paddingTop="8dp"
             android:text="选哪儿"
-            android:textColor="@color/textGray"
+            android:textColor="@color/text_color_selector"
             android:textSize="12sp" />
 
         <RadioButton
@@ -43,7 +43,7 @@
             android:gravity="center_horizontal"
             android:paddingTop="8dp"
             android:text="项目"
-            android:textColor="@color/textGray"
+            android:textColor="@color/text_color_selector"
             android:textSize="12sp" />
 
         <RadioButton
@@ -56,7 +56,7 @@
             android:gravity="center_horizontal"
             android:paddingTop="8dp"
             android:text="载体"
-            android:textColor="@color/textGray"
+            android:textColor="@color/text_color_selector"
             android:textSize="12sp" />
 
         <RadioButton
@@ -69,7 +69,7 @@
             android:gravity="center_horizontal"
             android:paddingTop="8dp"
             android:text="我"
-            android:textColor="@color/textGray"
+            android:textColor="@color/text_color_selector"
             android:textSize="12sp" />
     </RadioGroup>
 

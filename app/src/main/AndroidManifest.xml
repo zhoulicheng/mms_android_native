@@ -15,6 +15,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.ActivityAbout">
+
+        </activity>
+        <activity android:name=".activity.ActivityAgreement">
+
+        </activity>
+        <activity android:name=".activity.ActivitySetPrivacy">
+
+        </activity>
     </application>
 
 </manifest>

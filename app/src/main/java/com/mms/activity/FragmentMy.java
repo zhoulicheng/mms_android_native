@@ -27,7 +27,7 @@ public class FragmentMy extends BaseFragment implements View.OnClickListener {
     @InjectView(R.id.rl_fragment_my_editinfor)
     private RelativeLayout rlEditInfor;
 
-    @InjectView(R.id.rl_fragment_my_privacy)
+    @InjectView(R.id.rl_fragment_my_setprivacy)
     private RelativeLayout rlPrivacy;
 
     @InjectView(R.id.rl_fragment_my_menbers)
@@ -42,23 +42,27 @@ public class FragmentMy extends BaseFragment implements View.OnClickListener {
     @InjectView(R.id.rl_fragment_my_about)
     private RelativeLayout rlAbout;
 
-    @Nullable
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.layout_fragment_my, container,
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.layout_fragment_my, container,
                 false);
-
-        initView(v);
-        this.setOCL();
-        return v;
     }
 
-    private void initView(View v){
-
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        this.setOCL();
 
     }
 
     private void setOCL(){
-
+        rlAbout.setOnClickListener(this);
+        rlAccountAndPassword.setOnClickListener(this);
+        rlEditInfor.setOnClickListener(this);
+        rlFeedback.setOnClickListener(this);
+        rlMenbers.setOnClickListener(this);
+        rlPerson.setOnClickListener(this);
+        rlPrivacy.setOnClickListener(this);
+        rlServiceNumber.setOnClickListener(this);
     }
 
 
@@ -72,7 +76,9 @@ public class FragmentMy extends BaseFragment implements View.OnClickListener {
                 break;
             case R.id.rl_fragment_my_editinfor:
                 break;
-            case R.id.rl_fragment_my_privacy:
+            case R.id.rl_fragment_my_setprivacy:
+                intent = new Intent(getActivity(),ActivitySetPrivacy.class);
+                startActivity(intent);
                 break;
             case R.id.rl_fragment_my_menbers:
                 break;
@@ -81,6 +87,8 @@ public class FragmentMy extends BaseFragment implements View.OnClickListener {
             case R.id.rl_fragment_my_servicenumber:
                 break;
             case R.id.rl_fragment_my_about:
+                intent = new Intent(getActivity(),ActivityAbout.class);
+                startActivity(intent);
                 break;
 
         }

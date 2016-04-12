@@ -159,7 +159,7 @@
 
 
     <RelativeLayout
-        android:id="@+id/rl_fragment_my_privacy"
+        android:id="@+id/rl_fragment_my_setprivacy"
         android:clickable="true"
         android:background="@drawable/whitebuttonselector"
         android:layout_width="match_parent"

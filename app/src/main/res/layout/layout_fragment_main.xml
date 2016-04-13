@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/backGray"
+    >
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -32,5 +34,381 @@
             />
 
     </RelativeLayout>
+    
+    <RelativeLayout
+        android:clickable="true"
+        android:id="@+id/rl_fragment_main_system_message"
+        android:background="@drawable/whitebuttonselector"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:paddingTop="11dp"
+        android:paddingBottom="11dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_fragment_main_system_message"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/icon_1"
+            />
+
+        <LinearLayout
+            android:layout_toRightOf="@id/iv_fragment_main_system_message"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="12dp"
+            >
+            <TextView
+                android:id="@+id/tv_fragment_main_system_message_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="系统消息"
+                android:textSize="17sp"
+                android:textColor="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/tv_fragment_main_system_message_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="您没有未读的系统消息"
+                android:layout_marginTop="2dp"
+                />
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:background="@drawable/right"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            />
+
+    </RelativeLayout>
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divideLineGray"
+        android:layout_marginLeft="16dp"
+        />
+
+    <RelativeLayout
+        android:clickable="true"
+        android:id="@+id/rl_fragment_main_online_office"
+        android:background="@drawable/whitebuttonselector"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:paddingTop="11dp"
+        android:paddingBottom="11dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_fragment_main_online_office"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/icon_2"
+            />
+
+        <LinearLayout
+            android:layout_toRightOf="@id/iv_fragment_main_online_office"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="12dp"
+            >
+            <TextView
+                android:id="@+id/tv_fragment_main_online_office_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="在线办公"
+                android:textSize="17sp"
+                android:textColor="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/tv_fragment_main_online_office_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="您没有未读的办公消息"
+                android:layout_marginTop="2dp"
+                />
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:background="@drawable/right"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            />
+
+    </RelativeLayout>
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divideLineGray"
+        android:layout_marginLeft="16dp"
+        />
+
+    <RelativeLayout
+        android:clickable="true"
+        android:id="@+id/rl_fragment_main_item_new"
+        android:background="@drawable/whitebuttonselector"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:paddingTop="11dp"
+        android:paddingBottom="11dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_fragment_main_item_new"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/icon_3"
+            />
+
+        <LinearLayout
+            android:layout_toRightOf="@id/iv_fragment_main_item_new"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="12dp"
+            >
+            <TextView
+                android:id="@+id/tv_fragment_main_item_new_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="新项目推送"
+                android:textSize="17sp"
+                android:textColor="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/tv_fragment_main_item_new_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="您没有未读的推送消息"
+                android:layout_marginTop="2dp"
+                />
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:background="@drawable/right"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            />
+
+    </RelativeLayout>
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divideLineGray"
+        android:layout_marginLeft="16dp"
+        />
+
+    <RelativeLayout
+        android:clickable="true"
+        android:id="@+id/rl_fragment_main_item_todo"
+        android:background="@drawable/whitebuttonselector"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:paddingTop="11dp"
+        android:paddingBottom="11dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_fragment_main_item_todo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/icon_4"
+            />
+
+        <LinearLayout
+            android:layout_toRightOf="@id/iv_fragment_main_item_todo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="12dp"
+            >
+            <TextView
+                android:id="@+id/tv_fragment_main_item_todo_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="待处理项目"
+                android:textSize="17sp"
+                android:textColor="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/tv_fragment_main_item_todo_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="您没有未读的过期项目"
+                android:layout_marginTop="2dp"
+                />
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:background="@drawable/right"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            />
+
+    </RelativeLayout>
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divideLineGray"
+        android:layout_marginLeft="16dp"
+        />
+
+    <RelativeLayout
+        android:clickable="true"
+        android:id="@+id/rl_fragment_main_item_todo_aite"
+        android:background="@drawable/whitebuttonselector"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:paddingTop="11dp"
+        android:paddingBottom="11dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_fragment_main_item_todo_aite"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/icon_5"
+            />
+
+        <LinearLayout
+            android:layout_toRightOf="@id/iv_fragment_main_item_todo_aite"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="12dp"
+            >
+            <TextView
+                android:id="@+id/tv_fragment_main_item_todo_aite_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/daichuli"
+                android:textSize="17sp"
+                android:textColor="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/tv_fragment_main_item_todo_aite_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="您没有未读的@项目"
+                android:layout_marginTop="2dp"
+                />
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:background="@drawable/right"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            />
+
+    </RelativeLayout>
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divideLineGray"
+        android:layout_marginLeft="16dp"
+        />
+
+    <RelativeLayout
+        android:clickable="true"
+        android:id="@+id/rl_fragment_main_item_book"
+        android:background="@drawable/whitebuttonselector"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        android:paddingTop="11dp"
+        android:paddingBottom="11dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        >
+
+        <ImageView
+            android:id="@+id/iv_fragment_main_item_book"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/icon_6"
+            />
+
+        <LinearLayout
+            android:layout_toRightOf="@id/iv_fragment_main_item_book"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="12dp"
+            >
+            <TextView
+                android:id="@+id/tv_fragment_main_item_book_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="预约管理"
+                android:textSize="17sp"
+                android:textColor="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/tv_fragment_main_item_book_bottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="您没有未读的预约项目"
+                android:layout_marginTop="2dp"
+                />
+
+        </LinearLayout>
+
+        <Button
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:background="@drawable/right"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            />
+
+    </RelativeLayout>
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divideLineGray"
+        />
 
 </LinearLayout>

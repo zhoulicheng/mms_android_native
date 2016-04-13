@@ -18,4 +18,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AnimationFade">
+
+        <!-- PopupWindow左右弹出的效果 -->
+        <item name="android:windowEnterAnimation">@anim/inuptodown</item>
+        <item name="android:windowExitAnimation">@anim/outdowntoup</item>
+    </style>
+
+
 </resources>

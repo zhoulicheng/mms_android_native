@@ -15,14 +15,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.ActivityAbout">
-
+        <activity
+            android:name=".activity.ActivityAbout">
         </activity>
-        <activity android:name=".activity.ActivityAgreement">
-
+        <activity
+            android:name=".activity.ActivityAgreement">
         </activity>
-        <activity android:name=".activity.ActivitySetPrivacy">
-
+        <activity
+            android:name=".activity.ActivitySetPrivacy">
+        </activity>
+        <activity
+            android:name=".activity.ActivityFeedBack">
+        </activity>
+        <activity
+            android:name=".activity.ActivityOnlineOffice">
+        </activity>
+        <activity
+            android:name=".activity.ActivityItemImport">
+        </activity>
+        <activity
+            android:name=".activity.ActivityCarrierImport">
         </activity>
     </application>
 

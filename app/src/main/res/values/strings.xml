@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">MMS</string>
 
+    <string name="daichuli">"@待处理项目"</string>
+
     <string name="aboutintro1">"        选哪儿是投资者与招商人员对接工具平台，投资者通过选哪儿提交需求，系统会自动将需求进行匹配，第一时间推送给合适的招商人员，完成招商对接。"</string>
     <string name="aboutintro2">"        选哪儿招商版集成管理、分配、跟踪投资项目的综合系统，随时随地对项目从咨询、跟进到最后落户的全过程无纸化智能管理。"</string>
     <string name="copyright1">"天津谷川科技有限公司  版权所有"</string>

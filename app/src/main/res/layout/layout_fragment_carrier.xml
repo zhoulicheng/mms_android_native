@@ -2,10 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backGray"
     >
 
 
     <RelativeLayout
+
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:orientation="horizontal"
@@ -22,14 +24,14 @@
             android:text="全部"
             android:textSize="20sp"
             android:layout_centerHorizontal="true"
-            android:textColor="@color/white_text_color_selector"
+            android:textColor="@color/white_text_color_selector_for_press"
             android:layout_centerVertical="true"
             />
 
         <Button
-            android:id="@+id/btn_fragment_main_add"
-            android:layout_width="18dp"
-            android:layout_height="18dp"
+            android:id="@+id/btn_fragment_carrier_add"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="15dp"
             android:layout_centerVertical="true"
@@ -75,6 +77,14 @@
                 android:layout_weight="1"/>
         </LinearLayout>
 
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:background="@color/divideLineGray"
+            />
 
         <LinearLayout
 

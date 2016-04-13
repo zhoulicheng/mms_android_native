@@ -1,8 +1,8 @@
 package com.mms.activity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,7 +54,7 @@ public class FragmentMy extends BaseFragment implements View.OnClickListener {
 
     }
 
-    private void setOCL(){
+    private void setOCL() {
         rlAbout.setOnClickListener(this);
         rlAccountAndPassword.setOnClickListener(this);
         rlEditInfor.setOnClickListener(this);
@@ -69,7 +69,7 @@ public class FragmentMy extends BaseFragment implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         Intent intent = null;
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.rl_fragment_my_person:
                 break;
             case R.id.rl_fragment_my_accountandpassword:
@@ -77,17 +77,23 @@ public class FragmentMy extends BaseFragment implements View.OnClickListener {
             case R.id.rl_fragment_my_editinfor:
                 break;
             case R.id.rl_fragment_my_setprivacy:
-                intent = new Intent(getActivity(),ActivitySetPrivacy.class);
+                intent = new Intent(getActivity(), ActivitySetPrivacy.class);
                 startActivity(intent);
                 break;
             case R.id.rl_fragment_my_menbers:
                 break;
             case R.id.rl_fragment_my_feedback:
+                intent = new Intent(getActivity(), ActivityFeedBack.class);
+                startActivity(intent);
                 break;
             case R.id.rl_fragment_my_servicenumber:
+                //呼出拨打电话界面，应该加上Dialog
+                intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:02258518831"));
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
                 break;
             case R.id.rl_fragment_my_about:
-                intent = new Intent(getActivity(),ActivityAbout.class);
+                intent = new Intent(getActivity(), ActivityAbout.class);
                 startActivity(intent);
                 break;
 

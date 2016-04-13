@@ -64,7 +64,7 @@ public class ActivityMain extends RoboFragmentActivity {
         fragments = new ArrayList<BaseFragment>();
         fragments.add(new FragmentMain());
         fragments.add(new FragmentItem());
-        fragments.add(new FragmentMain());
+        fragments.add(new FragmentCarrier());
         fragments.add(new FragmentMy());
 
         radioGroup = (RadioGroup) findViewById(R.id.radioGroup);

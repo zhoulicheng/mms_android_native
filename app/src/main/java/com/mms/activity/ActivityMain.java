@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.widget.RadioButton;
@@ -18,7 +17,6 @@ import com.mms.base.BaseFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-import roboguice.activity.RoboActivity;
 import roboguice.activity.RoboFragmentActivity;
 import roboguice.inject.InjectView;
 

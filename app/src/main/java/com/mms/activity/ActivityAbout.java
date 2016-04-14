@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.mms.R;
 import com.mms.base.BaseActivity;
+import com.mms.base.BaseSwipeActivity;
 
 import roboguice.inject.ContentView;
 import roboguice.inject.InjectView;
@@ -16,7 +17,7 @@ import roboguice.inject.InjectView;
  * Created by Tanikawa on 2016/4/12.
  */
 @ContentView(R.layout.layout_activity_about)
-public class ActivityAbout extends BaseActivity implements View.OnClickListener {
+public class ActivityAbout extends BaseSwipeActivity implements View.OnClickListener {
 
     @InjectView(R.id.tv_activity_about_agreement)
     private TextView tvAgreement;

@@ -55,6 +55,7 @@ public class FragmentMain extends BaseFragment implements View.OnClickListener {
     }
 
     private void setOCL() {
+        btnAdd.setOnClickListener(this);
         rlItemBook.setOnClickListener(this);
         rlItemNew.setOnClickListener(this);
         rlItemTodo.setOnClickListener(this);
@@ -68,6 +69,7 @@ public class FragmentMain extends BaseFragment implements View.OnClickListener {
         Intent intent = null;
         switch (view.getId()) {
             case R.id.btn_fragment_main_add:
+
                 break;
             case R.id.rl_fragment_main_system_message:
                 break;

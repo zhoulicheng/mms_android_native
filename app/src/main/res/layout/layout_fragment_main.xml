@@ -25,8 +25,8 @@
 
         <Button
             android:id="@+id/btn_fragment_main_add"
-            android:layout_width="18dp"
-            android:layout_height="18dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="15dp"
             android:layout_centerVertical="true"
@@ -93,7 +93,7 @@
     <TextView
 
         android:layout_width="match_parent"
-        android:layout_height="0.5dp"
+        android:layout_height="@dimen/divide_line"
         android:background="@color/divideLineGray"
         android:layout_marginLeft="16dp"
         />
@@ -156,7 +156,7 @@
     <TextView
 
         android:layout_width="match_parent"
-        android:layout_height="0.5dp"
+        android:layout_height="@dimen/divide_line"
         android:background="@color/divideLineGray"
         android:layout_marginLeft="16dp"
         />
@@ -219,7 +219,7 @@
     <TextView
 
         android:layout_width="match_parent"
-        android:layout_height="0.5dp"
+        android:layout_height="@dimen/divide_line"
         android:background="@color/divideLineGray"
         android:layout_marginLeft="16dp"
         />
@@ -282,7 +282,7 @@
     <TextView
 
         android:layout_width="match_parent"
-        android:layout_height="0.5dp"
+        android:layout_height="@dimen/divide_line"
         android:background="@color/divideLineGray"
         android:layout_marginLeft="16dp"
         />
@@ -345,7 +345,7 @@
     <TextView
 
         android:layout_width="match_parent"
-        android:layout_height="0.5dp"
+        android:layout_height="@dimen/divide_line"
         android:background="@color/divideLineGray"
         android:layout_marginLeft="16dp"
         />
@@ -407,7 +407,7 @@
     <TextView
 
         android:layout_width="match_parent"
-        android:layout_height="0.5dp"
+        android:layout_height="@dimen/divide_line"
         android:background="@color/divideLineGray"
         />
 

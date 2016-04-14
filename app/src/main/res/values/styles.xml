@@ -25,5 +25,10 @@
         <item name="android:windowExitAnimation">@anim/outdowntoup</item>
     </style>
 
+    <!--透明无边框dialog样式-->
+    <style name="dialogTheme" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
 
 </resources>

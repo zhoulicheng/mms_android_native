@@ -15,6 +15,8 @@
         android:orientation="horizontal">
 
         <LinearLayout
+            android:clickable="true"
+            android:id="@+id/ll_fragment_item_title"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -26,19 +28,17 @@
                 android:id="@+id/tv_fragment_item_top_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:clickable="true"
                 android:text="项目"
                 android:textColor="@color/white_text_color_selector_for_press"
                 android:textSize="20sp" />
 
-            <ToggleButton
-                android:id="@+id/tb_fragment_item_top"
+            <ImageView
+                android:id="@+id/iv_fragment_item_top"
                 android:layout_width="16dp"
                 android:layout_height="16dp"
-                android:background="@drawable/downselector_forwhitetogglebutton"
-                android:textColor="@color/white_text_color_selector_for_check"
-                android:textOff="@null"
-                android:textOn="@null" />
+                android:background="@drawable/down_white"
+
+                 />
         </LinearLayout>
 
 
@@ -60,6 +60,8 @@
         android:orientation="horizontal">
 
         <RelativeLayout
+            android:id="@+id/rl_Fragment_item_from"
+            android:clickable="true"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="100"
@@ -79,19 +81,17 @@
                     android:id="@+id/tv_fragment_item_from_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:clickable="true"
                     android:text="来源"
                     android:textColor="@color/filterTextGray"
                     android:textSize="15sp" />
 
-                <ToggleButton
-                    android:id="@+id/tb_fragment_item_from"
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:background="@drawable/downselector_forgraytogglebutton"
-                    android:textColor="@color/white_text_color_selector_for_check"
-                    android:textOff="@null"
-                    android:textOn="@null" />
+                <ImageView
+                    android:id="@+id/iv_fragment_item_from"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:background="@drawable/down_gray"
+
+                    />
             </LinearLayout>
         </RelativeLayout>
 
@@ -104,6 +104,8 @@
             android:background="@color/divideLineGray" />
 
         <RelativeLayout
+            android:id="@+id/rl_Fragment_item_state"
+            android:clickable="true"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="100"
@@ -123,19 +125,17 @@
                     android:id="@+id/tv_fragment_item_state_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:clickable="true"
                     android:text="状态"
                     android:textColor="@color/filterTextGray"
                     android:textSize="15sp" />
 
-                <ToggleButton
-                    android:id="@+id/tb_fragment_item_state"
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:background="@drawable/downselector_forgraytogglebutton"
-                    android:textColor="@color/white_text_color_selector_for_check"
-                    android:textOff="@null"
-                    android:textOn="@null" />
+                <ImageView
+                    android:id="@+id/iv_fragment_item_state"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:background="@drawable/down_gray"
+
+                    />
             </LinearLayout>
         </RelativeLayout>
 
@@ -148,6 +148,8 @@
             android:background="@color/divideLineGray" />
 
         <RelativeLayout
+            android:id="@+id/rl_Fragment_item_level"
+            android:clickable="true"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="100"
@@ -167,19 +169,17 @@
                     android:id="@+id/tv_fragment_item_level_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:clickable="true"
                     android:text="等级"
                     android:textColor="@color/filterTextGray"
                     android:textSize="15sp" />
 
-                <ToggleButton
-                    android:id="@+id/tb_fragment_item_level"
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:background="@drawable/downselector_forgraytogglebutton"
-                    android:textColor="@color/white_text_color_selector_for_check"
-                    android:textOff="@null"
-                    android:textOn="@null" />
+                <ImageView
+                    android:id="@+id/iv_fragment_item_level"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:background="@drawable/down_gray"
+
+                    />
             </LinearLayout>
         </RelativeLayout>
 
@@ -192,6 +192,8 @@
             android:background="@color/divideLineGray" />
 
         <RelativeLayout
+            android:id="@+id/rl_Fragment_item_progress"
+            android:clickable="true"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="100"
@@ -211,21 +213,24 @@
                     android:id="@+id/tv_fragment_item_progress_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:clickable="true"
                     android:text="进度"
                     android:textColor="@color/filterTextGray"
                     android:textSize="15sp" />
 
-                <ToggleButton
-                    android:id="@+id/tb_fragment_item_progress"
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:background="@drawable/downselector_forgraytogglebutton"
-                    android:textColor="@color/white_text_color_selector_for_check"
-                    android:textOff="@null"
-                    android:textOn="@null" />
+                <ImageView
+                    android:id="@+id/iv_fragment_item_progress"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:background="@drawable/down_gray"
+
+                    />
             </LinearLayout>
         </RelativeLayout>
     </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divide_line"
+        android:background="@color/divideLineGray"
+        />
 
 </LinearLayout>

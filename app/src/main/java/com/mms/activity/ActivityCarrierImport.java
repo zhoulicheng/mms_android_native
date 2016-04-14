@@ -8,6 +8,7 @@ import android.widget.SimpleAdapter;
 
 import com.mms.R;
 import com.mms.base.BaseActivity;
+import com.mms.base.BaseSwipeActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,7 +23,7 @@ import roboguice.inject.InjectView;
  */
 
 @ContentView(R.layout.layout_activity_carrier_import)
-public class ActivityCarrierImport extends BaseActivity implements View.OnClickListener {
+public class ActivityCarrierImport extends BaseSwipeActivity implements View.OnClickListener {
 
     @InjectView(R.id.gv_activity_carrierimport)
     private GridView gvCarrierImport;

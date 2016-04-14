@@ -8,6 +8,7 @@ import android.widget.SimpleAdapter;
 
 import com.mms.R;
 import com.mms.base.BaseActivity;
+import com.mms.base.BaseSwipeActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,7 +22,7 @@ import roboguice.inject.InjectView;
  * Created by Tanikawa on 2016/4/13.
  */
 @ContentView(R.layout.layout_activity_onlineoffice)
-public class ActivityOnlineOffice extends BaseActivity implements View.OnClickListener {
+public class ActivityOnlineOffice extends BaseSwipeActivity implements View.OnClickListener {
 
     @InjectView(R.id.gv_activity_onlineoffice)
     private GridView gvOnlineOffice;

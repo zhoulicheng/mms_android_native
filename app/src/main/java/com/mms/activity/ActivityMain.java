@@ -20,6 +20,9 @@ import java.util.List;
 import roboguice.activity.RoboFragmentActivity;
 import roboguice.inject.InjectView;
 
+/**
+ * 主界面
+ */
 public class ActivityMain extends RoboFragmentActivity {
 
     private List<BaseFragment> fragments = null;

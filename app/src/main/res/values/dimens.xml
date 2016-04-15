@@ -10,6 +10,13 @@
     <dimen name="pop_white_y">300dp</dimen>
 
     <dimen name="fragment_my_item_padding_left">16dp</dimen>
+    <dimen name="fragment_my_item_height">44dp</dimen>
+    <dimen name="titleBarHeight">45dp</dimen>
+    <dimen name="backButtonWidth">18dp</dimen>
+    <dimen name="backButtonHeight">18dp</dimen>
+    <dimen name="chachaWidth">16dp</dimen>
+    <dimen name="chachaHeight">16dp</dimen>
+
 
     <dimen name="divide_line">0.5dp</dimen>
 

@@ -22,6 +22,7 @@ import roboguice.inject.InjectView;
 
 /**
  * Created by Tanikawa on 2016/4/12.
+ * 隐私设置界面
  */
 
 @ContentView(R.layout.layout_activity_setprivacy)

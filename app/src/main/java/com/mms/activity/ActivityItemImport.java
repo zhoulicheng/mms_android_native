@@ -20,6 +20,7 @@ import roboguice.inject.InjectView;
 
 /**
  * Created by Tanikawa on 2016/4/13.
+ * 选择项目导入类型界面
  */
 
 @ContentView(R.layout.layout_activity_item_import)

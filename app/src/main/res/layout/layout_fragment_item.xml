@@ -9,7 +9,7 @@
     <RelativeLayout
 
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="@dimen/titleBarHeight"
         android:background="@color/titleBarColor"
         android:gravity="center_vertical"
         android:orientation="horizontal">
@@ -17,7 +17,7 @@
         <LinearLayout
             android:clickable="true"
             android:id="@+id/ll_fragment_item_title"
-            android:layout_width="60dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
@@ -29,6 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="项目"
+                android:singleLine="true"
                 android:textColor="@color/white_text_color_selector_for_press"
                 android:textSize="20sp" />
 

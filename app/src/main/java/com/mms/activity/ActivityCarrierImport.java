@@ -1,7 +1,9 @@
 package com.mms.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.SimpleAdapter;
@@ -20,10 +22,11 @@ import roboguice.inject.InjectView;
 
 /**
  * Created by Tanikawa on 2016/4/13.
+ * 选择导入载体类型的界面
  */
 
 @ContentView(R.layout.layout_activity_carrier_import)
-public class ActivityCarrierImport extends BaseSwipeActivity implements View.OnClickListener {
+public class ActivityCarrierImport extends BaseSwipeActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
     @InjectView(R.id.gv_activity_carrierimport)
     private GridView gvCarrierImport;
@@ -55,7 +58,7 @@ public class ActivityCarrierImport extends BaseSwipeActivity implements View.OnC
 
     private void setOCL() {
         btnBack.setOnClickListener(this);
-
+        gvCarrierImport.setOnItemClickListener(this);
 
     }
 
@@ -75,6 +78,18 @@ public class ActivityCarrierImport extends BaseSwipeActivity implements View.OnC
         switch (view.getId()) {
             case R.id.btn_activity_carrierimport_back:
                 finish();
+                break;
+
+        }
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        Intent intent = null;
+        switch (i){
+            case 0:
+                intent = new Intent(this,ActivityCarrierImportTudi.class);
+                startActivity(intent);
                 break;
 
         }

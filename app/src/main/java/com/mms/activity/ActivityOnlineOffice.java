@@ -20,6 +20,7 @@ import roboguice.inject.InjectView;
 
 /**
  * Created by Tanikawa on 2016/4/13.
+ * 在线办公主界面
  */
 @ContentView(R.layout.layout_activity_onlineoffice)
 public class ActivityOnlineOffice extends BaseSwipeActivity implements View.OnClickListener {

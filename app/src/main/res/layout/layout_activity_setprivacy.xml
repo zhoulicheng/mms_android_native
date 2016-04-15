@@ -6,7 +6,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="@dimen/titleBarHeight"
         android:background="@color/titleBarColor"
         android:gravity="center_vertical"
         android:orientation="horizontal">
@@ -22,8 +22,8 @@
 
         <Button
             android:id="@+id/btn_activity_setprivacy_back"
-            android:layout_width="18dp"
-            android:layout_height="18dp"
+            android:layout_width="@dimen/backButtonWidth"
+            android:layout_height="@dimen/backButtonHeight"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="15dp"
@@ -34,7 +34,7 @@
     <RelativeLayout
         android:id="@+id/rl_activity_setprivacy_base"
         android:layout_width="match_parent"
-        android:layout_height="44dp"
+        android:layout_height="@dimen/fragment_my_item_height"
         android:background="@drawable/whitebuttonselector"
         android:clickable="true"
         android:gravity="center_vertical">
@@ -82,7 +82,7 @@
     <RelativeLayout
         android:id="@+id/rl_activity_setprivacy_mobilephone"
         android:layout_width="match_parent"
-        android:layout_height="44dp"
+        android:layout_height="@dimen/fragment_my_item_height"
         android:background="@drawable/whitebuttonselector"
         android:clickable="true"
         android:gravity="center_vertical">
@@ -129,7 +129,7 @@
     <RelativeLayout
         android:id="@+id/rl_activity_setprivacy_telephone"
         android:layout_width="match_parent"
-        android:layout_height="44dp"
+        android:layout_height="@dimen/fragment_my_item_height"
         android:background="@drawable/whitebuttonselector"
         android:clickable="true"
         android:gravity="center_vertical">

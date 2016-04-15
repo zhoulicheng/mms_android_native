@@ -7,7 +7,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="45dp"
+        android:layout_height="@dimen/titleBarHeight"
         android:background="@color/titleBarColor"
         android:gravity="center_vertical"
         android:orientation="horizontal">
@@ -30,12 +30,12 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:paddingLeft="@dimen/fragment_my_item_padding_left"
-        android:background="@drawable/whitebuttonselector"
         android:id="@+id/rl_fragment_my_person"
-        android:clickable="true"
         android:layout_width="match_parent"
-        android:layout_height="66dp">
+        android:layout_height="66dp"
+        android:background="@drawable/whitebuttonselector"
+        android:clickable="true"
+        android:paddingLeft="@dimen/fragment_my_item_padding_left">
 
         <ImageView
             android:id="@+id/image_fragment_my_head"
@@ -71,274 +71,252 @@
         <Button
             android:layout_width="12dp"
             android:layout_height="12dp"
-            android:layout_marginRight="17dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
+            android:layout_marginRight="17dp"
             android:background="@drawable/right"
 
             />
     </RelativeLayout>
-    
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="20dp"
-        android:background="@color/backGray"
-        />
+        android:background="@color/backGray" />
 
     <RelativeLayout
-        android:paddingLeft="@dimen/fragment_my_item_padding_left"
         android:id="@+id/rl_fragment_my_accountandpassword"
-        android:clickable="true"
-        android:background="@drawable/whitebuttonselector"
         android:layout_width="match_parent"
-        android:layout_height="44dp"
+        android:layout_height="@dimen/fragment_my_item_height"
+        android:background="@drawable/whitebuttonselector"
+        android:clickable="true"
         android:gravity="center_vertical"
-        >
+        android:paddingLeft="@dimen/fragment_my_item_padding_left">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:text="帐号与密码"
-            android:textSize="17sp"
             android:textColor="@color/black"
-            android:layout_centerVertical="true"
-            />
+            android:textSize="17sp" />
+
         <Button
             android:layout_width="12dp"
             android:layout_height="12dp"
-            android:background="@drawable/right"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="17dp"
             android:layout_centerVertical="true"
-            />
+            android:layout_marginRight="17dp"
+            android:background="@drawable/right" />
 
     </RelativeLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="@dimen/divide_line"
-        android:background="@color/divideLineGray"
         android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
-        />
+        android:background="@color/divideLineGray" />
 
     <RelativeLayout
-        android:paddingLeft="@dimen/fragment_my_item_padding_left"
         android:id="@+id/rl_fragment_my_editinfor"
-        android:clickable="true"
-        android:background="@drawable/whitebuttonselector"
         android:layout_width="match_parent"
-        android:layout_height="44dp"
+        android:layout_height="@dimen/fragment_my_item_height"
+        android:background="@drawable/whitebuttonselector"
+        android:clickable="true"
         android:gravity="center_vertical"
-        >
+        android:paddingLeft="@dimen/fragment_my_item_padding_left">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:text="编辑资料"
-            android:textSize="17sp"
             android:textColor="@color/black"
-            android:layout_centerVertical="true"
-            />
+            android:textSize="17sp" />
+
         <Button
             android:layout_width="12dp"
             android:layout_height="12dp"
-            android:background="@drawable/right"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="17dp"
             android:layout_centerVertical="true"
-            />
+            android:layout_marginRight="17dp"
+            android:background="@drawable/right" />
 
     </RelativeLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="@dimen/divide_line"
-        android:background="@color/divideLineGray"
         android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
-        />
+        android:background="@color/divideLineGray" />
 
 
     <RelativeLayout
-        android:paddingLeft="@dimen/fragment_my_item_padding_left"
         android:id="@+id/rl_fragment_my_setprivacy"
-        android:clickable="true"
-        android:background="@drawable/whitebuttonselector"
         android:layout_width="match_parent"
-        android:layout_height="44dp"
+        android:layout_height="@dimen/fragment_my_item_height"
+        android:background="@drawable/whitebuttonselector"
+        android:clickable="true"
         android:gravity="center_vertical"
-        >
+        android:paddingLeft="@dimen/fragment_my_item_padding_left">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:text="隐私设置"
-            android:textSize="17sp"
             android:textColor="@color/black"
-            android:layout_centerVertical="true"
-            />
+            android:textSize="17sp" />
+
         <Button
             android:layout_width="12dp"
             android:layout_height="12dp"
-            android:background="@drawable/right"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="17dp"
             android:layout_centerVertical="true"
-            />
+            android:layout_marginRight="17dp"
+            android:background="@drawable/right" />
 
     </RelativeLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="20dp"
-        android:background="@color/backGray"
-        />
+        android:background="@color/backGray" />
 
     <RelativeLayout
-        android:paddingLeft="@dimen/fragment_my_item_padding_left"
         android:id="@+id/rl_fragment_my_menbers"
-        android:clickable="true"
-        android:background="@drawable/whitebuttonselector"
         android:layout_width="match_parent"
-        android:layout_height="44dp"
+        android:layout_height="@dimen/fragment_my_item_height"
+        android:background="@drawable/whitebuttonselector"
+        android:clickable="true"
         android:gravity="center_vertical"
-        >
+        android:paddingLeft="@dimen/fragment_my_item_padding_left">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="单位成员"
-            android:textSize="17sp"
-            android:textColor="@color/black"
             android:layout_centerVertical="true"
-            />
+            android:text="单位成员"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
         <Button
             android:layout_width="12dp"
             android:layout_height="12dp"
-            android:background="@drawable/right"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="17dp"
             android:layout_centerVertical="true"
-            />
+            android:layout_marginRight="17dp"
+            android:background="@drawable/right" />
 
     </RelativeLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="20dp"
-        android:background="@color/backGray"
-        />
+        android:background="@color/backGray" />
 
     <RelativeLayout
-        android:paddingLeft="@dimen/fragment_my_item_padding_left"
         android:id="@+id/rl_fragment_my_feedback"
-        android:clickable="true"
-        android:background="@drawable/whitebuttonselector"
         android:layout_width="match_parent"
-        android:layout_height="44dp"
+        android:layout_height="@dimen/fragment_my_item_height"
+        android:background="@drawable/whitebuttonselector"
+        android:clickable="true"
         android:gravity="center_vertical"
-        >
+        android:paddingLeft="@dimen/fragment_my_item_padding_left">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:text="反馈意见"
-            android:textSize="17sp"
             android:textColor="@color/black"
-            android:layout_centerVertical="true"
-            />
+            android:textSize="17sp" />
+
         <Button
             android:layout_width="12dp"
             android:layout_height="12dp"
-            android:background="@drawable/right"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="17dp"
             android:layout_centerVertical="true"
-            />
+            android:layout_marginRight="17dp"
+            android:background="@drawable/right" />
 
     </RelativeLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="@dimen/divide_line"
-        android:background="@color/divideLineGray"
         android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
-        />
+        android:background="@color/divideLineGray" />
 
     <RelativeLayout
-        android:paddingLeft="@dimen/fragment_my_item_padding_left"
         android:id="@+id/rl_fragment_my_servicenumber"
-        android:clickable="true"
-        android:background="@drawable/whitebuttonselector"
         android:layout_width="match_parent"
-        android:layout_height="44dp"
+        android:layout_height="@dimen/fragment_my_item_height"
+        android:background="@drawable/whitebuttonselector"
+        android:clickable="true"
         android:gravity="center_vertical"
-        >
+        android:paddingLeft="@dimen/fragment_my_item_padding_left">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="客服电话"
-            android:textSize="17sp"
-            android:textColor="@color/black"
             android:layout_centerVertical="true"
-            />
+            android:text="客服电话"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
         <Button
             android:layout_width="12dp"
             android:layout_height="12dp"
-            android:background="@drawable/right"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="17dp"
             android:layout_centerVertical="true"
-            />
+            android:layout_marginRight="17dp"
+            android:background="@drawable/right" />
 
     </RelativeLayout>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="@dimen/divide_line"
-        android:background="@color/divideLineGray"
         android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
-        />
+        android:background="@color/divideLineGray" />
 
     <RelativeLayout
-        android:paddingLeft="@dimen/fragment_my_item_padding_left"
         android:id="@+id/rl_fragment_my_about"
-        android:clickable="true"
-        android:background="@drawable/whitebuttonselector"
         android:layout_width="match_parent"
-        android:layout_height="44dp"
+        android:layout_height="@dimen/fragment_my_item_height"
+        android:background="@drawable/whitebuttonselector"
+        android:clickable="true"
         android:gravity="center_vertical"
-        >
+        android:paddingLeft="@dimen/fragment_my_item_padding_left">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="关于选哪儿"
-            android:textSize="17sp"
-            android:textColor="@color/black"
             android:layout_centerVertical="true"
-            />
+            android:text="关于选哪儿"
+            android:textColor="@color/black"
+            android:textSize="17sp" />
+
         <Button
             android:layout_width="12dp"
             android:layout_height="12dp"
-            android:background="@drawable/right"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="17dp"
             android:layout_centerVertical="true"
-            />
+            android:layout_marginRight="17dp"
+            android:background="@drawable/right" />
 
     </RelativeLayout>
 
     <Button
-        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="45dp"
         android:layout_marginLeft="9dp"
         android:layout_marginRight="9dp"
-        android:text="退出登录"
-        android:textSize="17sp"
+        android:layout_marginTop="20dp"
         android:background="@color/myRed"
+        android:text="退出登录"
         android:textColor="@color/white"
-        />
-    
+        android:textSize="17sp" />
+
 </LinearLayout>

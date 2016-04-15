@@ -11,6 +11,7 @@ import roboguice.inject.ContentView;
 
 /**
  * Created by Tanikawa on 2016/4/13.
+ * 反馈意见界面
  */
 
 @ContentView(R.layout.layout_activity_feedback)

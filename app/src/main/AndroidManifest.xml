@@ -36,6 +36,12 @@
         <activity
             android:name=".activity.ActivityCarrierImport">
         </activity>
+        <activity
+            android:name=".activity.ActivityCarrierImportTudi">
+        </activity>
+        <activity
+            android:name=".activity.ActivityCarrierInfo">
+        </activity>
     </application>
 
 </manifest>

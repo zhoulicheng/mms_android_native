@@ -13,7 +13,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="45dp"
+            android:layout_height="@dimen/titleBarHeight"
             android:background="@color/titleBarColor"
             android:gravity="center_vertical"
             android:orientation="horizontal">
@@ -29,8 +29,8 @@
 
             <Button
                 android:id="@+id/btn_activity_about_back"
-                android:layout_width="18dp"
-                android:layout_height="18dp"
+                android:layout_width="@dimen/backButtonWidth"
+                android:layout_height="@dimen/backButtonHeight"
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="15dp"

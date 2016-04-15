@@ -13,10 +13,13 @@
     <color name="myRed">#E73333</color>
 
     <color name="filterTextGray">#333333</color>
+    <color name="hintGray">#AAAAAA</color>
 
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+
 
     <color name="popWindowGrayback">#494949</color>
 

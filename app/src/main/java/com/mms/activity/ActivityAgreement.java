@@ -13,6 +13,7 @@ import roboguice.inject.InjectView;
 
 /**
  * Created by Tanikawa on 2016/4/12.
+ * 服务条款与免责协议界面
  */
 @ContentView(R.layout.layout_activity_agreement)
 public class ActivityAgreement extends BaseSwipeActivity implements View.OnClickListener{

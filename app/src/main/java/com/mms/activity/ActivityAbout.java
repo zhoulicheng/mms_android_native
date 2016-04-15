@@ -15,6 +15,7 @@ import roboguice.inject.InjectView;
 
 /**
  * Created by Tanikawa on 2016/4/12.
+ * 关于选哪儿界面
  */
 @ContentView(R.layout.layout_activity_about)
 public class ActivityAbout extends BaseSwipeActivity implements View.OnClickListener {

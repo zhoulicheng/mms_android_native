@@ -51,8 +51,6 @@ public class ActivityCarrierImportTudi extends BaseSwipeActivity implements View
     @InjectView(R.id.btn_activity_carrier_import_tudi_add_contact)
     private Button btnAddContact;
 
-    public static final int BTNDELCONTACKID = 100;
-
     private Button btnDelContact;
 
     private boolean hasBtnDelContact = false;

@@ -1,4 +1,4 @@
-package com.mms.rlrView.adapter;
+package com.mms.widget.rlrView.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -6,8 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.mms.R;
-import com.mms.rlrView.view.LoadMoreRecyclerView;
-import com.mms.rlrView.viewHolder.LoadViewHolder;
+import com.mms.widget.rlrView.view.LoadMoreRecyclerView;
+import com.mms.widget.rlrView.viewHolder.LoadViewHolder;
 
 import java.util.HashMap;
 import java.util.Map;

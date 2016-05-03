@@ -1,4 +1,4 @@
-package com.mms.rlrView.other;
+package com.mms.widget.rlrView.other;
 
 /**
  * Created by cwj on 16/1/19.

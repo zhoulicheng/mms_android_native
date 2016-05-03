@@ -1,4 +1,4 @@
-package com.mms.rlrView.view;
+package com.mms.widget.rlrView.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -14,9 +14,9 @@ import android.view.ViewParent;
 
 import com.mms.R;
 import com.mms.imageLoader.ImageLoader;
-import com.mms.rlrView.adapter.RecyclerViewAdapter;
-import com.mms.rlrView.other.Divider;
-import com.mms.rlrView.viewHolder.HeaderViewHolder;
+import com.mms.widget.rlrView.adapter.RecyclerViewAdapter;
+import com.mms.widget.rlrView.other.Divider;
+import com.mms.widget.rlrView.viewHolder.HeaderViewHolder;
 
 import java.util.List;
 

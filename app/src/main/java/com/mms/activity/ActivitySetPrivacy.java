@@ -8,10 +8,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.mms.R;
-import com.mms.base.BaseActivity;
 import com.mms.base.BaseSwipeActivity;
 import com.mms.dialog.SelectDialog;
-import com.mms.rlrView.view.LoadMoreRecyclerView;
 import com.mms.util.Utils;
 
 import java.util.ArrayList;
@@ -53,7 +51,7 @@ public class ActivitySetPrivacy extends BaseSwipeActivity implements View.OnClic
     private SelectDialog selectDialog;
 
     private AdapterView.OnItemClickListener baseListener;
-    private AdapterView.OnItemClickListener mobilephoneListener;
+    private AdapterView.OnItemClickListener mobilePhoneListener;
     private AdapterView.OnItemClickListener telephoneListener;
 
 
@@ -64,7 +62,7 @@ public class ActivitySetPrivacy extends BaseSwipeActivity implements View.OnClic
         setOCL();
     }
 
-    private void init(){
+    private void init() {
         items = new ArrayList<>();
         items.add("自己");
         items.add("好友");
@@ -73,26 +71,65 @@ public class ActivitySetPrivacy extends BaseSwipeActivity implements View.OnClic
         baseListener = new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                switch (i){
+                switch (i) {
                     case 0:
-                        Utils.showToast(getApplicationContext(),"基本——自己");
+                        Utils.showToast(getApplicationContext(), "基本——自己");
 
                         break;
                     case 1:
-                        Utils.showToast(getApplicationContext(),"基本——好友");
+                        Utils.showToast(getApplicationContext(), "基本——好友");
                         break;
                     case 2:
-                        Utils.showToast(getApplicationContext(),"基本——所有人");
+                        Utils.showToast(getApplicationContext(), "基本——所有人");
                         break;
                 }
                 tvBase.setText(items.get(i));
             }
         };
-        selectDialog = new SelectDialog(this,items);
+
+        mobilePhoneListener = new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                switch (i) {
+                    case 0:
+                        Utils.showToast(getApplicationContext(), "手机号——自己");
+
+                        break;
+                    case 1:
+                        Utils.showToast(getApplicationContext(), "手机号——好友");
+                        break;
+                    case 2:
+                        Utils.showToast(getApplicationContext(), "手机号——所有人");
+                        break;
+                }
+                tvMobilephone.setText(items.get(i));
+            }
+        };
+
+        telephoneListener = new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                switch (i) {
+                    case 0:
+                        Utils.showToast(getApplicationContext(), "座机——自己");
+
+                        break;
+                    case 1:
+                        Utils.showToast(getApplicationContext(), "座机——好友");
+                        break;
+                    case 2:
+                        Utils.showToast(getApplicationContext(), "座机——所有人");
+                        break;
+                }
+                tvTelephone.setText(items.get(i));
+            }
+        };
+
+        selectDialog = new SelectDialog(this, items);
 
     }
 
-    private void setOCL(){
+    private void setOCL() {
         btnBack.setOnClickListener(this);
         rlBase.setOnClickListener(this);
         rlMobilephone.setOnClickListener(this);
@@ -101,7 +138,7 @@ public class ActivitySetPrivacy extends BaseSwipeActivity implements View.OnClic
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.btn_activity_setprivacy_back:
                 finish();
                 break;
@@ -110,8 +147,12 @@ public class ActivitySetPrivacy extends BaseSwipeActivity implements View.OnClic
                 selectDialog.show();
                 break;
             case R.id.rl_activity_setprivacy_mobilephone:
+                selectDialog.setOnItemClickListener(mobilePhoneListener);
+                selectDialog.show();
                 break;
             case R.id.rl_activity_setprivacy_telephone:
+                selectDialog.setOnItemClickListener(telephoneListener);
+                selectDialog.show();
                 break;
         }
     }

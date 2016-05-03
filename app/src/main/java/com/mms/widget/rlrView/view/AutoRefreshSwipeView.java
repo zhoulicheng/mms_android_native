@@ -1,4 +1,4 @@
-package com.mms.rlrView.view;
+package com.mms.widget.rlrView.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;

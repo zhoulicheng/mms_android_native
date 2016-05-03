@@ -1,4 +1,4 @@
-package com.mms.rlrView.view;
+package com.mms.widget.rlrView.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -18,9 +18,9 @@ import android.view.ViewTreeObserver;
 import android.widget.LinearLayout;
 
 import com.mms.R;
-import com.mms.rlrView.adapter.RecyclerViewAdapter;
-import com.mms.rlrView.other.Page;
-import com.mms.rlrView.viewHolder.HeaderViewHolder;
+import com.mms.widget.rlrView.adapter.RecyclerViewAdapter;
+import com.mms.widget.rlrView.other.Page;
+import com.mms.widget.rlrView.viewHolder.HeaderViewHolder;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.mms.rlrView.viewHolder;
+package com.mms.widget.rlrView.viewHolder;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;

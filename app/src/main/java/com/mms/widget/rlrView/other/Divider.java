@@ -1,4 +1,4 @@
-package com.mms.rlrView.other;
+package com.mms.widget.rlrView.other;
 
 import android.graphics.Canvas;
 import android.graphics.Rect;
@@ -7,7 +7,7 @@ import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import com.mms.rlrView.adapter.RecyclerViewAdapter;
+import com.mms.widget.rlrView.adapter.RecyclerViewAdapter;
 
 /**
  * Created by cwj on 16/1/22.

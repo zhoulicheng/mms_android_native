@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/backGray"
     android:orientation="vertical">
 
@@ -318,387 +319,424 @@
                 android:layout_height="@dimen/divide_line"
                 android:background="@color/divideLineGray" />
 
-            <View
+            <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/divide_line"-->
+                <!--android:layout_marginTop="20dp"-->
+                <!--android:background="@color/divideLineGray" />-->
+
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/rl_activity_carrier_import_tudi_name"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/fragment_my_item_height"-->
+                <!--android:background="@color/white"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:paddingLeft="@dimen/fragment_my_item_padding_left">-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:text="联系人"-->
+                    <!--android:textColor="@color/black"-->
+                    <!--android:textSize="17sp" />-->
+
+                <!--<EditText-->
+                    <!--android:inputType="text"-->
+                    <!--android:id="@+id/et_activity_carrier_import_tudi_name"-->
+                    <!--android:layout_width="200dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_marginLeft="100dp"-->
+                    <!--android:background="@color/white"-->
+                    <!--android:hint="请输入联系人姓名"-->
+                    <!--android:singleLine="true"-->
+                    <!--android:textColor="@color/textGray"-->
+                    <!--android:textColorHint="@color/hintGray"-->
+                    <!--android:textSize="17sp" />-->
+
+                <!--<Button-->
+                    <!--android:id="@+id/btn_activity_carrier_import_tudi_name_del"-->
+                    <!--android:layout_width="@dimen/chachaWidth"-->
+                    <!--android:layout_height="@dimen/chachaHeight"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_marginRight="16dp"-->
+                    <!--android:background="@drawable/chacha"-->
+                    <!--android:visibility="invisible" />-->
+
+            <!--</RelativeLayout>-->
+
+            <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/divide_line"-->
+                <!--android:layout_marginLeft="@dimen/fragment_my_item_padding_left"-->
+                <!--android:background="@color/divideLineGray" />-->
+
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/rl_activity_carrier_import_tudi_sex"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/fragment_my_item_height"-->
+                <!--android:background="@color/white"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:paddingLeft="@dimen/fragment_my_item_padding_left">-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:text="性别"-->
+                    <!--android:textColor="@color/black"-->
+                    <!--android:textSize="17sp" />-->
+
+                <!--<RadioGroup-->
+                    <!--android:id="@+id/rg_activity_carrier_import_tudi_sex"-->
+                    <!--android:layout_width="200dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_marginLeft="100dp"-->
+                    <!--android:background="@color/white"-->
+                    <!--android:orientation="horizontal">-->
+
+                    <!--<RadioButton-->
+                        <!--android:id="@+id/rb_activity_carrier_import_tudi_sex_male"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:checked="true"-->
+                        <!--android:text="先生"-->
+                        <!--android:textColor="@color/textGray"-->
+                        <!--android:textSize="17sp" />-->
+
+                    <!--<RadioButton-->
+                        <!--android:id="@+id/rb_activity_carrier_import_tudi_sex_female"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginLeft="40dp"-->
+                        <!--android:text="女士"-->
+                        <!--android:textColor="@color/textGray"-->
+                        <!--android:textSize="17sp" />-->
+
+                <!--</RadioGroup>-->
+
+            <!--</RelativeLayout>-->
+
+            <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/divide_line"-->
+                <!--android:layout_marginLeft="@dimen/fragment_my_item_padding_left"-->
+                <!--android:background="@color/divideLineGray" />-->
+
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/rl_activity_carrier_import_tudi_zhiwu"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/fragment_my_item_height"-->
+                <!--android:background="@color/white"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:paddingLeft="@dimen/fragment_my_item_padding_left">-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:text="职务"-->
+                    <!--android:textColor="@color/black"-->
+                    <!--android:textSize="17sp" />-->
+
+                <!--<EditText-->
+                    <!--android:id="@+id/et_activity_carrier_import_tudi_zhiwu"-->
+                    <!--android:layout_width="200dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_marginLeft="100dp"-->
+                    <!--android:background="@color/white"-->
+                    <!--android:hint="请输入联系人职务"-->
+                    <!--android:singleLine="true"-->
+                    <!--android:textColor="@color/textGray"-->
+                    <!--android:textColorHint="@color/hintGray"-->
+                    <!--android:textSize="17sp" />-->
+
+                <!--<Button-->
+                    <!--android:id="@+id/btn_activity_carrier_import_tudi_zhiwu_del"-->
+                    <!--android:layout_width="@dimen/chachaWidth"-->
+                    <!--android:layout_height="@dimen/chachaHeight"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_marginRight="16dp"-->
+                    <!--android:background="@drawable/chacha"-->
+                    <!--android:visibility="invisible" />-->
+
+            <!--</RelativeLayout>-->
+
+            <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/divide_line"-->
+                <!--android:layout_marginLeft="@dimen/fragment_my_item_padding_left"-->
+                <!--android:background="@color/divideLineGray" />-->
+
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/rl_activity_carrier_import_tudi_mobilephone"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/fragment_my_item_height"-->
+                <!--android:background="@color/white"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:paddingLeft="@dimen/fragment_my_item_padding_left">-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:text="手机"-->
+                    <!--android:textColor="@color/black"-->
+                    <!--android:textSize="17sp" />-->
+
+                <!--<EditText-->
+                    <!--android:id="@+id/et_activity_carrier_import_tudi_mobilephone"-->
+                    <!--android:layout_width="200dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_marginLeft="100dp"-->
+                    <!--android:background="@color/white"-->
+                    <!--android:hint="请输入联系人手机号码"-->
+                    <!--android:singleLine="true"-->
+                    <!--android:inputType="phone"-->
+                    <!--android:textColor="@color/textGray"-->
+                    <!--android:textColorHint="@color/hintGray"-->
+                    <!--android:textSize="17sp" />-->
+
+                <!--<Button-->
+                    <!--android:id="@+id/btn_activity_carrier_import_tudi_mobilephone_del"-->
+                    <!--android:layout_width="@dimen/chachaWidth"-->
+                    <!--android:layout_height="@dimen/chachaHeight"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_marginRight="16dp"-->
+                    <!--android:background="@drawable/chacha"-->
+                    <!--android:visibility="invisible" />-->
+
+            <!--</RelativeLayout>-->
+
+            <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/divide_line"-->
+                <!--android:layout_marginLeft="@dimen/fragment_my_item_padding_left"-->
+                <!--android:background="@color/divideLineGray" />-->
+
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/rl_activity_carrier_import_tudi_telephone"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/fragment_my_item_height"-->
+                <!--android:background="@color/white"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:paddingLeft="@dimen/fragment_my_item_padding_left">-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:text="座机"-->
+                    <!--android:textColor="@color/black"-->
+                    <!--android:textSize="17sp" />-->
+
+                <!--<EditText-->
+                    <!--android:inputType="number"-->
+                    <!--android:id="@+id/et_activity_carrier_import_tudi_telephone_quhao"-->
+                    <!--android:layout_width="50dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_marginLeft="100dp"-->
+                    <!--android:background="@color/white"-->
+                    <!--android:hint="区号"-->
+                    <!--android:singleLine="true"-->
+                    <!--android:textColor="@color/textGray"-->
+                    <!--android:textColorHint="@color/hintGray"-->
+                    <!--android:textSize="17sp" />-->
+
+                <!--<View-->
+                    <!--android:layout_width="10dp"-->
+                    <!--android:layout_height="1dp"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_toRightOf="@id/et_activity_carrier_import_tudi_telephone_quhao"-->
+                    <!--android:background="@color/divideLineGray" />-->
+
+                <!--<EditText-->
+                    <!--android:inputType="number"-->
+                    <!--android:id="@+id/et_activity_carrier_import_tudi_telephone_zuoji"-->
+                    <!--android:layout_width="80dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_marginLeft="160dp"-->
+                    <!--android:background="@color/white"-->
+                    <!--android:gravity="center_horizontal"-->
+                    <!--android:hint="座机"-->
+                    <!--android:singleLine="true"-->
+                    <!--android:textColor="@color/textGray"-->
+                    <!--android:textColorHint="@color/hintGray"-->
+                    <!--android:textSize="17sp" />-->
+
+                <!--<View-->
+                    <!--android:layout_width="10dp"-->
+                    <!--android:layout_height="1dp"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_toRightOf="@id/et_activity_carrier_import_tudi_telephone_zuoji"-->
+                    <!--android:background="@color/divideLineGray" />-->
+
+                <!--<EditText-->
+                    <!--android:id="@+id/et_activity_carrier_import_tudi_telephone_fenji"-->
+                    <!--android:layout_width="50dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_marginLeft="260dp"-->
+                    <!--android:background="@color/white"-->
+                    <!--android:gravity="center_horizontal"-->
+                    <!--android:hint="分机"-->
+                    <!--android:inputType="number"-->
+                    <!--android:singleLine="true"-->
+                    <!--android:textColor="@color/textGray"-->
+                    <!--android:textColorHint="@color/hintGray"-->
+                    <!--android:textSize="17sp" />-->
+
+                <!--<Button-->
+                    <!--android:id="@+id/btn_activity_carrier_import_tudi_telephone_del"-->
+                    <!--android:layout_width="@dimen/chachaWidth"-->
+                    <!--android:layout_height="@dimen/chachaHeight"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_marginRight="16dp"-->
+                    <!--android:background="@drawable/chacha"-->
+                    <!--android:visibility="invisible" />-->
+
+            <!--</RelativeLayout>-->
+            <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/divide_line"-->
+                <!--android:layout_marginLeft="@dimen/fragment_my_item_padding_left"-->
+                <!--android:background="@color/divideLineGray" />-->
+
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/rl_activity_carrier_import_tudi_mail"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/fragment_my_item_height"-->
+                <!--android:background="@color/white"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:paddingLeft="@dimen/fragment_my_item_padding_left">-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:text="邮箱"-->
+                    <!--android:textColor="@color/black"-->
+                    <!--android:textSize="17sp" />-->
+
+                <!--<EditText-->
+                    <!--android:inputType="textEmailAddress"-->
+                    <!--android:id="@+id/et_activity_carrier_import_tudi_mail"-->
+                    <!--android:layout_width="200dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_marginLeft="100dp"-->
+                    <!--android:background="@color/white"-->
+                    <!--android:hint="请输入联系人邮箱地址"-->
+                    <!--android:singleLine="true"-->
+                    <!--android:textColor="@color/textGray"-->
+                    <!--android:textColorHint="@color/hintGray"-->
+                    <!--android:textSize="17sp" />-->
+
+                <!--<Button-->
+                    <!--android:id="@+id/btn_activity_carrier_import_tudi_mail_del"-->
+                    <!--android:layout_width="@dimen/chachaWidth"-->
+                    <!--android:layout_height="@dimen/chachaHeight"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_marginRight="16dp"-->
+                    <!--android:background="@drawable/chacha"-->
+                    <!--android:visibility="invisible" />-->
+
+            <!--</RelativeLayout>-->
+
+            <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/divide_line"-->
+                <!--android:layout_marginLeft="@dimen/fragment_my_item_padding_left"-->
+                <!--android:background="@color/divideLineGray" />-->
+
+            <!--<RelativeLayout-->
+                <!--android:id="@+id/rl_activity_carrier_import_tudi_remark"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/fragment_my_item_height"-->
+                <!--android:background="@color/white"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:paddingLeft="@dimen/fragment_my_item_padding_left">-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:text="备注"-->
+                    <!--android:textColor="@color/black"-->
+                    <!--android:textSize="17sp" />-->
+
+                <!--<EditText-->
+                    <!--android:id="@+id/et_activity_carrier_import_tudi_remark"-->
+                    <!--android:layout_width="200dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_marginLeft="100dp"-->
+                    <!--android:background="@color/white"-->
+                    <!--android:hint="请输入联系人备注信息"-->
+                    <!--android:singleLine="true"-->
+                    <!--android:textColor="@color/textGray"-->
+                    <!--android:textColorHint="@color/hintGray"-->
+                    <!--android:textSize="17sp" />-->
+
+                <!--<Button-->
+                    <!--android:id="@+id/btn_activity_carrier_import_tudi_remark_del"-->
+                    <!--android:layout_width="@dimen/chachaWidth"-->
+                    <!--android:layout_height="@dimen/chachaHeight"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:layout_marginRight="16dp"-->
+                    <!--android:background="@drawable/chacha"-->
+                    <!--android:visibility="invisible" />-->
+
+            <!--</RelativeLayout>-->
+            <LinearLayout
+                android:id="@+id/ll_activity_carrier_import_tudi_contacts"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/divide_line"
-                android:layout_marginTop="20dp"
-                android:background="@color/divideLineGray" />
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <!--<com.mms.widget.ContactView-->
+                    <!--android:id="@+id/contact1"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--&gt;-->
+                <!--</com.mms.widget.ContactView>-->
 
-            <RelativeLayout
-                android:id="@+id/rl_activity_carrier_import_tudi_name"
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/fragment_my_item_height"
-                android:background="@color/white"
-                android:gravity="center_vertical"
-                android:paddingLeft="@dimen/fragment_my_item_padding_left">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="联系人"
-                    android:textColor="@color/black"
-                    android:textSize="17sp" />
-
-                <EditText
-                    android:inputType="text"
-                    android:id="@+id/et_activity_carrier_import_tudi_name"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="100dp"
-                    android:background="@color/white"
-                    android:hint="请输入联系人姓名"
-                    android:singleLine="true"
-                    android:textColor="@color/textGray"
-                    android:textColorHint="@color/hintGray"
-                    android:textSize="17sp" />
-
+                android:orientation="horizontal"
+                android:id="@+id/ll_activity_carrier_import_tudi_add_and_del"
+                android:layout_height="@dimen/fragment_my_item_height">
                 <Button
-                    android:id="@+id/btn_activity_carrier_import_tudi_name_del"
-                    android:layout_width="@dimen/chachaWidth"
-                    android:layout_height="@dimen/chachaHeight"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="16dp"
-                    android:background="@drawable/chacha"
-                    android:visibility="invisible" />
+                    android:id="@+id/btn_activity_carrier_import_tudi_add_contact"
+                    android:background="@drawable/whitebuttonselector"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:text="增加联系人"
+                    android:textColor="@color/textBlue"
+                    android:textSize="17sp"
+                    android:layout_height="wrap_content" />
+                <!--<Button-->
+                    <!--android:id="@+id/btn_activity_carrier_import_tudi_del_contact"-->
+                    <!--android:background="@drawable/whitebuttonselector"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:layout_height="wrap_content" />-->
 
-            </RelativeLayout>
+            </LinearLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/divide_line"
-                android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
-                android:background="@color/divideLineGray" />
-
-            <RelativeLayout
-                android:id="@+id/rl_activity_carrier_import_tudi_sex"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/fragment_my_item_height"
-                android:background="@color/white"
-                android:gravity="center_vertical"
-                android:paddingLeft="@dimen/fragment_my_item_padding_left">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="性别"
-                    android:textColor="@color/black"
-                    android:textSize="17sp" />
-
-                <RadioGroup
-                    android:id="@+id/rg_activity_carrier_import_tudi_sex"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="100dp"
-                    android:background="@color/white"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/rb_activity_carrier_import_tudi_sex_male"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:checked="true"
-                        android:text="先生"
-                        android:textColor="@color/textGray"
-                        android:textSize="17sp" />
-
-                    <RadioButton
-                        android:id="@+id/rb_activity_carrier_import_tudi_sex_female"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="40dp"
-                        android:text="女士"
-                        android:textColor="@color/textGray"
-                        android:textSize="17sp" />
-
-                </RadioGroup>
-
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/divide_line"
-                android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
-                android:background="@color/divideLineGray" />
-
-            <RelativeLayout
-                android:id="@+id/rl_activity_carrier_import_tudi_zhiwu"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/fragment_my_item_height"
-                android:background="@color/white"
-                android:gravity="center_vertical"
-                android:paddingLeft="@dimen/fragment_my_item_padding_left">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="职务"
-                    android:textColor="@color/black"
-                    android:textSize="17sp" />
-
-                <EditText
-                    android:id="@+id/et_activity_carrier_import_tudi_zhiwu"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="100dp"
-                    android:background="@color/white"
-                    android:hint="请输入联系人职务"
-                    android:singleLine="true"
-                    android:textColor="@color/textGray"
-                    android:textColorHint="@color/hintGray"
-                    android:textSize="17sp" />
-
-                <Button
-                    android:id="@+id/btn_activity_carrier_import_tudi_zhiwu_del"
-                    android:layout_width="@dimen/chachaWidth"
-                    android:layout_height="@dimen/chachaHeight"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="16dp"
-                    android:background="@drawable/chacha"
-                    android:visibility="invisible" />
-
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/divide_line"
-                android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
-                android:background="@color/divideLineGray" />
-
-            <RelativeLayout
-                android:id="@+id/rl_activity_carrier_import_tudi_mobilephone"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/fragment_my_item_height"
-                android:background="@color/white"
-                android:gravity="center_vertical"
-                android:paddingLeft="@dimen/fragment_my_item_padding_left">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="手机"
-                    android:textColor="@color/black"
-                    android:textSize="17sp" />
-
-                <EditText
-                    android:id="@+id/et_activity_carrier_import_tudi_mobilephone"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="100dp"
-                    android:background="@color/white"
-                    android:hint="请输入联系人手机号码"
-                    android:singleLine="true"
-                    android:inputType="phone"
-                    android:textColor="@color/textGray"
-                    android:textColorHint="@color/hintGray"
-                    android:textSize="17sp" />
-
-                <Button
-                    android:id="@+id/btn_activity_carrier_import_tudi_mobilephone_del"
-                    android:layout_width="@dimen/chachaWidth"
-                    android:layout_height="@dimen/chachaHeight"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="16dp"
-                    android:background="@drawable/chacha"
-                    android:visibility="invisible" />
-
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/divide_line"
-                android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
-                android:background="@color/divideLineGray" />
-
-            <RelativeLayout
-                android:id="@+id/rl_activity_carrier_import_tudi_telephone"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/fragment_my_item_height"
-                android:background="@color/white"
-                android:gravity="center_vertical"
-                android:paddingLeft="@dimen/fragment_my_item_padding_left">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="座机"
-                    android:textColor="@color/black"
-                    android:textSize="17sp" />
-
-                <EditText
-                    android:inputType="number"
-                    android:id="@+id/et_activity_carrier_import_tudi_telephone_quhao"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="100dp"
-                    android:background="@color/white"
-                    android:hint="区号"
-                    android:singleLine="true"
-                    android:textColor="@color/textGray"
-                    android:textColorHint="@color/hintGray"
-                    android:textSize="17sp" />
-
-                <View
-                    android:layout_width="10dp"
-                    android:layout_height="1dp"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@id/et_activity_carrier_import_tudi_telephone_quhao"
-                    android:background="@color/divideLineGray" />
-
-                <EditText
-                    android:inputType="number"
-                    android:id="@+id/et_activity_carrier_import_tudi_telephone_zuoji"
-                    android:layout_width="80dp"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="160dp"
-                    android:background="@color/white"
-                    android:gravity="center_horizontal"
-                    android:hint="座机"
-                    android:singleLine="true"
-                    android:textColor="@color/textGray"
-                    android:textColorHint="@color/hintGray"
-                    android:textSize="17sp" />
-
-                <View
-                    android:layout_width="10dp"
-                    android:layout_height="1dp"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@id/et_activity_carrier_import_tudi_telephone_zuoji"
-                    android:background="@color/divideLineGray" />
-
-                <EditText
-                    android:id="@+id/et_activity_carrier_import_tudi_telephone_fenji"
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="260dp"
-                    android:background="@color/white"
-                    android:gravity="center_horizontal"
-                    android:hint="分机"
-                    android:inputType="number"
-                    android:singleLine="true"
-                    android:textColor="@color/textGray"
-                    android:textColorHint="@color/hintGray"
-                    android:textSize="17sp" />
-
-                <Button
-                    android:id="@+id/btn_activity_carrier_import_tudi_telephone_del"
-                    android:layout_width="@dimen/chachaWidth"
-                    android:layout_height="@dimen/chachaHeight"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="16dp"
-                    android:background="@drawable/chacha"
-                    android:visibility="invisible" />
-
-            </RelativeLayout>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/divide_line"
-                android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
-                android:background="@color/divideLineGray" />
-
-            <RelativeLayout
-                android:id="@+id/rl_activity_carrier_import_tudi_mail"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/fragment_my_item_height"
-                android:background="@color/white"
-                android:gravity="center_vertical"
-                android:paddingLeft="@dimen/fragment_my_item_padding_left">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="邮箱"
-                    android:textColor="@color/black"
-                    android:textSize="17sp" />
-
-                <EditText
-                    android:inputType="textEmailAddress"
-                    android:id="@+id/et_activity_carrier_import_tudi_mail"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="100dp"
-                    android:background="@color/white"
-                    android:hint="请输入联系人邮箱地址"
-                    android:singleLine="true"
-                    android:textColor="@color/textGray"
-                    android:textColorHint="@color/hintGray"
-                    android:textSize="17sp" />
-
-                <Button
-                    android:id="@+id/btn_activity_carrier_import_tudi_mail_del"
-                    android:layout_width="@dimen/chachaWidth"
-                    android:layout_height="@dimen/chachaHeight"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="16dp"
-                    android:background="@drawable/chacha"
-                    android:visibility="invisible" />
-
-            </RelativeLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/divide_line"
-                android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
-                android:background="@color/divideLineGray" />
-
-            <RelativeLayout
-                android:id="@+id/rl_activity_carrier_import_tudi_remark"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/fragment_my_item_height"
-                android:background="@color/white"
-                android:gravity="center_vertical"
-                android:paddingLeft="@dimen/fragment_my_item_padding_left">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="备注"
-                    android:textColor="@color/black"
-                    android:textSize="17sp" />
-
-                <EditText
-                    android:id="@+id/et_activity_carrier_import_tudi_remark"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="100dp"
-                    android:background="@color/white"
-                    android:hint="请输入联系人备注信息"
-                    android:singleLine="true"
-                    android:textColor="@color/textGray"
-                    android:textColorHint="@color/hintGray"
-                    android:textSize="17sp" />
-
-                <Button
-                    android:id="@+id/btn_activity_carrier_import_tudi_remark_del"
-                    android:layout_width="@dimen/chachaWidth"
-                    android:layout_height="@dimen/chachaHeight"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="16dp"
-                    android:background="@drawable/chacha"
-                    android:visibility="invisible" />
-
-            </RelativeLayout>
 
         </LinearLayout>
     </ScrollView>

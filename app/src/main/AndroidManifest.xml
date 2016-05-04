@@ -37,7 +37,22 @@
             android:name=".activity.ActivityCarrierImport">
         </activity>
         <activity
-            android:name=".activity.ActivityCarrierImportTudi">
+            android:name=".activity.ActivityCarrierImportLand">
+        </activity>
+        <activity
+            android:name=".activity.ActivityCarrierImportBusiness">
+        </activity>
+        <activity
+            android:name=".activity.ActivityCarrierImportDepot">
+        </activity>
+        <activity
+            android:name=".activity.ActivityCarrierImportFactory">
+        </activity>
+        <activity
+            android:name=".activity.ActivityCarrierImportOther">
+        </activity>
+        <activity
+            android:name=".activity.ActivityCarrierImportSoho">
         </activity>
         <activity
             android:name=".activity.ActivityCarrierInfo">

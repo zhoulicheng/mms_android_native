@@ -8,7 +8,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/titleBarHeight"
-        android:background="@color/titleBarColor"
+        android:background="@color/colorPrimary"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 

@@ -9,7 +9,6 @@ import android.widget.GridView;
 import android.widget.SimpleAdapter;
 
 import com.mms.R;
-import com.mms.base.BaseActivity;
 import com.mms.base.BaseSwipeActivity;
 
 import java.util.ArrayList;
@@ -88,7 +87,11 @@ public class ActivityCarrierImport extends BaseSwipeActivity implements View.OnC
         Intent intent = null;
         switch (i){
             case 0:
-                intent = new Intent(this,ActivityCarrierImportTudi.class);
+                intent = new Intent(this,ActivityCarrierImportLand.class);
+                startActivity(intent);
+                break;
+            case 1:
+                intent = new Intent(this,ActivityCarrierImportFactory.class);
                 startActivity(intent);
                 break;
 

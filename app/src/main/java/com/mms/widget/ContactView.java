@@ -18,13 +18,15 @@ public class ContactView extends LinearLayout {
 
     private CancelableEditView etName;
     private RadioGroup rgSex;
-    private CancelableEditView etZhiwu;
+    private CancelableEditView etPost;
     private CancelableEditView etPhone;
     private EditText etQuhao;
     private EditText etZuoji;
     private EditText etFenji;
     private CancelableEditView etMail;
     private CancelableEditView etRemark;
+
+    private boolean isMale = true;
 
     public ContactView(Context context) {
         this(context, null);
@@ -53,7 +55,7 @@ public class ContactView extends LinearLayout {
         View view = LayoutInflater.from(getContext()).inflate(R.layout.contact_view, this);
         etName = (CancelableEditView) view.findViewById(R.id.et_activity_carrier_import_tudi_name);
         rgSex = (RadioGroup) view.findViewById(R.id.rg_activity_carrier_import_tudi_sex);
-        etZhiwu = (CancelableEditView) view.findViewById(R.id.et_activity_carrier_import_tudi_zhiwu);
+        etPost = (CancelableEditView) view.findViewById(R.id.et_activity_carrier_import_tudi_post);
         etPhone = (CancelableEditView) view.findViewById(R.id.et_activity_carrier_import_tudi_phone);
         etQuhao = (EditText) view.findViewById(R.id.et_activity_carrier_import_tudi_telephone_quhao);
         etZuoji = (EditText) view.findViewById(R.id.et_activity_carrier_import_tudi_telephone_zuoji);
@@ -64,13 +66,48 @@ public class ContactView extends LinearLayout {
     }
 
     private void setView() {
-        //例如可见性
+        rgSex.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                isMale = !isMale;
+            }
+        });
     }
 
-//    private void setVisible(View view, boolean visible) {
-//        if (visible)
-//            view.setVisibility(VISIBLE);
-//        else view.setVisibility(GONE);
-//    }
+    public String getName() {
+        return etName.getText().trim();
+    }
+
+    public boolean getIsMale(){
+        return isMale;
+    }
+
+    public String getPost(){
+        return etPost.getText().trim();
+    }
+
+    public String getPhone(){
+        return etPhone.getText().trim();
+    }
+
+    public String getQuhao(){
+        return etQuhao.getText().toString().trim();
+    }
+
+    public String getZuoji(){
+        return etZuoji.getText().toString().trim();
+    }
+
+    public String getFenji(){
+        return etFenji.getText().toString().trim();
+    }
+
+    public String getMail(){
+        return etMail.getText().trim();
+    }
+
+    public String getRemark(){
+        return etRemark.getText().trim();
+    }
 
 }

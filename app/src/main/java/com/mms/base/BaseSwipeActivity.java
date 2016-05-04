@@ -19,11 +19,13 @@ import android.view.animation.DecelerateInterpolator;
 import android.widget.FrameLayout;
 
 import com.mms.R;
+import com.mms.util.StatusBarUtils;
 
 /**
  * 滑动关闭页面基类，使用时继承此类并使用BlankTheme主题即可
  */
 public abstract class BaseSwipeActivity extends BaseActivity {
+
     private SwipeLayout swipeLayout;
     /**
      * 是否可以滑动关闭页面

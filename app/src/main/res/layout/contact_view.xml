@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/divide_line"
@@ -31,10 +32,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="20dp"
-            app:hintColor="@color/hintGray"
             app:cancelIcon="@drawable/chacha"
-            app:hintText="请输入联系人姓名"
-            app:editTextSize="17sp">
+            app:editTextSize="17sp"
+            app:hintColor="@color/hintGray"
+            app:hintText="请输入联系人姓名">
 
         </com.mms.widget.CancelableEditView>
 
@@ -117,14 +118,14 @@
             android:textSize="17sp" />
 
         <com.mms.widget.CancelableEditView
-            android:id="@+id/et_activity_carrier_import_tudi_zhiwu"
+            android:id="@+id/et_activity_carrier_import_tudi_post"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="20dp"
-            app:hintColor="@color/hintGray"
             app:cancelIcon="@drawable/chacha"
-            app:hintText="请输入联系人职务"
-            app:editTextSize="17sp">
+            app:editTextSize="17sp"
+            app:hintColor="@color/hintGray"
+            app:hintText="请输入联系人职务">
 
         </com.mms.widget.CancelableEditView>
 
@@ -141,8 +142,8 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/fragment_my_item_height"
         android:background="@color/white"
-        android:orientation="horizontal"
         android:gravity="center_vertical"
+        android:orientation="horizontal"
         android:paddingLeft="@dimen/fragment_my_item_padding_left">
 
         <TextView
@@ -157,10 +158,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="20dp"
-            app:hintColor="@color/hintGray"
             app:cancelIcon="@drawable/chacha"
+            app:editTextSize="17sp"
+            app:hintColor="@color/hintGray"
             app:hintText="请输入联系人手机号码"
-            app:editTextSize="17sp">
+            app:textType="number">
 
         </com.mms.widget.CancelableEditView>
 
@@ -189,7 +191,6 @@
             android:textSize="17sp" />
 
         <EditText
-            android:inputType="number"
             android:id="@+id/et_activity_carrier_import_tudi_telephone_quhao"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
@@ -197,6 +198,7 @@
             android:layout_marginLeft="100dp"
             android:background="@color/white"
             android:hint="区号"
+            android:inputType="number"
             android:singleLine="true"
             android:textColor="@color/textGray"
             android:textColorHint="@color/hintGray"
@@ -210,7 +212,6 @@
             android:background="@color/divideLineGray" />
 
         <EditText
-            android:inputType="number"
             android:id="@+id/et_activity_carrier_import_tudi_telephone_zuoji"
             android:layout_width="80dp"
             android:layout_height="wrap_content"
@@ -219,6 +220,7 @@
             android:background="@color/white"
             android:gravity="center_horizontal"
             android:hint="座机"
+            android:inputType="number"
             android:singleLine="true"
             android:textColor="@color/textGray"
             android:textColorHint="@color/hintGray"
@@ -257,6 +259,7 @@
             android:visibility="invisible" />
 
     </RelativeLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/divide_line"
@@ -284,10 +287,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="20dp"
-            app:hintColor="@color/hintGray"
             app:cancelIcon="@drawable/chacha"
-            app:hintText="请输入联系人邮箱地址"
-            app:editTextSize="17sp">
+            app:editTextSize="17sp"
+            app:hintColor="@color/hintGray"
+            app:hintText="请输入联系人邮箱地址">
 
         </com.mms.widget.CancelableEditView>
 
@@ -320,14 +323,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="20dp"
-            app:hintColor="@color/hintGray"
             app:cancelIcon="@drawable/chacha"
-            app:hintText="请输入联系人备注信息"
-            app:editTextSize="17sp">
+            app:editTextSize="17sp"
+            app:hintColor="@color/hintGray"
+            app:hintText="请输入联系人备注信息">
 
         </com.mms.widget.CancelableEditView>
 
     </LinearLayout>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/divide_line"

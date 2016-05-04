@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.mms.R;
 import com.mms.adapter.FragmentTabAdapter;
 import com.mms.base.BaseFragment;
+import com.mms.util.StatusBarUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +25,16 @@ import roboguice.inject.InjectView;
  * 主界面
  */
 public class ActivityMain extends RoboFragmentActivity {
+
+    //沉浸式状态栏
+    @Override
+    public void setContentView(int layoutResID) {
+        super.setContentView(layoutResID);
+        setStatusBar();
+    }
+    protected void setStatusBar() {
+        StatusBarUtils.setColor(this, getResources().getColor(R.color.colorPrimary),0);
+    }
 
     private List<BaseFragment> fragments = null;
 

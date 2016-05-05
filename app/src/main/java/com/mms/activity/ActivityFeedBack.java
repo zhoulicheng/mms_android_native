@@ -15,7 +15,7 @@ import roboguice.inject.ContentView;
  */
 
 @ContentView(R.layout.layout_activity_feedback)
-public class ActivityFeedBack extends BaseSwipeActivity implements View.OnClickListener {
+public class ActivityFeedBack extends BaseActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

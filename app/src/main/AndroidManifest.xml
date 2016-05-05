@@ -16,46 +16,61 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activity.ActivityAbout">
+            android:name=".activity.ActivityAbout"
+            >
+
         </activity>
         <activity
-            android:name=".activity.ActivityAgreement">
+            android:name=".activity.ActivityAgreement"
+            >
         </activity>
         <activity
-            android:name=".activity.ActivitySetPrivacy">
+            android:name=".activity.ActivitySetPrivacy"
+           >
         </activity>
         <activity
-            android:name=".activity.ActivityFeedBack">
+            android:name=".activity.ActivityFeedBack"
+           >
         </activity>
         <activity
-            android:name=".activity.ActivityOnlineOffice">
+            android:name=".activity.ActivityOnlineOffice"
+            >
         </activity>
         <activity
-            android:name=".activity.ActivityItemImport">
+            android:name=".activity.ActivityItemImport"
+            >
         </activity>
         <activity
-            android:name=".activity.ActivityCarrierImport">
+            android:name=".activity.ActivityCarrierImport"
+            >
         </activity>
         <activity
-            android:name=".activity.ActivityCarrierImportLand">
+            android:name=".activity.ActivityCarrierImportTudi"
+            >
         </activity>
         <activity
-            android:name=".activity.ActivityCarrierImportBusiness">
+            android:name=".activity.ActivityCarrierImportBusiness"
+            >
         </activity>
         <activity
-            android:name=".activity.ActivityCarrierImportDepot">
+            android:name=".activity.ActivityCarrierImportDepot"
+            >
         </activity>
         <activity
-            android:name=".activity.ActivityCarrierImportFactory">
+            android:name=".activity.ActivityCarrierImportFactory"
+            >
         </activity>
         <activity
-            android:name=".activity.ActivityCarrierImportOther">
+            android:name=".activity.ActivityCarrierImportOther"
+           >
         </activity>
         <activity
-            android:name=".activity.ActivityCarrierImportSoho">
+            android:name=".activity.ActivityCarrierImportSoho"
+            >
         </activity>
         <activity
-            android:name=".activity.ActivityCarrierInfo">
+            android:name=".activity.ActivityCarrierInfo"
+            >
         </activity>
     </application>
 

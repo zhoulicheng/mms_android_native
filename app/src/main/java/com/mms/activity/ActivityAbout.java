@@ -18,7 +18,7 @@ import roboguice.inject.InjectView;
  * 关于选哪儿界面
  */
 @ContentView(R.layout.layout_activity_about)
-public class ActivityAbout extends BaseSwipeActivity implements View.OnClickListener {
+public class ActivityAbout extends BaseActivity implements View.OnClickListener {
 
     @InjectView(R.id.tv_activity_about_agreement)
     private TextView tvAgreement;

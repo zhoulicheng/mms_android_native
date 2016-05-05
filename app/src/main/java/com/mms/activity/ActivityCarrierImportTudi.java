@@ -3,6 +3,7 @@ package com.mms.activity;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -11,9 +12,9 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
 
 import com.mms.R;
+import com.mms.base.BaseActivity;
 import com.mms.base.BaseSwipeActivity;
 import com.mms.dialog.MessageDialog;
 import com.mms.dialog.SelectDialog;
@@ -32,68 +33,68 @@ import roboguice.inject.InjectView;
  * Created by Tanikawa on 2016/4/15.
  */
 
-@ContentView(R.layout.layout_activity_carrier_import_land)
-public class ActivityCarrierImportLand extends BaseSwipeActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
+@ContentView(R.layout.layout_activity_carrier_import_tudi)
+public class ActivityCarrierImportTudi extends BaseActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
 
-    @InjectView(R.id.btn_activity_carrier_import_land_back)
+    @InjectView(R.id.btn_activity_carrier_import_tudi_back)
     private Button btnBack;
 
-    @InjectView(R.id.et_activity_carrier_import_land_title)
+    @InjectView(R.id.et_activity_carrier_import_tudi_title)
     private CancelableEditView etTitle;
 
-    @InjectView(R.id.et_activity_carrier_import_land_address)
+    @InjectView(R.id.et_activity_carrier_import_tudi_address)
     private CancelableEditView etAddress;
 
-    @InjectView(R.id.rl_activity_carrier_import_land_level)
+    @InjectView(R.id.rl_activity_carrier_import_tudi_level)
     private RelativeLayout rlLevel;
 
-    @InjectView(R.id.rl_activity_carrier_import_land_state)
-    private RelativeLayout rlState;
+    @InjectView(R.id.rl_activity_carrier_import_tudi_status)
+    private RelativeLayout rlStatus;
 
-    @InjectView(R.id.ll_activity_carrier_import_land_contacts)
+    @InjectView(R.id.ll_activity_carrier_import_tudi_contacts)
     private LinearLayout llContacts;
 
-    @InjectView(R.id.ll_activity_carrier_import_land_add_and_del)
+    @InjectView(R.id.ll_activity_carrier_import_tudi_add_and_del)
     private LinearLayout llAddAndDel;
 
-    @InjectView(R.id.btn_activity_carrier_import_land_add_contact)
+    @InjectView(R.id.btn_activity_carrier_import_tudi_add_contact)
     private Button btnAddContact;
 
-    @InjectView(R.id.cb_activity_carrier_import_land_rent)
+    @InjectView(R.id.cb_activity_carrier_import_tudi_rent)
     private CheckBox cbRent;
 
-    @InjectView(R.id.cb_activity_carrier_import_land_purchase)
+    @InjectView(R.id.cb_activity_carrier_import_tudi_purchase)
     private CheckBox cbPurchase;
 
-    @InjectView(R.id.cb_activity_carrier_import_land_cooperation)
+    @InjectView(R.id.cb_activity_carrier_import_tudi_cooperation)
     private CheckBox cbCooperation;
 
-    @InjectView(R.id.cb_activity_carrier_import_land_tagout)
+    @InjectView(R.id.cb_activity_carrier_import_tudi_tagout)
     private CheckBox cbTagout;
 
-    @InjectView(R.id.cb_activity_carrier_import_land_transfer)
+    @InjectView(R.id.cb_activity_carrier_import_tudi_transfer)
     private CheckBox cbTransfer;
 
-    @InjectView(R.id.rl_activity_carrier_import_land_type)
+    @InjectView(R.id.rl_activity_carrier_import_tudi_type)
     private RelativeLayout rlType;
 
-    @InjectView(R.id.et_activity_carrier_import_land_area)
+    @InjectView(R.id.et_activity_carrier_import_tudi_area)
     private CancelableEditView etArea;
 
     //这词儿是容积率的意思
-    @InjectView(R.id.et_activity_carrier_import_land_volume_rate)
+    @InjectView(R.id.et_activity_carrier_import_tudi_volume_rate)
     private CancelableEditView etVolumeRate;
 
-    @InjectView(R.id.et_activity_carrier_import_land_tax_require)
+    @InjectView(R.id.et_activity_carrier_import_tudi_tax_require)
     private CancelableEditView etTaxRequire;
 
-    @InjectView(R.id.et_activity_carrier_import_land_price)
+    @InjectView(R.id.et_activity_carrier_import_tudi_price)
     private CancelableEditView etPrice;
 
-    @InjectView(R.id.et_activity_carrier_import_land_intro)
+    @InjectView(R.id.et_activity_carrier_import_tudi_intro)
     private EditText etIntro;
 
-    @InjectView(R.id.btn_activity_carrier_import_land_save)
+    @InjectView(R.id.btn_activity_carrier_import_tudi_save)
     private Button btnSave;
 
     private boolean hasBtnDelContact = false;
@@ -109,6 +110,8 @@ public class ActivityCarrierImportLand extends BaseSwipeActivity implements View
     private AdapterView.OnItemClickListener typeListener;
 
     private MessageDialog messageDialog;
+
+    private View.OnTouchListener etLongTextOnTouchListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -138,19 +141,19 @@ public class ActivityCarrierImportLand extends BaseSwipeActivity implements View
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 switch (i) {
                     case 0:
-                        Utils.showToast(ActivityCarrierImportLand.this, "1");
+                        Utils.showToast(ActivityCarrierImportTudi.this, "1");
                         break;
                     case 1:
-                        Utils.showToast(ActivityCarrierImportLand.this, "2");
+                        Utils.showToast(ActivityCarrierImportTudi.this, "2");
                         break;
                     case 2:
-                        Utils.showToast(ActivityCarrierImportLand.this, "3");
+                        Utils.showToast(ActivityCarrierImportTudi.this, "3");
                         break;
                     case 3:
-                        Utils.showToast(ActivityCarrierImportLand.this, "4");
+                        Utils.showToast(ActivityCarrierImportTudi.this, "4");
                         break;
                     case 4:
-                        Utils.showToast(ActivityCarrierImportLand.this, "5");
+                        Utils.showToast(ActivityCarrierImportTudi.this, "5");
                         break;
 
                 }
@@ -166,16 +169,16 @@ public class ActivityCarrierImportLand extends BaseSwipeActivity implements View
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 switch (i) {
                     case 0:
-                        Utils.showToast(ActivityCarrierImportLand.this, "待租");
+                        Utils.showToast(ActivityCarrierImportTudi.this, "待租");
                         break;
                     case 1:
-                        Utils.showToast(ActivityCarrierImportLand.this, "待售");
+                        Utils.showToast(ActivityCarrierImportTudi.this, "待售");
                         break;
                     case 2:
-                        Utils.showToast(ActivityCarrierImportLand.this, "已租");
+                        Utils.showToast(ActivityCarrierImportTudi.this, "已租");
                         break;
                     case 3:
-                        Utils.showToast(ActivityCarrierImportLand.this, "已售");
+                        Utils.showToast(ActivityCarrierImportTudi.this, "已售");
                         break;
 
                 }
@@ -192,19 +195,19 @@ public class ActivityCarrierImportLand extends BaseSwipeActivity implements View
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 switch (i) {
                     case 0:
-                        Utils.showToast(ActivityCarrierImportLand.this, "工业用地");
+                        Utils.showToast(ActivityCarrierImportTudi.this, "工业用地");
                         break;
                     case 1:
-                        Utils.showToast(ActivityCarrierImportLand.this, "商业用地");
+                        Utils.showToast(ActivityCarrierImportTudi.this, "商业用地");
                         break;
                     case 2:
-                        Utils.showToast(ActivityCarrierImportLand.this, "综合用地");
+                        Utils.showToast(ActivityCarrierImportTudi.this, "综合用地");
                         break;
                     case 3:
-                        Utils.showToast(ActivityCarrierImportLand.this, "住宅用地");
+                        Utils.showToast(ActivityCarrierImportTudi.this, "住宅用地");
                         break;
                     case 4:
-                        Utils.showToast(ActivityCarrierImportLand.this, "其他用地");
+                        Utils.showToast(ActivityCarrierImportTudi.this, "其他用地");
                         break;
 
                 }
@@ -217,12 +220,20 @@ public class ActivityCarrierImportLand extends BaseSwipeActivity implements View
         ContactView contact1 = new ContactView(this);
         llContacts.addView(contact1, LP_FW);
         contactViews.add(contact1);
+
+        etLongTextOnTouchListener = new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                view.getParent().requestDisallowInterceptTouchEvent(true);
+                return false;
+            }
+        };
     }
 
     private void setOCL() {
         btnBack.setOnClickListener(this);
         rlLevel.setOnClickListener(this);
-        rlState.setOnClickListener(this);
+        rlStatus.setOnClickListener(this);
         btnAddContact.setOnClickListener(this);
         cbPurchase.setOnCheckedChangeListener(this);
         cbTagout.setOnCheckedChangeListener(this);
@@ -231,6 +242,7 @@ public class ActivityCarrierImportLand extends BaseSwipeActivity implements View
         cbRent.setOnCheckedChangeListener(this);
         rlType.setOnClickListener(this);
         btnSave.setOnClickListener(this);
+        etIntro.setOnTouchListener(etLongTextOnTouchListener);
 
     }
 
@@ -238,7 +250,7 @@ public class ActivityCarrierImportLand extends BaseSwipeActivity implements View
     public void onClick(View view) {
         SelectDialog selectDialog;
         switch (view.getId()) {
-            case R.id.btn_activity_carrier_import_land_back:
+            case R.id.btn_activity_carrier_import_tudi_back:
                 messageDialog.setMessage("你确定要退出编辑吗？退出后将丢失已经添加或修改的内容。");
                 messageDialog.setTitle("后退");
                 messageDialog.setPositiveListener(new View.OnClickListener() {
@@ -249,19 +261,19 @@ public class ActivityCarrierImportLand extends BaseSwipeActivity implements View
                 });
                 messageDialog.show();
                 break;
-            case R.id.rl_activity_carrier_import_land_level:
+            case R.id.rl_activity_carrier_import_tudi_level:
                 //点击等级选择
                 selectDialog = new SelectDialog(this, levelList);
                 selectDialog.setOnItemClickListener(levelListener);
                 selectDialog.show();
                 break;
-            case R.id.rl_activity_carrier_import_land_state:
+            case R.id.rl_activity_carrier_import_tudi_status:
                 //点击状态选择
                 selectDialog = new SelectDialog(this, stateList);
                 selectDialog.setOnItemClickListener(stateListener);
                 selectDialog.show();
                 break;
-            case R.id.btn_activity_carrier_import_land_add_contact:
+            case R.id.btn_activity_carrier_import_tudi_add_contact:
                 //增加一个联系人
                 addContact();
                 break;
@@ -269,13 +281,13 @@ public class ActivityCarrierImportLand extends BaseSwipeActivity implements View
                 //删除联系人
                 delContact(view);
                 break;
-            case R.id.rl_activity_carrier_import_land_type:
+            case R.id.rl_activity_carrier_import_tudi_type:
                 //点击类型选择
                 selectDialog = new SelectDialog(this, typeList);
                 selectDialog.setOnItemClickListener(typeListener);
                 selectDialog.show();
                 break;
-            case R.id.btn_activity_carrier_import_land_save:
+            case R.id.btn_activity_carrier_import_tudi_save:
                 //点击保存按钮
 
                 messageDialog.setTitle("保存");
@@ -340,35 +352,35 @@ public class ActivityCarrierImportLand extends BaseSwipeActivity implements View
     @Override
     public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
         switch (compoundButton.getId()) {
-            case R.id.cb_activity_carrier_import_land_rent:
+            case R.id.cb_activity_carrier_import_tudi_rent:
                 if (b) {
                     Utils.showToast(this, "您选择了租赁");
                 } else {
                     Utils.showToast(this, "您取消了租赁");
                 }
                 break;
-            case R.id.cb_activity_carrier_import_land_purchase:
+            case R.id.cb_activity_carrier_import_tudi_purchase:
                 if (b) {
                     Utils.showToast(this, "您选择了购置");
                 } else {
                     Utils.showToast(this, "您取消了购置");
                 }
                 break;
-            case R.id.cb_activity_carrier_import_land_cooperation:
+            case R.id.cb_activity_carrier_import_tudi_cooperation:
                 if (b) {
                     Utils.showToast(this, "您选择了合作");
                 } else {
                     Utils.showToast(this, "您取消了合作");
                 }
                 break;
-            case R.id.cb_activity_carrier_import_land_tagout:
+            case R.id.cb_activity_carrier_import_tudi_tagout:
                 if (b) {
                     Utils.showToast(this, "您选择了挂牌");
                 } else {
                     Utils.showToast(this, "您取消了挂牌");
                 }
                 break;
-            case R.id.cb_activity_carrier_import_land_transfer:
+            case R.id.cb_activity_carrier_import_tudi_transfer:
                 if (b) {
                     Utils.showToast(this, "您选择了转让");
                 } else {

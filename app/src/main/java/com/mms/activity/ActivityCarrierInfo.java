@@ -3,6 +3,7 @@ package com.mms.activity;
 import android.os.Bundle;
 
 import com.mms.R;
+import com.mms.base.BaseActivity;
 import com.mms.base.BaseSwipeActivity;
 
 import roboguice.inject.ContentView;
@@ -13,7 +14,7 @@ import roboguice.inject.ContentView;
  */
 
 @ContentView(R.layout.layout_activity_carrier_info)
-public class ActivityCarrierInfo extends BaseSwipeActivity {
+public class ActivityCarrierInfo extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

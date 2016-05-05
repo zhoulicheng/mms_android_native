@@ -16,7 +16,7 @@ import roboguice.inject.InjectView;
  * 服务条款与免责协议界面
  */
 @ContentView(R.layout.layout_activity_agreement)
-public class ActivityAgreement extends BaseSwipeActivity implements View.OnClickListener{
+public class ActivityAgreement extends BaseActivity implements View.OnClickListener{
 
     @InjectView(R.id.btn_activity_agreement_back)
     private Button btnBack;

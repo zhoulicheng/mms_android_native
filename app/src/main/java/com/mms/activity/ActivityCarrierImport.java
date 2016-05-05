@@ -9,6 +9,7 @@ import android.widget.GridView;
 import android.widget.SimpleAdapter;
 
 import com.mms.R;
+import com.mms.base.BaseActivity;
 import com.mms.base.BaseSwipeActivity;
 
 import java.util.ArrayList;
@@ -25,7 +26,7 @@ import roboguice.inject.InjectView;
  */
 
 @ContentView(R.layout.layout_activity_carrier_import)
-public class ActivityCarrierImport extends BaseSwipeActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
+public class ActivityCarrierImport extends BaseActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
     @InjectView(R.id.gv_activity_carrierimport)
     private GridView gvCarrierImport;
@@ -87,7 +88,7 @@ public class ActivityCarrierImport extends BaseSwipeActivity implements View.OnC
         Intent intent = null;
         switch (i){
             case 0:
-                intent = new Intent(this,ActivityCarrierImportLand.class);
+                intent = new Intent(this,ActivityCarrierImportTudi.class);
                 startActivity(intent);
                 break;
             case 1:

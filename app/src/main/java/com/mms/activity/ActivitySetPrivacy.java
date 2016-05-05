@@ -8,7 +8,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.mms.R;
-import com.mms.base.BaseSwipeActivity;
+import com.mms.base.BaseActivity;
 import com.mms.dialog.SelectDialog;
 import com.mms.util.Utils;
 
@@ -24,7 +24,7 @@ import roboguice.inject.InjectView;
  */
 
 @ContentView(R.layout.layout_activity_setprivacy)
-public class ActivitySetPrivacy extends BaseSwipeActivity implements View.OnClickListener {
+public class ActivitySetPrivacy extends BaseActivity implements View.OnClickListener {
 
     @InjectView(R.id.btn_activity_setprivacy_back)
     private Button btnBack;
@@ -36,10 +36,10 @@ public class ActivitySetPrivacy extends BaseSwipeActivity implements View.OnClic
     private TextView tvBase;
 
     @InjectView(R.id.rl_activity_setprivacy_mobilephone)
-    private RelativeLayout rlMobilephone;
+    private RelativeLayout rlMobilePhone;
 
     @InjectView(R.id.tv_activity_setprivacy_mobilephone)
-    private TextView tvMobilephone;
+    private TextView tvMobilePhone;
 
     @InjectView(R.id.rl_activity_setprivacy_telephone)
     private RelativeLayout rlTelephone;
@@ -102,7 +102,7 @@ public class ActivitySetPrivacy extends BaseSwipeActivity implements View.OnClic
                         Utils.showToast(getApplicationContext(), "手机号——所有人");
                         break;
                 }
-                tvMobilephone.setText(items.get(i));
+                tvMobilePhone.setText(items.get(i));
             }
         };
 
@@ -132,7 +132,7 @@ public class ActivitySetPrivacy extends BaseSwipeActivity implements View.OnClic
     private void setOCL() {
         btnBack.setOnClickListener(this);
         rlBase.setOnClickListener(this);
-        rlMobilephone.setOnClickListener(this);
+        rlMobilePhone.setOnClickListener(this);
         rlTelephone.setOnClickListener(this);
     }
 

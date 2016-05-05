@@ -23,7 +23,7 @@ import roboguice.inject.InjectView;
  * 在线办公主界面
  */
 @ContentView(R.layout.layout_activity_onlineoffice)
-public class ActivityOnlineOffice extends BaseSwipeActivity implements View.OnClickListener {
+public class ActivityOnlineOffice extends BaseActivity implements View.OnClickListener {
 
     @InjectView(R.id.gv_activity_onlineoffice)
     private GridView gvOnlineOffice;

@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.util.AttributeSet;
 import android.util.Log;
+import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.widget.ScrollView;
 
@@ -19,6 +20,12 @@ import java.util.List;
  * 可添加多个滚动监听器
  */
 public class SafeScrollView extends ScrollView {
+
+    /**
+     * 用于解决ScrollView横向滑动失效的问题
+     */
+    private GestureDetector mGestureDetector;
+
 
     /**
      * 空闲
@@ -51,7 +58,7 @@ public class SafeScrollView extends ScrollView {
 
     public SafeScrollView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-        init();
+        init(context);
     }
 
     public SafeScrollView(Context context, AttributeSet attrs) {
@@ -62,11 +69,13 @@ public class SafeScrollView extends ScrollView {
         this(context, null);
     }
 
-    private void init() {
+    private void init(Context context) {
+        //解决横向滑动事件被拦截的问题(本来想解决右划退出的不过并没有卵用)，此代码本意是用来解决ScrollView嵌套ViewPager滑动失效和无法正常滑动冲突问题
+        mGestureDetector = new GestureDetector(context, new YScrollDetector());
+
         addOnScrollStateChangedListener(new OnScrollStateChangedListener() {
             @Override
             public void onScrollStateChanged(int scrollState) {
-                Log.i("SafeScrollView", "" + scrollState);
                 switch (scrollState) {
                     case FLING:
                         if (ImageLoader.isInitial())
@@ -124,6 +133,7 @@ public class SafeScrollView extends ScrollView {
                 break;
         }
         return super.onTouchEvent(ev);
+//        return false;
     }
 
     /**
@@ -133,4 +143,22 @@ public class SafeScrollView extends ScrollView {
         this.listeners.add(listener);
     }
 
+    /**
+     * 用于解决ScrollView横向滑动失效的问题
+     */
+    @Override
+    public boolean onInterceptTouchEvent(MotionEvent ev) {
+        return super.onInterceptTouchEvent(ev) && mGestureDetector.onTouchEvent(ev);
+//        return false;
+    }
+
+    class YScrollDetector extends GestureDetector.SimpleOnGestureListener {
+
+        @Override
+        public boolean onScroll(MotionEvent e1, MotionEvent e2,
+                                float distanceX, float distanceY) {
+            //如果我们滚动更接近水平方向,返回false,让子视图来处理它
+            return (Math.abs(distanceY) > Math.abs(distanceX));
+        }
+    }
 }

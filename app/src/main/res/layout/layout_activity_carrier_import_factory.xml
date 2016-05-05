@@ -71,8 +71,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:background="@color/white"
-                    app:editTextSize="@dimen/fragment_my_item_left_text_size"
                     app:cancelIcon="@drawable/chacha"
+                    app:editTextSize="@dimen/fragment_my_item_left_text_size"
                     app:hintColor="@color/hintGray"
                     app:hintText="请输入标题">
 
@@ -196,8 +196,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:background="@color/white"
-                    app:editTextSize="@dimen/fragment_my_item_left_text_size"
                     app:cancelIcon="@drawable/chacha"
+                    app:editTextSize="@dimen/fragment_my_item_left_text_size"
                     app:hintColor="@color/hintGray"
                     app:hintText="请输入地址">
 
@@ -257,7 +257,7 @@
                 android:background="@color/divideLineGray" />
 
             <RelativeLayout
-                android:id="@+id/rl_activity_carrier_import_factory_state"
+                android:id="@+id/rl_activity_carrier_import_factory_status"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/fragment_my_item_height"
                 android:background="@drawable/whitebuttonselector"
@@ -274,7 +274,7 @@
                     android:textSize="@dimen/fragment_my_item_left_text_size" />
 
                 <TextView
-                    android:id="@+id/tv_activity_carrier_import_factory_state"
+                    android:id="@+id/tv_activity_carrier_import_factory_status"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -346,9 +346,9 @@
                     android:textSize="@dimen/fragment_my_item_left_text_size" />
 
                 <LinearLayout
-                    android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:orientation="horizontal"
                     android:paddingLeft="20dp">
 
                     <CheckBox
@@ -357,6 +357,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="出租"
+                        android:textColor="@color/filterTextGray"
                         android:textSize="@dimen/fragment_my_item_left_text_size" />
 
                     <CheckBox
@@ -365,6 +366,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="出售 "
+                        android:textColor="@color/filterTextGray"
                         android:textSize="@dimen/fragment_my_item_left_text_size" />
 
                     <CheckBox
@@ -373,10 +375,12 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:text="合作"
+                        android:textColor="@color/filterTextGray"
                         android:textSize="@dimen/fragment_my_item_left_text_size" />
 
                 </LinearLayout>
             </LinearLayout>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/divide_line"
@@ -451,8 +455,8 @@
                     app:cancelIcon="@drawable/chacha"
                     app:editTextSize="@dimen/fragment_my_item_left_text_size"
                     app:hintColor="@color/hintGray"
-                    app:textType="number"
-                    app:hintText="0">
+                    app:hintText="0"
+                    app:textType="number">
 
                 </com.mms.widget.CancelableEditView>
 
@@ -475,6 +479,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/divide_line"
                 android:background="@color/divideLineGray" />
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/fragment_my_item_height"
@@ -499,10 +504,10 @@
                     android:layout_toRightOf="@id/null_tv_activity_carrier_import_factory_yard_area"
                     android:paddingLeft="20dp"
                     app:cancelIcon="@drawable/chacha"
-                    app:textType="number"
                     app:editTextSize="@dimen/fragment_my_item_left_text_size"
                     app:hintColor="@color/hintGray"
-                    app:hintText="0">
+                    app:hintText="0"
+                    app:textType="number">
 
                 </com.mms.widget.CancelableEditView>
 
@@ -549,11 +554,11 @@
                     android:layout_centerVertical="true"
                     android:layout_toRightOf="@id/null_tv_activity_carrier_import_factory_office_area"
                     android:paddingLeft="20dp"
-                    app:textType="number"
                     app:cancelIcon="@drawable/chacha"
                     app:editTextSize="@dimen/fragment_my_item_left_text_size"
                     app:hintColor="@color/hintGray"
-                    app:hintText="0">
+                    app:hintText="0"
+                    app:textType="number">
 
                 </com.mms.widget.CancelableEditView>
 
@@ -577,12 +582,486 @@
                 android:layout_height="@dimen/divide_line"
                 android:background="@color/divideLineGray" />
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fragment_my_item_height"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/fragment_my_item_padding_left">
+
+                <TextView
+                    android:id="@+id/null_tv_activity_carrier_import_factory_bearing"
+                    android:layout_width="@dimen/fragment_my_item_left_tv_width"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="承重"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                <com.mms.widget.CancelableEditView
+                    android:id="@+id/et_activity_carrier_import_factory_bearing"
+                    android:layout_width="240dp"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/null_tv_activity_carrier_import_factory_bearing"
+                    android:paddingLeft="20dp"
+                    app:cancelIcon="@drawable/chacha"
+                    app:editTextSize="@dimen/fragment_my_item_left_text_size"
+                    app:hintColor="@color/hintGray"
+                    app:hintText="0"
+                    app:textType="number">
+
+                </com.mms.widget.CancelableEditView>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="16dp"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:text="吨"
+                    android:textColor="@color/hintGray"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_line"
+                android:background="@color/divideLineGray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fragment_my_item_height"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/fragment_my_item_padding_left">
+
+                <TextView
+                    android:id="@+id/null_tv_activity_carrier_import_factory_height"
+                    android:layout_width="@dimen/fragment_my_item_left_tv_width"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="高度"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                <com.mms.widget.CancelableEditView
+                    android:id="@+id/et_activity_carrier_import_factory_height"
+                    android:layout_width="240dp"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/null_tv_activity_carrier_import_factory_height"
+                    android:paddingLeft="20dp"
+                    app:cancelIcon="@drawable/chacha"
+                    app:editTextSize="@dimen/fragment_my_item_left_text_size"
+                    app:hintColor="@color/hintGray"
+                    app:hintText="0"
+                    app:textType="number">
+
+                </com.mms.widget.CancelableEditView>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="16dp"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:text="m"
+                    android:textColor="@color/hintGray"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_line"
+                android:background="@color/divideLineGray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fragment_my_item_height"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/fragment_my_item_padding_left">
+
+                <TextView
+                    android:id="@+id/null_tv_activity_carrier_import_factory_span"
+                    android:layout_width="@dimen/fragment_my_item_left_tv_width"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="跨度"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                <com.mms.widget.CancelableEditView
+                    android:id="@+id/et_activity_carrier_import_factory_span"
+                    android:layout_width="240dp"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/null_tv_activity_carrier_import_factory_span"
+                    android:paddingLeft="20dp"
+                    app:cancelIcon="@drawable/chacha"
+                    app:editTextSize="@dimen/fragment_my_item_left_text_size"
+                    app:hintColor="@color/hintGray"
+                    app:hintText="0"
+                    app:textType="number">
+
+                </com.mms.widget.CancelableEditView>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="16dp"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:text="m"
+                    android:textColor="@color/hintGray"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_line"
+                android:background="@color/divideLineGray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fragment_my_item_height"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/fragment_my_item_padding_left">
+
+                <TextView
+                    android:id="@+id/null_tv_activity_carrier_import_factory_floors"
+                    android:layout_width="@dimen/fragment_my_item_left_tv_width"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="层数"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                <com.mms.widget.CancelableEditView
+                    android:id="@+id/et_activity_carrier_import_factory_floors"
+                    android:layout_width="240dp"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/null_tv_activity_carrier_import_factory_floors"
+                    android:paddingLeft="20dp"
+                    app:cancelIcon="@drawable/chacha"
+                    app:editTextSize="@dimen/fragment_my_item_left_text_size"
+                    app:hintColor="@color/hintGray"
+                    app:hintText="0"
+                    app:textType="number">
+
+                </com.mms.widget.CancelableEditView>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="16dp"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:text="层"
+                    android:textColor="@color/hintGray"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_line"
+                android:background="@color/divideLineGray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fragment_my_item_height"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/fragment_my_item_padding_left">
+
+                <TextView
+                    android:id="@+id/null_tv_activity_carrier_import_factory_per_rent"
+                    android:layout_width="@dimen/fragment_my_item_left_tv_width"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="跨度"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                <com.mms.widget.CancelableEditView
+                    android:id="@+id/et_activity_carrier_import_factory_per_rent"
+                    android:layout_width="195dp"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/null_tv_activity_carrier_import_factory_per_rent"
+                    android:paddingLeft="20dp"
+                    app:cancelIcon="@drawable/chacha"
+                    app:editTextSize="@dimen/fragment_my_item_left_text_size"
+                    app:hintColor="@color/hintGray"
+                    app:hintText="0"
+                    app:textType="number">
+
+                </com.mms.widget.CancelableEditView>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="16dp"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:text="元/㎡·天"
+                    android:textColor="@color/hintGray"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_line"
+                android:background="@color/divideLineGray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fragment_my_item_height"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/fragment_my_item_padding_left">
+
+                <TextView
+                    android:id="@+id/null_tv_activity_carrier_import_factory_per_price"
+                    android:layout_width="@dimen/fragment_my_item_left_tv_width"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="售价"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                <com.mms.widget.CancelableEditView
+                    android:id="@+id/et_activity_carrier_import_factory_per_price"
+                    android:layout_width="215dp"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/null_tv_activity_carrier_import_factory_per_price"
+                    android:paddingLeft="20dp"
+                    app:cancelIcon="@drawable/chacha"
+                    app:editTextSize="@dimen/fragment_my_item_left_text_size"
+                    app:hintColor="@color/hintGray"
+                    app:hintText="0"
+                    app:textType="number">
+
+                </com.mms.widget.CancelableEditView>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="16dp"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:text="元/㎡"
+                    android:textColor="@color/hintGray"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_line"
+                android:background="@color/divideLineGray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fragment_my_item_height"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/fragment_my_item_padding_left">
+
+                <TextView
+                    android:id="@+id/null_tv_activity_carrier_import_factory_kva"
+                    android:layout_width="@dimen/fragment_my_item_left_tv_width"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="变压器"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                <com.mms.widget.CancelableEditView
+                    android:id="@+id/et_activity_carrier_import_factory_kva"
+                    android:layout_width="230dp"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/null_tv_activity_carrier_import_factory_kva"
+                    android:paddingLeft="20dp"
+                    app:cancelIcon="@drawable/chacha"
+                    app:editTextSize="@dimen/fragment_my_item_left_text_size"
+                    app:hintColor="@color/hintGray"
+                    app:hintText="0"
+                    app:textType="number">
+
+                </com.mms.widget.CancelableEditView>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="16dp"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:text="kva"
+                    android:textColor="@color/hintGray"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_line"
+                android:background="@color/divideLineGray" />
+
+            <RelativeLayout
+                android:id="@+id/rl_activity_carrier_import_crane"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fragment_my_item_height"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/fragment_my_item_padding_left">
+
+                <TextView
+                    android:layout_width="@dimen/fragment_my_item_left_tv_width"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="天车"
+                    android:textColor="@color/black"
+                    android:textSize="17sp" />
+
+                <RadioGroup
+                    android:id="@+id/rg_activity_carrier_import_crane"
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="100dp"
+                    android:background="@color/white"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb_activity_carrier_import_crane_yes"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:checked="true"
+                        android:text="是"
+                        android:textColor="@color/filterTextGray"
+                        android:textSize="17sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_activity_carrier_import_crane_no"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="40dp"
+                        android:text="否"
+                        android:textColor="@color/filterTextGray"
+                        android:textSize="17sp" />
+
+                </RadioGroup>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_line"
+                android:background="@color/divideLineGray" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                android:text="介绍"
+                android:textColor="@color/filterTextGray"
+                android:textSize="15sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_line"
+                android:background="@color/divideLineGray" />
+
+
+            <EditText
+                android:id="@+id/et_activity_carrier_import_factory_intro"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@color/white"
+                android:gravity="top"
+                android:hint="请详细描述你的问题和意见"
+                android:paddingBottom="6dp"
+                android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                android:paddingRight="@dimen/fragment_my_item_padding_left"
+                android:paddingTop="6dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/hintGray"
+                android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_line"
+                android:background="@color/divideLineGray" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                android:text="图片上传"
+                android:textColor="@color/filterTextGray"
+                android:textSize="15sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_line"
+                android:background="@color/divideLineGray" />
+
+            <!--后续添加上传图片的view-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="@color/white" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_line"
+                android:background="@color/divideLineGray" />
             <!--此button在代码中设置样式-->
             <Button
-                android:layout_margin="8dp"
                 android:id="@+id/btn_activity_carrier_import_factory_save"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
+                android:layout_margin="8dp"
                 android:text="保    存"
                 android:textColor="@color/white"
                 android:textSize="20sp" />

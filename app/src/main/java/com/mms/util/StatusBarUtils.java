@@ -14,8 +14,6 @@ import android.widget.LinearLayout;
 /**
  * Created by zlc on 16/5/4.
  *
- * Email: chjie.jaeger@gamil.com
- * GitHub: https://github.com/laobie
  */
 public class StatusBarUtils {
 

@@ -3,16 +3,19 @@ package com.mms.activity;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 
 import com.mms.R;
-import com.mms.base.BaseSwipeActivity;
+import com.mms.base.BaseActivity;
 import com.mms.dialog.MessageDialog;
 import com.mms.dialog.SelectDialog;
 import com.mms.util.DrawableUtils;
@@ -30,7 +33,7 @@ import roboguice.inject.InjectView;
  * Created by Tanikawa on 2016/5/4.
  */
 @ContentView(R.layout.layout_activity_carrier_import_factory)
-public class ActivityCarrierImportFactory extends BaseSwipeActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
+public class ActivityCarrierImportFactory extends BaseActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
 
     @InjectView(R.id.btn_activity_carrier_import_factory_back)
     private Button btnBack;
@@ -44,8 +47,8 @@ public class ActivityCarrierImportFactory extends BaseSwipeActivity implements V
     @InjectView(R.id.rl_activity_carrier_import_factory_level)
     private RelativeLayout rlLevel;
 
-    @InjectView(R.id.rl_activity_carrier_import_factory_state)
-    private RelativeLayout rlState;
+    @InjectView(R.id.rl_activity_carrier_import_factory_status)
+    private RelativeLayout rlStatus;
 
     @InjectView(R.id.ll_activity_carrier_import_factory_contacts)
     private LinearLayout llContacts;
@@ -68,10 +71,46 @@ public class ActivityCarrierImportFactory extends BaseSwipeActivity implements V
     @InjectView(R.id.rl_activity_carrier_import_factory_structure)
     private RelativeLayout rlStructure;
 
+    @InjectView(R.id.et_activity_carrier_import_factory_area)
+    private CancelableEditView etArea;
+
+    @InjectView(R.id.et_activity_carrier_import_factory_yard_area)
+    private CancelableEditView etYardArea;
+
+    @InjectView(R.id.et_activity_carrier_import_factory_office_area)
+    private CancelableEditView etOfficeArea;
+
+    @InjectView(R.id.et_activity_carrier_import_factory_bearing)
+    private CancelableEditView etBearing;
+
+    @InjectView(R.id.et_activity_carrier_import_factory_height)
+    private CancelableEditView etHeight;
+
+    @InjectView(R.id.et_activity_carrier_import_factory_span)
+    private CancelableEditView etSpan;
+
+    @InjectView(R.id.et_activity_carrier_import_factory_floors)
+    private CancelableEditView etFloors;
+
+    @InjectView(R.id.et_activity_carrier_import_factory_per_rent)
+    private CancelableEditView etPerRent;
+
+    @InjectView(R.id.et_activity_carrier_import_factory_per_price)
+    private CancelableEditView etPerPrice;
+
+    @InjectView(R.id.et_activity_carrier_import_factory_kva)
+    private CancelableEditView etKVA;
+
+    @InjectView(R.id.rg_activity_carrier_import_crane)
+    private RadioGroup rgCrane;
+
+    @InjectView(R.id.et_activity_carrier_import_factory_intro)
+    private EditText etIntro;
+
     @InjectView(R.id.btn_activity_carrier_import_factory_save)
     private Button btnSave;
 
-
+    private boolean hasCrane = true;
     private boolean hasBtnDelContact = false;
 
     private List<ContactView> contactViews;
@@ -85,6 +124,8 @@ public class ActivityCarrierImportFactory extends BaseSwipeActivity implements V
     private AdapterView.OnItemClickListener structureListener;
 
     private MessageDialog messageDialog;
+
+    private View.OnTouchListener etLongTextOnTouchListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -192,17 +233,34 @@ public class ActivityCarrierImportFactory extends BaseSwipeActivity implements V
         ContactView contact1 = new ContactView(this);
         llContacts.addView(contact1, LP_FW);
         contactViews.add(contact1);
+
+        etLongTextOnTouchListener = new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                view.getParent().requestDisallowInterceptTouchEvent(true);
+                return false;
+            }
+        };
     }
 
     private void setOCL() {
         btnBack.setOnClickListener(this);
         rlLevel.setOnClickListener(this);
-        rlState.setOnClickListener(this);
+        rlStatus.setOnClickListener(this);
         rlStructure.setOnClickListener(this);
         btnAddContact.setOnClickListener(this);
         cbCooperation.setOnCheckedChangeListener(this);
         cbRent.setOnCheckedChangeListener(this);
         cbSell.setOnCheckedChangeListener(this);
+        etIntro.setOnTouchListener(etLongTextOnTouchListener);
+        rgCrane.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                hasCrane = !hasCrane;
+            }
+        });
+        btnSave.setOnClickListener(this);
+
     }
 
     private void addContact() {
@@ -309,7 +367,7 @@ public class ActivityCarrierImportFactory extends BaseSwipeActivity implements V
                 selectDialog.setOnItemClickListener(structureListener);
                 selectDialog.show();
                 break;
-            case R.id.btn_activity_carrier_import_land_save:
+            case R.id.btn_activity_carrier_import_factory_save:
                 //点击保存按钮
                 messageDialog.setTitle("保存");
                 messageDialog.setMessage("确认所填信息无误并保存吗？");
@@ -319,12 +377,13 @@ public class ActivityCarrierImportFactory extends BaseSwipeActivity implements V
                         save();
                     }
                 });
+                messageDialog.show();
                 break;
 
         }
     }
 
-    private void save(){
+    private void save() {
         showLoadingDialog();
         cancelLoadingDialog();
     }
@@ -335,6 +394,50 @@ public class ActivityCarrierImportFactory extends BaseSwipeActivity implements V
 
     private String getAddress() {
         return etAddress.getText();
+    }
+
+    private String getArea() {
+        return etArea.getText();
+    }
+
+    private String getYardArea() {
+        return etYardArea.getText();
+    }
+
+    private String getOfficeArea() {
+        return etOfficeArea.getText();
+    }
+
+    private String getBearing() {
+        return etBearing.getText();
+    }
+
+    private String getHeight() {
+        return etHeight.getText();
+    }
+
+    private String getSpan() {
+        return etSpan.getText();
+    }
+
+    private String getFloors() {
+        return etFloors.getText();
+    }
+
+    private String getPerRent() {
+        return etPerRent.getText();
+    }
+
+    private String getPerPrice() {
+        return etPerPrice.getText();
+    }
+
+    private String getKVA() {
+        return etKVA.getText();
+    }
+
+    private boolean getHasCrane(){
+        return hasCrane;
     }
 
     @Override

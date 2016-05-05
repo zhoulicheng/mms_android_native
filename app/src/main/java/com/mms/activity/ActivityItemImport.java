@@ -24,7 +24,7 @@ import roboguice.inject.InjectView;
  */
 
 @ContentView(R.layout.layout_activity_item_import)
-public class ActivityItemImport extends BaseSwipeActivity implements View.OnClickListener {
+public class ActivityItemImport extends BaseActivity implements View.OnClickListener {
 
     @InjectView(R.id.gv_activity_itemimport)
     private GridView gvItemImport;

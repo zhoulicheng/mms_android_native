@@ -95,6 +95,10 @@ public class ActivityCarrierImport extends BaseActivity implements View.OnClickL
                 intent = new Intent(this,ActivityCarrierImportFactory.class);
                 startActivity(intent);
                 break;
+            case 2:
+                intent = new Intent(this,ActivityCarrierImportDepot.class);
+                startActivity(intent);
+                break;
 
         }
     }

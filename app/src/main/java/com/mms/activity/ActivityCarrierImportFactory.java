@@ -92,11 +92,11 @@ public class ActivityCarrierImportFactory extends BaseActivity implements View.O
     @InjectView(R.id.et_activity_carrier_import_factory_floors)
     private CancelableEditView etFloors;
 
-    @InjectView(R.id.et_activity_carrier_import_factory_per_rent)
-    private CancelableEditView etPerRent;
+    @InjectView(R.id.et_activity_carrier_import_factory_rprice)
+    private CancelableEditView etRPrice;
 
-    @InjectView(R.id.et_activity_carrier_import_factory_per_price)
-    private CancelableEditView etPerPrice;
+    @InjectView(R.id.et_activity_carrier_import_factory_sprice)
+    private CancelableEditView etSPrice;
 
     @InjectView(R.id.et_activity_carrier_import_factory_kva)
     private CancelableEditView etKVA;
@@ -110,7 +110,7 @@ public class ActivityCarrierImportFactory extends BaseActivity implements View.O
     @InjectView(R.id.btn_activity_carrier_import_factory_save)
     private Button btnSave;
 
-    private boolean hasCrane = true;
+    private boolean hasTianche = true;
     private boolean hasBtnDelContact = false;
 
     private List<ContactView> contactViews;
@@ -256,7 +256,7 @@ public class ActivityCarrierImportFactory extends BaseActivity implements View.O
         rgCrane.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                hasCrane = !hasCrane;
+                hasTianche = !hasTianche;
             }
         });
         btnSave.setOnClickListener(this);
@@ -347,7 +347,7 @@ public class ActivityCarrierImportFactory extends BaseActivity implements View.O
                 selectDialog.setOnItemClickListener(levelListener);
                 selectDialog.show();
                 break;
-            case R.id.rl_activity_carrier_import_factory_state:
+            case R.id.rl_activity_carrier_import_factory_status:
                 //点击状态选择
                 selectDialog = new SelectDialog(this, stateList);
                 selectDialog.setOnItemClickListener(stateListener);
@@ -424,20 +424,20 @@ public class ActivityCarrierImportFactory extends BaseActivity implements View.O
         return etFloors.getText();
     }
 
-    private String getPerRent() {
-        return etPerRent.getText();
+    private String getRPrice() {
+        return etRPrice.getText();
     }
 
-    private String getPerPrice() {
-        return etPerPrice.getText();
+    private String getSPrice() {
+        return etSPrice.getText();
     }
 
     private String getKVA() {
         return etKVA.getText();
     }
 
-    private boolean getHasCrane(){
-        return hasCrane;
+    private boolean getHasTianche(){
+        return hasTianche;
     }
 
     @Override

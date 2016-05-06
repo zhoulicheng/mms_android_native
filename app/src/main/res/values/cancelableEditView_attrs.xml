@@ -12,5 +12,7 @@
             <enum name="number" value="1" />
             <enum name="password" value="2" />
         </attr>
+        <attr name="singleLine" format="boolean" />
+        <attr name="isWrapContent" format="boolean" />
     </declare-styleable>
 </resources>

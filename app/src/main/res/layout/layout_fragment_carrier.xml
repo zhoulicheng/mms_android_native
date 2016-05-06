@@ -1,124 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backGray"
-    >
+    android:orientation="vertical">
 
 
     <RelativeLayout
 
         android:layout_width="match_parent"
         android:layout_height="@dimen/titleBarHeight"
-        android:orientation="horizontal"
         android:background="@color/colorPrimary"
         android:gravity="center_vertical"
-        >
+        android:orientation="horizontal">
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
             android:clickable="true"
             android:drawableRight="@drawable/downselector"
             android:paddingLeft="4dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="全部"
-            android:textSize="20sp"
-            android:layout_centerHorizontal="true"
             android:textColor="@color/white_text_color_selector_for_press"
-            android:layout_centerVertical="true"
-            />
+            android:textSize="20sp" />
 
         <Button
-            android:id="@+id/btn_fragment_carrier_add"
+            android:id="@+id/btn_fragment_carrier_import"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="15dp"
             android:layout_centerVertical="true"
-            android:background="@drawable/addselector"
-            />
+            android:layout_marginRight="15dp"
+            android:background="@drawable/addselector" />
 
     </RelativeLayout>
-    
+
     <LinearLayout
-        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:orientation="horizontal"
-        >
-        <LinearLayout
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <Spinner
+            android:id="@+id/sp_fragment_carrier_status"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="100"
-            android:orientation="horizontal"
-            >
+            android:layout_weight="100">
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
-
-            <TextView
-                android:clickable="true"
-                android:paddingLeft="4dp"
-                android:drawableRight="@drawable/down_gray_small"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="状态"
-                android:background="#00FFFFFF"
-                android:textSize="17sp"
-                android:layout_gravity="center"
-                android:textColor="@color/filterTextGray"
-                />
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
-        </LinearLayout>
+        </Spinner>
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_marginTop="6dp"
             android:layout_marginBottom="6dp"
-            android:background="@color/divideLineGray"
-            />
+            android:layout_marginTop="6dp"
+            android:layout_weight="1"
+            android:background="@color/divideLineGray" />
 
-        <LinearLayout
-
+        <Spinner
+            android:id="@+id/sp_fragment_carrier_need"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="100"
-            android:orientation="horizontal"
-            >
+            android:layout_weight="100">
 
-            <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
-
-            <TextView
-                android:clickable="true"
-                android:paddingLeft="4dp"
-                android:drawableRight="@drawable/down_gray_small"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="意向"
-                android:background="#00FFFFFF"
-                android:textSize="17sp"
-                android:layout_gravity="center"
-                android:textColor="@color/filterTextGray"
-                />
-
-            <View
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"/>
-        </LinearLayout>
+        </Spinner>
     </LinearLayout>
 
 </LinearLayout>

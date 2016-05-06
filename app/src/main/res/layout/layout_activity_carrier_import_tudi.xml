@@ -52,14 +52,15 @@
             <LinearLayout
                 android:id="@+id/rl_activity_carrier_import_tudi_title"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/fragment_my_item_height"
+                android:layout_height="wrap_content"
                 android:background="@color/white"
                 android:gravity="center_vertical"
                 android:paddingLeft="@dimen/fragment_my_item_padding_left">
 
                 <TextView
                     android:layout_width="@dimen/fragment_my_item_left_tv_width"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:gravity="center_vertical"
                     android:text="标题"
                     android:textColor="@color/black"
                     android:textSize="@dimen/fragment_my_item_left_text_size" />
@@ -70,6 +71,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:background="@color/white"
+                    app:singleLine="false"
+                    app:isWrapContent="true"
                     app:cancelIcon="@drawable/chacha"
                     app:editTextSize="@dimen/fragment_my_item_left_text_size"
                     app:hintColor="@color/hintGray"
@@ -553,7 +556,7 @@
 
                 <com.mms.widget.CancelableEditView
                     android:id="@+id/et_activity_carrier_import_tudi_volume_rate"
-                    android:layout_width="240dp"
+                    android:layout_width="260dp"
                     android:layout_height="match_parent"
                     android:layout_centerVertical="true"
                     android:layout_toRightOf="@id/null_tv_activity_carrier_import_tudi_volume_rate"

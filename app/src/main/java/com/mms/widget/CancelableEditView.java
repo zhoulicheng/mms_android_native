@@ -37,6 +37,8 @@ public class CancelableEditView extends LinearLayout {
     private Drawable hintIcon;
     private Drawable cancelIcon;
 
+    private boolean isWrapContent;
+    private boolean singleLine;
     private int editTextSize;
     private int hintColor;
     private int editTextColor;
@@ -128,6 +130,8 @@ public class CancelableEditView extends LinearLayout {
         if (attrs != null) {
             TypedArray typedArray = getContext().obtainStyledAttributes(attrs,
                     R.styleable.CancelableEditView);
+            singleLine = typedArray.getBoolean(R.styleable.CancelableEditView_singleLine, true);
+            isWrapContent = typedArray.getBoolean(R.styleable.CancelableEditView_isWrapContent, false);
             maxLength = typedArray.getInt(R.styleable.CancelableEditView_maximumLength, NO_LENGTH_LIMIT);
             inputType = typedArray.getInt(R.styleable.CancelableEditView_textType, DEFAULT);
             hintIcon = typedArray.getDrawable(R.styleable.CancelableEditView_hintIcon);
@@ -165,16 +169,21 @@ public class CancelableEditView extends LinearLayout {
 
     private void addEditText() {
         editText = new EditText(getContext());
-        LayoutParams params = new LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT);
+        LayoutParams params = null;
+        if (isWrapContent) {
+            params = new LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT);
+        } else {
+            params = new LayoutParams(0, ViewGroup.LayoutParams.MATCH_PARENT);
+        }
         params.weight = 1;
         editText.setPadding(0, 0, 0, 0);//一定要设置,好像EditText默认有padding
-        if (Build.VERSION.SDK_INT>=16){
+        if (Build.VERSION.SDK_INT >= 16) {
             editText.setBackground(null);
-        }else {
+        } else {
             editText.setBackgroundDrawable(null);
         }
         editText.setGravity(Gravity.CENTER_VERTICAL);
-        editText.setSingleLine(true);
+        editText.setSingleLine(singleLine);
         editText.setHint(hintText);
         editText.setHintTextColor(hintColor);
         editText.setTextColor(editTextColor);

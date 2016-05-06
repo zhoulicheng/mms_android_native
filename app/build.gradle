@@ -38,6 +38,10 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.3.0'
     compile 'com.android.support:design:23.1.1'
     compile 'com.google.protobuf:protobuf-java:2.6.1'
+    //volley
+    compile 'com.mcxiaoke.volley:library:1.0.6'
+    //gson
+    compile 'com.google.code.gson:gson:2.3'
     //imageLoader
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
     //roboGuice

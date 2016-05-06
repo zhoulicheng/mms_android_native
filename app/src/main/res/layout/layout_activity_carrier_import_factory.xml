@@ -53,14 +53,15 @@
             <LinearLayout
                 android:id="@+id/rl_activity_carrier_import_factory_title"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/fragment_my_item_height"
+                android:layout_height="wrap_content"
                 android:background="@color/white"
                 android:gravity="center_vertical"
                 android:paddingLeft="@dimen/fragment_my_item_padding_left">
 
                 <TextView
                     android:layout_width="@dimen/fragment_my_item_left_tv_width"
-                    android:layout_height="wrap_content"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:gravity="center_vertical"
                     android:text="标题"
                     android:textColor="@color/black"
                     android:textSize="@dimen/fragment_my_item_left_text_size" />
@@ -71,6 +72,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:background="@color/white"
+                    app:singleLine="false"
+                    app:isWrapContent="true"
                     app:cancelIcon="@drawable/chacha"
                     app:editTextSize="@dimen/fragment_my_item_left_text_size"
                     app:hintColor="@color/hintGray"
@@ -794,20 +797,20 @@
                 android:paddingLeft="@dimen/fragment_my_item_padding_left">
 
                 <TextView
-                    android:id="@+id/null_tv_activity_carrier_import_factory_per_rent"
+                    android:id="@+id/null_tv_activity_carrier_import_factory_rprice"
                     android:layout_width="@dimen/fragment_my_item_left_tv_width"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="跨度"
+                    android:text="租金"
                     android:textColor="@color/black"
                     android:textSize="@dimen/fragment_my_item_left_text_size" />
 
                 <com.mms.widget.CancelableEditView
-                    android:id="@+id/et_activity_carrier_import_factory_per_rent"
+                    android:id="@+id/et_activity_carrier_import_factory_rprice"
                     android:layout_width="195dp"
                     android:layout_height="match_parent"
                     android:layout_centerVertical="true"
-                    android:layout_toRightOf="@id/null_tv_activity_carrier_import_factory_per_rent"
+                    android:layout_toRightOf="@id/null_tv_activity_carrier_import_factory_rprice"
                     android:paddingLeft="20dp"
                     app:cancelIcon="@drawable/chacha"
                     app:editTextSize="@dimen/fragment_my_item_left_text_size"
@@ -845,7 +848,7 @@
                 android:paddingLeft="@dimen/fragment_my_item_padding_left">
 
                 <TextView
-                    android:id="@+id/null_tv_activity_carrier_import_factory_per_price"
+                    android:id="@+id/null_tv_activity_carrier_import_factory_sprice"
                     android:layout_width="@dimen/fragment_my_item_left_tv_width"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -854,11 +857,11 @@
                     android:textSize="@dimen/fragment_my_item_left_text_size" />
 
                 <com.mms.widget.CancelableEditView
-                    android:id="@+id/et_activity_carrier_import_factory_per_price"
+                    android:id="@+id/et_activity_carrier_import_factory_sprice"
                     android:layout_width="215dp"
                     android:layout_height="match_parent"
                     android:layout_centerVertical="true"
-                    android:layout_toRightOf="@id/null_tv_activity_carrier_import_factory_per_price"
+                    android:layout_toRightOf="@id/null_tv_activity_carrier_import_factory_sprice"
                     android:paddingLeft="20dp"
                     app:cancelIcon="@drawable/chacha"
                     app:editTextSize="@dimen/fragment_my_item_left_text_size"

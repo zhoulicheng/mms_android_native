@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="厂房载体录入"
+            android:text="仓库载体录入"
             android:textColor="@color/white"
             android:textSize="20sp" />
 

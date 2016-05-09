@@ -24,4 +24,7 @@
 
     <dimen name="pop_layout_gray_y">65dp</dimen>
     <dimen name="pop_layout_white_y">107dp</dimen>
+
+
+    <dimen name="app_cus_popuwindow_item_h">43dp</dimen>
 </resources>

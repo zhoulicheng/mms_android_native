@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/app_cus_popuwindow_item_h"
+    android:background="#ffffff">
+    <TextView 
+        android:id="@+id/tvContent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="16dp"
+        android:textColor="#343434"
+        android:textSize="13sp"
+        android:text="全厦门"/>
+	<View 
+	    android:id="@+id/vLine"
+	    android:layout_height="match_parent"
+	    android:layout_width="4dp"
+	    android:background="@color/colorPrimary"
+	    android:layout_alignParentLeft="true"
+	    android:visibility="gone"/>
+	<View
+	    android:id="@+id/vDivider" 
+	    style="@style/vertical_line"
+	    android:layout_alignParentRight="true"
+	    android:visibility="gone"/>
+	<View 
+	    android:id="@+id/vBottomDivider"
+	    style="@style/horizontal_line"
+	    android:layout_alignParentBottom="true"
+	    android:visibility="gone"/>
+</RelativeLayout>

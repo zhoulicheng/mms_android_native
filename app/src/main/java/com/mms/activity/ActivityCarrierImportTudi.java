@@ -2,6 +2,7 @@ package com.mms.activity;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -12,10 +13,10 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.mms.R;
 import com.mms.base.BaseActivity;
-import com.mms.base.BaseSwipeActivity;
 import com.mms.dialog.MessageDialog;
 import com.mms.dialog.SelectDialog;
 import com.mms.util.DrawableUtils;
@@ -48,8 +49,14 @@ public class ActivityCarrierImportTudi extends BaseActivity implements View.OnCl
     @InjectView(R.id.rl_activity_carrier_import_tudi_level)
     private RelativeLayout rlLevel;
 
+    @InjectView(R.id.tv_activity_carrier_import_tudi_level)
+    private TextView tvLevel;
+
     @InjectView(R.id.rl_activity_carrier_import_tudi_status)
     private RelativeLayout rlStatus;
+
+    @InjectView(R.id.tv_activity_carrier_import_tudi_status)
+    private TextView tvStatus;
 
     @InjectView(R.id.ll_activity_carrier_import_tudi_contacts)
     private LinearLayout llContacts;
@@ -60,36 +67,39 @@ public class ActivityCarrierImportTudi extends BaseActivity implements View.OnCl
     @InjectView(R.id.btn_activity_carrier_import_tudi_add_contact)
     private Button btnAddContact;
 
-    @InjectView(R.id.cb_activity_carrier_import_tudi_rent)
-    private CheckBox cbRent;
+    @InjectView(R.id.cb_activity_carrier_import_tudi_zhaobiao)
+    private CheckBox cbZhaoBiao;
 
-    @InjectView(R.id.cb_activity_carrier_import_tudi_purchase)
-    private CheckBox cbPurchase;
+    @InjectView(R.id.cb_activity_carrier_import_tudi_paimai)
+    private CheckBox cbPaiMai;
 
-    @InjectView(R.id.cb_activity_carrier_import_tudi_cooperation)
-    private CheckBox cbCooperation;
+    @InjectView(R.id.cb_activity_carrier_import_tudi_guapai)
+    private CheckBox cbGuaPai;
 
-    @InjectView(R.id.cb_activity_carrier_import_tudi_tagout)
-    private CheckBox cbTagout;
+    @InjectView(R.id.cb_activity_carrier_import_tudi_zhuanrang)
+    private CheckBox cbZhuanRang;
 
-    @InjectView(R.id.cb_activity_carrier_import_tudi_transfer)
-    private CheckBox cbTransfer;
+    @InjectView(R.id.cb_activity_carrier_import_tudi_no)
+    private CheckBox cbNo;
 
     @InjectView(R.id.rl_activity_carrier_import_tudi_type)
     private RelativeLayout rlType;
+
+    @InjectView(R.id.tv_activity_carrier_import_tudi_type)
+    private TextView tvTudiType;
 
     @InjectView(R.id.et_activity_carrier_import_tudi_area)
     private CancelableEditView etArea;
 
     //这词儿是容积率的意思
-    @InjectView(R.id.et_activity_carrier_import_tudi_volume_rate)
-    private CancelableEditView etVolumeRate;
+    @InjectView(R.id.et_activity_carrier_import_tudi_ratio)
+    private CancelableEditView etRatio;
 
-    @InjectView(R.id.et_activity_carrier_import_tudi_tax_require)
-    private CancelableEditView etTaxRequire;
+    @InjectView(R.id.et_activity_carrier_import_tudi_tax_need)
+    private CancelableEditView etTaxNeed;
 
-    @InjectView(R.id.et_activity_carrier_import_tudi_price)
-    private CancelableEditView etPrice;
+    @InjectView(R.id.et_activity_carrier_import_tudi_land_price)
+    private CancelableEditView etLandPrice;
 
     @InjectView(R.id.et_activity_carrier_import_tudi_intro)
     private EditText etIntro;
@@ -98,15 +108,19 @@ public class ActivityCarrierImportTudi extends BaseActivity implements View.OnCl
     private Button btnSave;
 
     private boolean hasBtnDelContact = false;
+    private int level = -1;
+    private int status = -1;
+    private int tudiType = -1;
+    private List<String> transforType;
 
     private List<ContactView> contactViews;
     private LinearLayout.LayoutParams LP_FW;
 
     private List<String> levelList;
-    private List<String> stateList;
+    private List<String> statusList;
     private List<String> typeList;
     private AdapterView.OnItemClickListener levelListener;
-    private AdapterView.OnItemClickListener stateListener;
+    private AdapterView.OnItemClickListener statusListener;
     private AdapterView.OnItemClickListener typeListener;
 
     private MessageDialog messageDialog;
@@ -121,6 +135,7 @@ public class ActivityCarrierImportTudi extends BaseActivity implements View.OnCl
     }
 
     private void init() {
+        transforType = new ArrayList<>();
         messageDialog = new MessageDialog(this);
         if (Build.VERSION.SDK_INT >= 16) {
             btnSave.setBackground(DrawableUtils.getStateDrawable(new DrawableUtils.CornerStateDrawable(new int[]{DrawableUtils.STATE_PRESSED}, 20, getResources().getColor(R.color.textGray))
@@ -139,49 +154,53 @@ public class ActivityCarrierImportTudi extends BaseActivity implements View.OnCl
         levelListener = new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                switch (i) {
-                    case 0:
-                        Utils.showToast(ActivityCarrierImportTudi.this, "1");
-                        break;
-                    case 1:
-                        Utils.showToast(ActivityCarrierImportTudi.this, "2");
-                        break;
-                    case 2:
-                        Utils.showToast(ActivityCarrierImportTudi.this, "3");
-                        break;
-                    case 3:
-                        Utils.showToast(ActivityCarrierImportTudi.this, "4");
-                        break;
-                    case 4:
-                        Utils.showToast(ActivityCarrierImportTudi.this, "5");
-                        break;
-
-                }
+//                switch (i) {
+//                    case 0:
+//                        Utils.showToast(ActivityCarrierImportTudi.this, "1");
+//                        break;
+//                    case 1:
+//                        Utils.showToast(ActivityCarrierImportTudi.this, "2");
+//                        break;
+//                    case 2:
+//                        Utils.showToast(ActivityCarrierImportTudi.this, "3");
+//                        break;
+//                    case 3:
+//                        Utils.showToast(ActivityCarrierImportTudi.this, "4");
+//                        break;
+//                    case 4:
+//                        Utils.showToast(ActivityCarrierImportTudi.this, "5");
+//                        break;
+//
+//                }
+                level = i + 1;
+                tvLevel.setText(levelList.get(i));
             }
         };
-        stateList = new ArrayList<>();
-        stateList.add("待租");
-        stateList.add("待售");
-        stateList.add("已租");
-        stateList.add("已售");
-        stateListener = new AdapterView.OnItemClickListener() {
+        statusList = new ArrayList<>();
+        statusList.add("待租");
+        statusList.add("待售");
+        statusList.add("已租");
+        statusList.add("已售");
+        statusListener = new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                switch (i) {
-                    case 0:
-                        Utils.showToast(ActivityCarrierImportTudi.this, "待租");
-                        break;
-                    case 1:
-                        Utils.showToast(ActivityCarrierImportTudi.this, "待售");
-                        break;
-                    case 2:
-                        Utils.showToast(ActivityCarrierImportTudi.this, "已租");
-                        break;
-                    case 3:
-                        Utils.showToast(ActivityCarrierImportTudi.this, "已售");
-                        break;
-
-                }
+//                switch (i) {
+//                    case 0:
+//                        Utils.showToast(ActivityCarrierImportTudi.this, "待租");
+//                        break;
+//                    case 1:
+//                        Utils.showToast(ActivityCarrierImportTudi.this, "待售");
+//                        break;
+//                    case 2:
+//                        Utils.showToast(ActivityCarrierImportTudi.this, "已租");
+//                        break;
+//                    case 3:
+//                        Utils.showToast(ActivityCarrierImportTudi.this, "已售");
+//                        break;
+//
+//                }
+                status = i + 1;
+                tvStatus.setText(statusList.get(i));
             }
         };
         typeList = new ArrayList<>();
@@ -193,24 +212,26 @@ public class ActivityCarrierImportTudi extends BaseActivity implements View.OnCl
         typeListener = new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                switch (i) {
-                    case 0:
-                        Utils.showToast(ActivityCarrierImportTudi.this, "工业用地");
-                        break;
-                    case 1:
-                        Utils.showToast(ActivityCarrierImportTudi.this, "商业用地");
-                        break;
-                    case 2:
-                        Utils.showToast(ActivityCarrierImportTudi.this, "综合用地");
-                        break;
-                    case 3:
-                        Utils.showToast(ActivityCarrierImportTudi.this, "住宅用地");
-                        break;
-                    case 4:
-                        Utils.showToast(ActivityCarrierImportTudi.this, "其他用地");
-                        break;
-
-                }
+//                switch (i) {
+//                    case 0:
+//                        Utils.showToast(ActivityCarrierImportTudi.this, "工业用地");
+//                        break;
+//                    case 1:
+//                        Utils.showToast(ActivityCarrierImportTudi.this, "商业用地");
+//                        break;
+//                    case 2:
+//                        Utils.showToast(ActivityCarrierImportTudi.this, "综合用地");
+//                        break;
+//                    case 3:
+//                        Utils.showToast(ActivityCarrierImportTudi.this, "住宅用地");
+//                        break;
+//                    case 4:
+//                        Utils.showToast(ActivityCarrierImportTudi.this, "其他用地");
+//                        break;
+//
+//                }
+                tudiType = i + 1;
+                tvTudiType.setText(typeList.get(i));
             }
         };
         //动态添加自定义ContactView相关
@@ -235,11 +256,11 @@ public class ActivityCarrierImportTudi extends BaseActivity implements View.OnCl
         rlLevel.setOnClickListener(this);
         rlStatus.setOnClickListener(this);
         btnAddContact.setOnClickListener(this);
-        cbPurchase.setOnCheckedChangeListener(this);
-        cbTagout.setOnCheckedChangeListener(this);
-        cbCooperation.setOnCheckedChangeListener(this);
-        cbTransfer.setOnCheckedChangeListener(this);
-        cbRent.setOnCheckedChangeListener(this);
+        cbPaiMai.setOnCheckedChangeListener(this);
+        cbZhuanRang.setOnCheckedChangeListener(this);
+        cbGuaPai.setOnCheckedChangeListener(this);
+        cbNo.setOnCheckedChangeListener(this);
+        cbZhaoBiao.setOnCheckedChangeListener(this);
         rlType.setOnClickListener(this);
         btnSave.setOnClickListener(this);
         etIntro.setOnTouchListener(etLongTextOnTouchListener);
@@ -269,8 +290,8 @@ public class ActivityCarrierImportTudi extends BaseActivity implements View.OnCl
                 break;
             case R.id.rl_activity_carrier_import_tudi_status:
                 //点击状态选择
-                selectDialog = new SelectDialog(this, stateList);
-                selectDialog.setOnItemClickListener(stateListener);
+                selectDialog = new SelectDialog(this, statusList);
+                selectDialog.setOnItemClickListener(statusListener);
                 selectDialog.show();
                 break;
             case R.id.btn_activity_carrier_import_tudi_add_contact:
@@ -289,19 +310,43 @@ public class ActivityCarrierImportTudi extends BaseActivity implements View.OnCl
                 break;
             case R.id.btn_activity_carrier_import_tudi_save:
                 //点击保存按钮
-
-                messageDialog.setTitle("保存");
-                messageDialog.setMessage("确认所填信息无误并保存吗？");
-                messageDialog.setPositiveListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        save();
-                    }
-                });
-                messageDialog.show();
+                if (isLegal()){
+                    messageDialog.setTitle("保存");
+                    messageDialog.setMessage("确认所填信息无误并保存吗？");
+                    messageDialog.setPositiveListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            save();
+                        }
+                    });
+                    messageDialog.show();
+                }
                 break;
 
         }
+    }
+
+    private boolean isLegal() {
+        if (TextUtils.isEmpty(getTheTitle())) {
+            Utils.showToast(this, "请输入标题");
+            return false;
+        }
+        if (level == -1) {
+            Utils.showToast(this, "请选择等级");
+            return false;
+        }
+        if (status == -1) {
+            Utils.showToast(this, "请选择载体状态");
+            return false;
+        }
+        if (transforType.size() == 0) {
+            Utils.showToast(this, "请选择意向");
+            return false;
+        }
+        if (tudiType == -1) {
+            Utils.showToast(this, "请选择建筑结构");
+        }
+        return true;
     }
 
     private void save() {
@@ -352,39 +397,49 @@ public class ActivityCarrierImportTudi extends BaseActivity implements View.OnCl
     @Override
     public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
         switch (compoundButton.getId()) {
-            case R.id.cb_activity_carrier_import_tudi_rent:
+            case R.id.cb_activity_carrier_import_tudi_zhaobiao:
                 if (b) {
-                    Utils.showToast(this, "您选择了租赁");
+                    Utils.showToast(this, "您选择了招标");
+                    transforType.add("1");
                 } else {
-                    Utils.showToast(this, "您取消了租赁");
+                    Utils.showToast(this, "您取消了招标");
+                    transforType.remove("1");
                 }
                 break;
-            case R.id.cb_activity_carrier_import_tudi_purchase:
+            case R.id.cb_activity_carrier_import_tudi_paimai:
                 if (b) {
-                    Utils.showToast(this, "您选择了购置");
+                    Utils.showToast(this, "您选择了拍卖");
+                    transforType.add("2");
                 } else {
-                    Utils.showToast(this, "您取消了购置");
+                    Utils.showToast(this, "您取消了拍卖");
+                    transforType.remove("2");
                 }
                 break;
-            case R.id.cb_activity_carrier_import_tudi_cooperation:
-                if (b) {
-                    Utils.showToast(this, "您选择了合作");
-                } else {
-                    Utils.showToast(this, "您取消了合作");
-                }
-                break;
-            case R.id.cb_activity_carrier_import_tudi_tagout:
+            case R.id.cb_activity_carrier_import_tudi_guapai:
                 if (b) {
                     Utils.showToast(this, "您选择了挂牌");
+                    transforType.add("3");
                 } else {
                     Utils.showToast(this, "您取消了挂牌");
+                    transforType.remove("3");
                 }
                 break;
-            case R.id.cb_activity_carrier_import_tudi_transfer:
+            case R.id.cb_activity_carrier_import_tudi_zhuanrang:
                 if (b) {
                     Utils.showToast(this, "您选择了转让");
+                    transforType.add("4");
                 } else {
                     Utils.showToast(this, "您取消了转让");
+                    transforType.remove("4");
+                }
+                break;
+            case R.id.cb_activity_carrier_import_tudi_no:
+                if (b) {
+                    Utils.showToast(this, "您选择了不限");
+                    transforType.add("10");
+                } else {
+                    Utils.showToast(this, "您取消了不限");
+                    transforType.remove("10");
                 }
                 break;
         }
@@ -398,24 +453,41 @@ public class ActivityCarrierImportTudi extends BaseActivity implements View.OnCl
         return etAddress.getText();
     }
 
-    private String getArea() {
-        return etArea.getText();
+    private int getLevel(){
+        return level;
     }
 
-    private String getVolumeRate() {
-        return etVolumeRate.getText();
+    private int getStatus(){
+        return status;
     }
 
-    private String getTaxRequire() {
-        return etTaxRequire.getText();
+    private double getArea() {
+        return Utils.getStringToDouble(etArea.getText());
     }
 
-    private String getPrice() {
-        return etPrice.getText();
+    private String getRatio() {
+        return etRatio.getText();
+    }
+
+    private double getTaxNeed() {
+        return Utils.getStringToDouble(etTaxNeed.getText());
+    }
+
+    private double getLandPrice() {
+        return Utils.getStringToDouble(etLandPrice.getText());
     }
 
     private String getIntro() {
         return etIntro.getText().toString();
+    }
+
+    private String getTransforType() {
+        String s = "";
+        for (String str : transforType) {
+            s = s + str + ",";
+        }
+        return s.substring(0, s.length() - 1);
+
     }
 
     @Override

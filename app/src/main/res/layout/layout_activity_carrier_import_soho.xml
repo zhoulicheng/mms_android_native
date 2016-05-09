@@ -18,12 +18,12 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="土地载体录入"
+            android:text="写字楼载体录入"
             android:textColor="@color/white"
             android:textSize="20sp" />
 
         <Button
-            android:id="@+id/btn_activity_carrier_import_tudi_back"
+            android:id="@+id/btn_activity_carrier_import_soho_back"
             android:layout_width="@dimen/backButtonWidth"
             android:layout_height="@dimen/backButtonHeight"
             android:layout_alignParentLeft="true"
@@ -34,6 +34,7 @@
     </RelativeLayout>
 
     <ScrollView
+
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -50,7 +51,7 @@
                 android:background="@color/divideLineGray" />
 
             <LinearLayout
-                android:id="@+id/rl_activity_carrier_import_tudi_title"
+                android:id="@+id/rl_activity_carrier_import_soho_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
@@ -66,17 +67,17 @@
                     android:textSize="@dimen/fragment_my_item_left_text_size" />
 
                 <com.mms.widget.CancelableEditView
-                    android:id="@+id/et_activity_carrier_import_tudi_title"
+                    android:id="@+id/et_activity_carrier_import_soho_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:background="@color/white"
-                    app:singleLine="false"
-                    app:isWrapContent="true"
                     app:cancelIcon="@drawable/chacha"
                     app:editTextSize="@dimen/fragment_my_item_left_text_size"
                     app:hintColor="@color/hintGray"
-                    app:hintText="请输入标题">
+                    app:hintText="请输入标题"
+                    app:isWrapContent="true"
+                    app:singleLine="false">
 
                 </com.mms.widget.CancelableEditView>
 
@@ -90,7 +91,7 @@
                 android:background="@color/divideLineGray" />
 
             <RelativeLayout
-                android:id="@+id/rl_activity_carrier_import_tudi_level"
+                android:id="@+id/rl_activity_carrier_import_soho_level"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/fragment_my_item_height"
                 android:background="@drawable/whitebuttonselector"
@@ -107,7 +108,7 @@
                     android:textSize="@dimen/fragment_my_item_left_text_size" />
 
                 <TextView
-                    android:id="@+id/tv_activity_carrier_import_tudi_level"
+                    android:id="@+id/tv_activity_carrier_import_soho_level"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -134,7 +135,7 @@
                 android:background="@color/divideLineGray" />
 
             <RelativeLayout
-                android:id="@+id/rl_activity_carrier_import_tudi_district"
+                android:id="@+id/rl_activity_carrier_import_soho_diqu"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/fragment_my_item_height"
                 android:background="@drawable/whitebuttonselector"
@@ -151,7 +152,7 @@
                     android:textSize="@dimen/fragment_my_item_left_text_size" />
 
                 <TextView
-                    android:id="@+id/tv_activity_carrier_import_tudi_district"
+                    android:id="@+id/tv_activity_carrier_import_soho_diqu"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -178,7 +179,7 @@
                 android:background="@color/divideLineGray" />
 
             <LinearLayout
-                android:id="@+id/rl_activity_carrier_import_tudi_address"
+                android:id="@+id/rl_activity_carrier_import_soho_address"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/fragment_my_item_height"
                 android:background="@color/white"
@@ -193,7 +194,7 @@
                     android:textSize="@dimen/fragment_my_item_left_text_size" />
 
                 <com.mms.widget.CancelableEditView
-                    android:id="@+id/et_activity_carrier_import_tudi_address"
+                    android:id="@+id/et_activity_carrier_import_soho_address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
@@ -205,6 +206,7 @@
 
                 </com.mms.widget.CancelableEditView>
 
+
             </LinearLayout>
 
             <View
@@ -214,7 +216,7 @@
                 android:background="@color/divideLineGray" />
 
             <RelativeLayout
-                android:id="@+id/rl_activity_carrier_import_tudi_dituAPI"
+                android:id="@+id/rl_activity_carrier_import_soho_biaozhu"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/fragment_my_item_height"
                 android:background="@drawable/whitebuttonselector"
@@ -231,7 +233,7 @@
                     android:textSize="@dimen/fragment_my_item_left_text_size" />
 
                 <TextView
-                    android:id="@+id/tv_activity_carrier_import_tudi_dituAPI"
+                    android:id="@+id/tv_activity_carrier_import_soho_biaozhu"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -258,7 +260,7 @@
                 android:background="@color/divideLineGray" />
 
             <RelativeLayout
-                android:id="@+id/rl_activity_carrier_import_tudi_status"
+                android:id="@+id/rl_activity_carrier_import_soho_status"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/fragment_my_item_height"
                 android:background="@drawable/whitebuttonselector"
@@ -275,7 +277,7 @@
                     android:textSize="@dimen/fragment_my_item_left_text_size" />
 
                 <TextView
-                    android:id="@+id/tv_activity_carrier_import_tudi_status"
+                    android:id="@+id/tv_activity_carrier_import_soho_status"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -301,7 +303,7 @@
                 android:background="@color/divideLineGray" />
 
             <LinearLayout
-                android:id="@+id/ll_activity_carrier_import_tudi_contacts"
+                android:id="@+id/ll_activity_carrier_import_soho_contacts"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -309,13 +311,13 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/ll_activity_carrier_import_tudi_add_and_del"
+                android:id="@+id/ll_activity_carrier_import_soho_add_and_del"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/fragment_my_item_height"
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/btn_activity_carrier_import_tudi_add_contact"
+                    android:id="@+id/btn_activity_carrier_import_soho_add_contact"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -342,7 +344,7 @@
                 <TextView
                     android:layout_width="@dimen/fragment_my_item_left_tv_width"
                     android:layout_height="wrap_content"
-                    android:text="出让形式"
+                    android:text="意向"
                     android:textColor="@color/black"
                     android:textSize="@dimen/fragment_my_item_left_text_size" />
 
@@ -353,35 +355,33 @@
                     android:paddingLeft="20dp">
 
                     <CheckBox
-                        android:id="@+id/cb_activity_carrier_import_tudi_zhaobiao"
+                        android:id="@+id/cb_activity_carrier_import_soho_rent"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:text="出租"
                         android:textColor="@color/filterTextGray"
-                        android:text="招标"
                         android:textSize="@dimen/fragment_my_item_left_text_size" />
 
                     <CheckBox
-                        android:id="@+id/cb_activity_carrier_import_tudi_paimai"
+                        android:id="@+id/cb_activity_carrier_import_soho_sell"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:text="出售 "
                         android:textColor="@color/filterTextGray"
-                        android:text="拍卖"
                         android:textSize="@dimen/fragment_my_item_left_text_size" />
 
                     <CheckBox
-                        android:id="@+id/cb_activity_carrier_import_tudi_guapai"
+                        android:id="@+id/cb_activity_carrier_import_soho_cooperation"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
-                        android:textColor="@color/filterTextGray"
                         android:layout_weight="1"
-                        android:text="挂牌"
+                        android:text="合作"
+                        android:textColor="@color/filterTextGray"
                         android:textSize="@dimen/fragment_my_item_left_text_size" />
 
                 </LinearLayout>
-
-
             </LinearLayout>
 
             <View
@@ -390,53 +390,35 @@
                 android:background="@color/divideLineGray" />
 
             <LinearLayout
+                android:id="@+id/rl_activity_carrier_import_soho_unitnum"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/fragment_my_item_height"
                 android:background="@color/white"
                 android:gravity="center_vertical"
-                android:orientation="horizontal"
                 android:paddingLeft="@dimen/fragment_my_item_padding_left">
 
                 <TextView
                     android:layout_width="@dimen/fragment_my_item_left_tv_width"
                     android:layout_height="wrap_content"
-                    android:text=""
+                    android:text="单元号"
                     android:textColor="@color/black"
                     android:textSize="@dimen/fragment_my_item_left_text_size" />
 
-                <LinearLayout
+                <com.mms.widget.CancelableEditView
+                    android:id="@+id/et_activity_carrier_import_soho_unitnum"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:paddingLeft="20dp">
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:background="@color/white"
+                    app:cancelIcon="@drawable/chacha"
+                    app:editTextSize="@dimen/fragment_my_item_left_text_size"
+                    app:hintColor="@color/hintGray"
+                    app:textType="number"
+                    app:hintText="0">
 
-                    <CheckBox
-                        android:id="@+id/cb_activity_carrier_import_tudi_zhuanrang"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:textColor="@color/filterTextGray"
-                        android:text="转让"
-                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+                </com.mms.widget.CancelableEditView>
 
-                    <CheckBox
-                        android:id="@+id/cb_activity_carrier_import_tudi_no"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="不限"
-                        android:textColor="@color/filterTextGray"
-                        android:textSize="@dimen/fragment_my_item_left_text_size" />
 
-                    <CheckBox
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="备用"
-                        android:textSize="@dimen/fragment_my_item_left_text_size"
-                        android:visibility="invisible" />
-
-                </LinearLayout>
             </LinearLayout>
 
             <View
@@ -445,40 +427,48 @@
                 android:background="@color/divideLineGray" />
 
             <RelativeLayout
-                android:id="@+id/rl_activity_carrier_import_tudi_type"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/fragment_my_item_height"
-                android:background="@drawable/whitebuttonselector"
-                android:clickable="true"
+                android:background="@color/white"
                 android:gravity="center_vertical"
                 android:paddingLeft="@dimen/fragment_my_item_padding_left">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/null_tv_activity_carrier_import_soho_onfloor"
+                    android:layout_width="@dimen/fragment_my_item_left_tv_width"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="土地类型"
+                    android:text="所在楼层"
                     android:textColor="@color/black"
                     android:textSize="@dimen/fragment_my_item_left_text_size" />
 
-                <TextView
-                    android:id="@+id/tv_activity_carrier_import_tudi_type"
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
+                <com.mms.widget.CancelableEditView
+                    android:id="@+id/et_activity_carrier_import_soho_onfloor"
+                    android:layout_width="240dp"
+                    android:layout_height="match_parent"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="100dp"
-                    android:background="@null"
-                    android:text="请选择"
-                    android:textColor="@color/hintGray"
-                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+                    android:layout_toRightOf="@id/null_tv_activity_carrier_import_soho_onfloor"
+                    android:paddingLeft="20dp"
+                    app:cancelIcon="@drawable/chacha"
+                    app:editTextSize="@dimen/fragment_my_item_left_text_size"
+                    app:hintColor="@color/hintGray"
+                    app:hintText="0"
+                    app:textType="number">
 
-                <Button
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
+                </com.mms.widget.CancelableEditView>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="17dp"
-                    android:background="@drawable/right" />
+                    android:layout_marginRight="16dp"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:text="层"
+                    android:textColor="@color/hintGray"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
 
             </RelativeLayout>
 
@@ -495,7 +485,7 @@
                 android:paddingLeft="@dimen/fragment_my_item_padding_left">
 
                 <TextView
-                    android:id="@+id/null_tv_activity_carrier_import_tudi_area"
+                    android:id="@+id/null_tv_activity_carrier_import_soho_area"
                     android:layout_width="@dimen/fragment_my_item_left_tv_width"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -504,11 +494,11 @@
                     android:textSize="@dimen/fragment_my_item_left_text_size" />
 
                 <com.mms.widget.CancelableEditView
-                    android:id="@+id/et_activity_carrier_import_tudi_area"
+                    android:id="@+id/et_activity_carrier_import_soho_area"
                     android:layout_width="240dp"
                     android:layout_height="match_parent"
                     android:layout_centerVertical="true"
-                    android:layout_toRightOf="@id/null_tv_activity_carrier_import_tudi_area"
+                    android:layout_toRightOf="@id/null_tv_activity_carrier_import_soho_area"
                     android:paddingLeft="20dp"
                     app:cancelIcon="@drawable/chacha"
                     app:editTextSize="@dimen/fragment_my_item_left_text_size"
@@ -527,7 +517,7 @@
                     android:layout_marginRight="16dp"
                     android:background="@null"
                     android:gravity="center_vertical"
-                    android:text="亩"
+                    android:text="㎡"
                     android:textColor="@color/hintGray"
                     android:textSize="@dimen/fragment_my_item_left_text_size" />
 
@@ -546,59 +536,20 @@
                 android:paddingLeft="@dimen/fragment_my_item_padding_left">
 
                 <TextView
-                    android:id="@+id/null_tv_activity_carrier_import_tudi_ratio"
+                    android:id="@+id/null_tv_activity_carrier_import_soho_pfee"
                     android:layout_width="@dimen/fragment_my_item_left_tv_width"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="容积率"
+                    android:text="物业费"
                     android:textColor="@color/black"
                     android:textSize="@dimen/fragment_my_item_left_text_size" />
 
                 <com.mms.widget.CancelableEditView
-                    android:id="@+id/et_activity_carrier_import_tudi_ratio"
-                    android:layout_width="260dp"
+                    android:id="@+id/et_activity_carrier_import_soho_pfee"
+                    android:layout_width="195dp"
                     android:layout_height="match_parent"
                     android:layout_centerVertical="true"
-                    android:layout_toRightOf="@id/null_tv_activity_carrier_import_tudi_ratio"
-                    android:paddingLeft="20dp"
-                    app:cancelIcon="@drawable/chacha"
-                    app:editTextSize="@dimen/fragment_my_item_left_text_size"
-                    app:hintColor="@color/hintGray"
-                    app:hintText="0"
-                    app:textType="number">
-
-                </com.mms.widget.CancelableEditView>
-
-            </RelativeLayout>
-
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/divide_line"
-                android:background="@color/divideLineGray" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/fragment_my_item_height"
-                android:background="@color/white"
-                android:gravity="center_vertical"
-                android:paddingLeft="@dimen/fragment_my_item_padding_left">
-
-                <TextView
-                    android:id="@+id/null_tv_activity_carrier_import_tudi_tax_need"
-                    android:layout_width="@dimen/fragment_my_item_left_tv_width"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="税收要求"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/fragment_my_item_left_text_size" />
-
-                <com.mms.widget.CancelableEditView
-                    android:id="@+id/et_activity_carrier_import_tudi_tax_need"
-                    android:layout_width="200dp"
-                    android:layout_height="match_parent"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@id/null_tv_activity_carrier_import_tudi_tax_need"
+                    android:layout_toRightOf="@id/null_tv_activity_carrier_import_soho_pfee"
                     android:paddingLeft="20dp"
                     app:cancelIcon="@drawable/chacha"
                     app:editTextSize="@dimen/fragment_my_item_left_text_size"
@@ -617,7 +568,7 @@
                     android:layout_marginRight="16dp"
                     android:background="@null"
                     android:gravity="center_vertical"
-                    android:text="万元/亩"
+                    android:text="元/㎡·天"
                     android:textColor="@color/hintGray"
                     android:textSize="@dimen/fragment_my_item_left_text_size" />
 
@@ -636,20 +587,20 @@
                 android:paddingLeft="@dimen/fragment_my_item_padding_left">
 
                 <TextView
-                    android:id="@+id/null_tv_activity_carrier_import_tudi_land_price"
+                    android:id="@+id/null_tv_activity_carrier_import_soho_norent_price"
                     android:layout_width="@dimen/fragment_my_item_left_tv_width"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:text="价格"
+                    android:text="免租期"
                     android:textColor="@color/black"
                     android:textSize="@dimen/fragment_my_item_left_text_size" />
 
                 <com.mms.widget.CancelableEditView
-                    android:id="@+id/et_activity_carrier_import_tudi_land_price"
-                    android:layout_width="200dp"
+                    android:id="@+id/et_activity_carrier_import_soho_norent_price"
+                    android:layout_width="240dp"
                     android:layout_height="match_parent"
                     android:layout_centerVertical="true"
-                    android:layout_toRightOf="@id/null_tv_activity_carrier_import_tudi_land_price"
+                    android:layout_toRightOf="@id/null_tv_activity_carrier_import_soho_norent_price"
                     android:paddingLeft="20dp"
                     app:cancelIcon="@drawable/chacha"
                     app:editTextSize="@dimen/fragment_my_item_left_text_size"
@@ -668,7 +619,172 @@
                     android:layout_marginRight="16dp"
                     android:background="@null"
                     android:gravity="center_vertical"
-                    android:text="万元/亩"
+                    android:text="月"
+                    android:textColor="@color/hintGray"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_line"
+                android:background="@color/divideLineGray" />
+
+            <RelativeLayout
+                android:id="@+id/rl_activity_carrier_import_soho_deco"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fragment_my_item_height"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/fragment_my_item_padding_left">
+
+                <TextView
+                    android:layout_width="@dimen/fragment_my_item_left_tv_width"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="装修"
+                    android:textColor="@color/black"
+                    android:textSize="17sp" />
+
+                <RadioGroup
+                    android:id="@+id/rg_activity_carrier_import_soho_deco"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="100dp"
+                    android:background="@color/white"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp">
+
+                    <RadioButton
+                        android:id="@+id/rb_activity_carrier_import_soho_deco_jingzhuang"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:checked="true"
+                        android:text="精装"
+                        android:textColor="@color/filterTextGray"
+                        android:textSize="17sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_activity_carrier_import_soho_deco_jianzhuang"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="简装"
+                        android:textColor="@color/filterTextGray"
+                        android:textSize="17sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_activity_carrier_import_soho_deco_maopi"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="毛坯"
+                        android:textColor="@color/filterTextGray"
+                        android:textSize="17sp" />
+                </RadioGroup>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_line"
+                android:background="@color/divideLineGray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fragment_my_item_height"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/fragment_my_item_padding_left">
+
+                <TextView
+                    android:id="@+id/null_tv_activity_carrier_import_soho_rprice"
+                    android:layout_width="@dimen/fragment_my_item_left_tv_width"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="租金"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                <com.mms.widget.CancelableEditView
+                    android:id="@+id/et_activity_carrier_import_soho_rprice"
+                    android:layout_width="195dp"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/null_tv_activity_carrier_import_soho_rprice"
+                    android:paddingLeft="20dp"
+                    app:cancelIcon="@drawable/chacha"
+                    app:editTextSize="@dimen/fragment_my_item_left_text_size"
+                    app:hintColor="@color/hintGray"
+                    app:hintText="0"
+                    app:textType="number">
+
+                </com.mms.widget.CancelableEditView>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="16dp"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:text="元/㎡·天"
+                    android:textColor="@color/hintGray"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_line"
+                android:background="@color/divideLineGray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fragment_my_item_height"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/fragment_my_item_padding_left">
+
+                <TextView
+                    android:id="@+id/null_tv_activity_carrier_import_soho_sprice"
+                    android:layout_width="@dimen/fragment_my_item_left_tv_width"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="售价"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                <com.mms.widget.CancelableEditView
+                    android:id="@+id/et_activity_carrier_import_soho_sprice"
+                    android:layout_width="215dp"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/null_tv_activity_carrier_import_soho_sprice"
+                    android:paddingLeft="20dp"
+                    app:cancelIcon="@drawable/chacha"
+                    app:editTextSize="@dimen/fragment_my_item_left_text_size"
+                    app:hintColor="@color/hintGray"
+                    app:hintText="0"
+                    app:textType="number">
+
+                </com.mms.widget.CancelableEditView>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="16dp"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:text="元/㎡"
                     android:textColor="@color/hintGray"
                     android:textSize="@dimen/fragment_my_item_left_text_size" />
 
@@ -696,7 +812,7 @@
 
 
             <EditText
-                android:id="@+id/et_activity_carrier_import_tudi_intro"
+                android:id="@+id/et_activity_carrier_import_soho_intro"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:background="@color/white"
@@ -729,6 +845,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/divide_line"
                 android:background="@color/divideLineGray" />
+
             <!--后续添加上传图片的view-->
             <View
                 android:layout_width="match_parent"
@@ -741,7 +858,7 @@
                 android:background="@color/divideLineGray" />
             <!--此button在代码中设置样式-->
             <Button
-                android:id="@+id/btn_activity_carrier_import_tudi_save"
+                android:id="@+id/btn_activity_carrier_import_soho_save"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:layout_margin="8dp"
@@ -751,4 +868,5 @@
 
         </LinearLayout>
     </ScrollView>
+
 </LinearLayout>

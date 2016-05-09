@@ -19,8 +19,16 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#2768AC</color>
 
-
-
     <color name="popWindowGrayback">#494949</color>
+
+    <!-- custom popuwindow -->
+    <color name="app_custom_popup_bottom_bg">#004C4C4C</color>
+    <color name="app_custom_popup_bottom_item_bg">#E5E5E5</color>
+    <color name="app_custom_popup_view_area_text">#343434</color>
+    <color name="app_custom_popup_view_plate_text">#616161</color>
+    <color name="app_custom_popup_view_list_text">#333333</color>
+    <!-- 遮罩层背景 -->
+    <color name="app_shade_bg">#7f000000</color>
+    <color name="transparent">#00000000</color>
 
 </resources>

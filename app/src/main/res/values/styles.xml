@@ -21,5 +21,73 @@
         <item name="android:windowBackground">@android:color/transparent</item>
     </style>
 
+    <!--自定义下拉列表-->
+    <style name="WrapContent">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="searchTypeTabText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">#484d51</item>
+        <item name="android:drawableRight">@drawable/down_gray</item>
+        <item name="android:drawablePadding">3dp</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="searchTypeTabRightDivider" parent="vertical_line">
+        <item name="android:layout_alignParentRight">true</item>
+    </style>
+
+    <style name="searchTypeTabBottomPressLine">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">4dp</item>
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="vertical_line">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@color/divideLineGray</item>
+    </style>
+
+    <style name="horizontal_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">@color/divideLineGray</item>
+    </style>
+
+    <style name="moreItem">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/app_cus_popuwindow_item_h</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="moreItemLeftText" parent="WrapContent">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/app_custom_popup_view_list_text</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+    <style name="moreItemRight" parent="WrapContent">
+        <item name="android:textSize">13sp</item>
+        <item name="android:textColor">@color/app_custom_popup_view_list_text</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+    <style name="moreItemarrow" parent="WrapContent">
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="android:src">@drawable/icon_search_arrow</item>
+    </style>
+    <style name="PopupWindowAnimation">
+        <item name="android:windowEnterAnimation">@anim/popshow_anim</item>
+        <item name="android:windowExitAnimation">@anim/pophidden_anim</item>
+    </style>
 
 </resources>

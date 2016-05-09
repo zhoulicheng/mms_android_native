@@ -2,6 +2,7 @@ package com.mms.activity;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.mms.R;
 import com.mms.base.BaseActivity;
@@ -47,8 +49,14 @@ public class ActivityCarrierImportFactory extends BaseActivity implements View.O
     @InjectView(R.id.rl_activity_carrier_import_factory_level)
     private RelativeLayout rlLevel;
 
+    @InjectView(R.id.tv_activity_carrier_import_factory_level)
+    private TextView tvLevel;
+
     @InjectView(R.id.rl_activity_carrier_import_factory_status)
     private RelativeLayout rlStatus;
+
+    @InjectView(R.id.tv_activity_carrier_import_factory_status)
+    private TextView tvStatus;
 
     @InjectView(R.id.ll_activity_carrier_import_factory_contacts)
     private LinearLayout llContacts;
@@ -70,6 +78,9 @@ public class ActivityCarrierImportFactory extends BaseActivity implements View.O
 
     @InjectView(R.id.rl_activity_carrier_import_factory_structure)
     private RelativeLayout rlStructure;
+
+    @InjectView(R.id.tv_activity_carrier_import_factory_structure)
+    private TextView tvStructure;
 
     @InjectView(R.id.et_activity_carrier_import_factory_area)
     private CancelableEditView etArea;
@@ -112,15 +123,19 @@ public class ActivityCarrierImportFactory extends BaseActivity implements View.O
 
     private boolean hasTianche = true;
     private boolean hasBtnDelContact = false;
+    private int level = -1;
+    private int status = -1;
+    private int structure = -1;
+    private List<String> needs;
 
     private List<ContactView> contactViews;
     private LinearLayout.LayoutParams LP_FW;
 
     private List<String> levelList;
-    private List<String> stateList;
+    private List<String> statusList;
     private List<String> structureList;
     private AdapterView.OnItemClickListener levelListener;
-    private AdapterView.OnItemClickListener stateListener;
+    private AdapterView.OnItemClickListener statusListener;
     private AdapterView.OnItemClickListener structureListener;
 
     private MessageDialog messageDialog;
@@ -135,6 +150,7 @@ public class ActivityCarrierImportFactory extends BaseActivity implements View.O
     }
 
     private void init() {
+        needs = new ArrayList<>();
         messageDialog = new MessageDialog(this);
         if (Build.VERSION.SDK_INT >= 16) {
             btnSave.setBackground(DrawableUtils.getStateDrawable(new DrawableUtils.CornerStateDrawable(new int[]{DrawableUtils.STATE_PRESSED}, 20, getResources().getColor(R.color.textGray))
@@ -153,49 +169,53 @@ public class ActivityCarrierImportFactory extends BaseActivity implements View.O
         levelListener = new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                switch (i) {
-                    case 0:
-                        Utils.showToast(ActivityCarrierImportFactory.this, "1");
-                        break;
-                    case 1:
-                        Utils.showToast(ActivityCarrierImportFactory.this, "2");
-                        break;
-                    case 2:
-                        Utils.showToast(ActivityCarrierImportFactory.this, "3");
-                        break;
-                    case 3:
-                        Utils.showToast(ActivityCarrierImportFactory.this, "4");
-                        break;
-                    case 4:
-                        Utils.showToast(ActivityCarrierImportFactory.this, "5");
-                        break;
-
-                }
+//                switch (i) {
+//                    case 0:
+//                        Utils.showToast(ActivityCarrierImportFactory.this, "1");
+//                        break;
+//                    case 1:
+//                        Utils.showToast(ActivityCarrierImportFactory.this, "2");
+//                        break;
+//                    case 2:
+//                        Utils.showToast(ActivityCarrierImportFactory.this, "3");
+//                        break;
+//                    case 3:
+//                        Utils.showToast(ActivityCarrierImportFactory.this, "4");
+//                        break;
+//                    case 4:
+//                        Utils.showToast(ActivityCarrierImportFactory.this, "5");
+//                        break;
+//
+//                }
+                level = i + 1;
+                tvLevel.setText(levelList.get(i));
             }
         };
-        stateList = new ArrayList<>();
-        stateList.add("待租");
-        stateList.add("待售");
-        stateList.add("已租");
-        stateList.add("已售");
-        stateListener = new AdapterView.OnItemClickListener() {
+        statusList = new ArrayList<>();
+        statusList.add("待租");
+        statusList.add("待售");
+        statusList.add("已租");
+        statusList.add("已售");
+        statusListener = new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                switch (i) {
-                    case 0:
-                        Utils.showToast(ActivityCarrierImportFactory.this, "待租");
-                        break;
-                    case 1:
-                        Utils.showToast(ActivityCarrierImportFactory.this, "待售");
-                        break;
-                    case 2:
-                        Utils.showToast(ActivityCarrierImportFactory.this, "已租");
-                        break;
-                    case 3:
-                        Utils.showToast(ActivityCarrierImportFactory.this, "已售");
-                        break;
-
-                }
+//                switch (i) {
+//                    case 0:
+//                        Utils.showToast(ActivityCarrierImportFactory.this, "待租");
+//                        break;
+//                    case 1:
+//                        Utils.showToast(ActivityCarrierImportFactory.this, "待售");
+//                        break;
+//                    case 2:
+//                        Utils.showToast(ActivityCarrierImportFactory.this, "已租");
+//                        break;
+//                    case 3:
+//                        Utils.showToast(ActivityCarrierImportFactory.this, "已售");
+//                        break;
+//
+//                }
+                status = i + 1;
+                tvStatus.setText(statusList.get(i));
             }
         };
         structureList = new ArrayList<>();
@@ -207,23 +227,25 @@ public class ActivityCarrierImportFactory extends BaseActivity implements View.O
         structureListener = new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                switch (i) {
-                    case 0:
-                        Utils.showToast(ActivityCarrierImportFactory.this, "彩钢");
-                        break;
-                    case 1:
-                        Utils.showToast(ActivityCarrierImportFactory.this, "钢混");
-                        break;
-                    case 2:
-                        Utils.showToast(ActivityCarrierImportFactory.this, "砖混");
-                        break;
-                    case 3:
-                        Utils.showToast(ActivityCarrierImportFactory.this, "框架");
-                        break;
-                    case 4:
-                        Utils.showToast(ActivityCarrierImportFactory.this, "其他");
-                        break;
-                }
+//                switch (i) {
+//                    case 0:
+//                        Utils.showToast(ActivityCarrierImportFactory.this, "彩钢");
+//                        break;
+//                    case 1:
+//                        Utils.showToast(ActivityCarrierImportFactory.this, "钢混");
+//                        break;
+//                    case 2:
+//                        Utils.showToast(ActivityCarrierImportFactory.this, "砖混");
+//                        break;
+//                    case 3:
+//                        Utils.showToast(ActivityCarrierImportFactory.this, "框架");
+//                        break;
+//                    case 4:
+//                        Utils.showToast(ActivityCarrierImportFactory.this, "其他");
+//                        break;
+//                }
+                structure = i + 1;
+                tvStructure.setText(structureList.get(i));
             }
         };
         //动态添加自定义ContactView相关
@@ -305,22 +327,28 @@ public class ActivityCarrierImportFactory extends BaseActivity implements View.O
             case R.id.cb_activity_carrier_import_factory_rent:
                 if (b) {
                     Utils.showToast(this, "您选择了出租");
+                    needs.add("1");
                 } else {
                     Utils.showToast(this, "您取消了出租");
+                    needs.remove("1");
                 }
                 break;
             case R.id.cb_activity_carrier_import_factory_sell:
                 if (b) {
                     Utils.showToast(this, "您选择了出售");
+                    needs.add("2");
                 } else {
                     Utils.showToast(this, "您取消了出售");
+                    needs.remove("2");
                 }
                 break;
             case R.id.cb_activity_carrier_import_factory_cooperation:
                 if (b) {
                     Utils.showToast(this, "您选择了合作");
+                    needs.add("3");
                 } else {
                     Utils.showToast(this, "您取消了合作");
+                    needs.remove("3");
                 }
                 break;
         }
@@ -349,8 +377,8 @@ public class ActivityCarrierImportFactory extends BaseActivity implements View.O
                 break;
             case R.id.rl_activity_carrier_import_factory_status:
                 //点击状态选择
-                selectDialog = new SelectDialog(this, stateList);
-                selectDialog.setOnItemClickListener(stateListener);
+                selectDialog = new SelectDialog(this, statusList);
+                selectDialog.setOnItemClickListener(statusListener);
                 selectDialog.show();
                 break;
             case R.id.btn_activity_carrier_import_factory_add_contact:
@@ -369,18 +397,43 @@ public class ActivityCarrierImportFactory extends BaseActivity implements View.O
                 break;
             case R.id.btn_activity_carrier_import_factory_save:
                 //点击保存按钮
-                messageDialog.setTitle("保存");
-                messageDialog.setMessage("确认所填信息无误并保存吗？");
-                messageDialog.setPositiveListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        save();
-                    }
-                });
-                messageDialog.show();
+                if (isLegal()) {
+                    messageDialog.setTitle("保存");
+                    messageDialog.setMessage("确认所填信息无误并保存吗？");
+                    messageDialog.setPositiveListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            save();
+                        }
+                    });
+                    messageDialog.show();
+                }
                 break;
 
         }
+    }
+
+    private boolean isLegal() {
+        if (TextUtils.isEmpty(getTheTitle())) {
+            Utils.showToast(this, "请输入标题");
+            return false;
+        }
+        if (level == -1) {
+            Utils.showToast(this, "请选择等级");
+            return false;
+        }
+        if (status == -1) {
+            Utils.showToast(this, "请选择载体状态");
+            return false;
+        }
+        if (needs.size() == 0) {
+            Utils.showToast(this, "请选择意向");
+            return false;
+        }
+        if (structure == -1) {
+            Utils.showToast(this, "请选择建筑结构");
+        }
+        return true;
     }
 
     private void save() {
@@ -396,48 +449,65 @@ public class ActivityCarrierImportFactory extends BaseActivity implements View.O
         return etAddress.getText();
     }
 
-    private String getArea() {
-        return etArea.getText();
+    private int getLevel(){
+        return level;
     }
 
-    private String getYardArea() {
-        return etYardArea.getText();
+    private int getStatus(){
+        return status;
     }
 
-    private String getOfficeArea() {
-        return etOfficeArea.getText();
+    private double getArea() {
+        return Utils.getStringToDouble(etArea.getText());
     }
 
-    private String getBearing() {
-        return etBearing.getText();
+    private double getYardArea() {
+        return Utils.getStringToDouble(etYardArea.getText());
     }
 
-    private String getHeight() {
-        return etHeight.getText();
+    private double getOfficeArea() {
+        return Utils.getStringToDouble(etOfficeArea.getText());
     }
 
-    private String getSpan() {
-        return etSpan.getText();
+    private double getBearing() {
+        return Utils.getStringToDouble(etBearing.getText());
     }
 
-    private String getFloors() {
-        return etFloors.getText();
+    private double getHeight() {
+        return Utils.getStringToDouble(etHeight.getText());
     }
 
-    private String getRPrice() {
-        return etRPrice.getText();
+    private double getSpan() {
+        return Utils.getStringToDouble(etSpan.getText());
     }
 
-    private String getSPrice() {
-        return etSPrice.getText();
+    private int getFloors() {
+        return Utils.getStringToInt(etFloors.getText());
     }
 
-    private String getKVA() {
-        return etKVA.getText();
+    private double getRPrice() {
+        return Utils.getStringToDouble(etRPrice.getText());
     }
 
-    private boolean getHasTianche(){
+    private double getSPrice() {
+        return Utils.getStringToDouble(etSPrice.getText());
+    }
+
+    private int getKVA() {
+        return Utils.getStringToInt(etKVA.getText());
+    }
+
+    private boolean getHasTianche() {
         return hasTianche;
+    }
+
+    private String getNeed() {
+        String s = "";
+        for (String str : needs) {
+            s = s + str + ",";
+        }
+        return s.substring(0, s.length() - 1);
+
     }
 
     @Override

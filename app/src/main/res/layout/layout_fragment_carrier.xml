@@ -43,29 +43,18 @@
         android:background="@color/white"
         android:orientation="horizontal">
 
-        <Spinner
-            android:id="@+id/sp_fragment_carrier_status"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="100">
+        <com.mms.widget.CustomSpinner.ExpandTabView
+            android:id="@+id/expandtabTab"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
-        </Spinner>
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="6dp"
-            android:layout_marginTop="6dp"
-            android:layout_weight="1"
-            android:background="@color/divideLineGray" />
-
-        <Spinner
-            android:id="@+id/sp_fragment_carrier_need"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="100">
-
-        </Spinner>
     </LinearLayout>
+
+    <View
+        android:id="@+id/v_bg"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_shade_bg"
+        android:visibility="gone"/>
 
 </LinearLayout>

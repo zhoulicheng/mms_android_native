@@ -5,15 +5,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.Spinner;
 
 import com.mms.R;
 import com.mms.base.BaseFragment;
+import com.mms.widget.CustomSpinner.ExpandTabView;
+import com.mms.widget.CustomSpinner.ViewList;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import roboguice.inject.InjectView;
 
@@ -22,17 +20,19 @@ import roboguice.inject.InjectView;
  */
 public class FragmentCarrier extends BaseFragment implements View.OnClickListener {
 
-    @InjectView(R.id.btn_fragment_carrier_import)
-    private Button btnAdd;
+    @InjectView(R.id.expandtabTab)
+    private ExpandTabView expandTabView;
 
-    @InjectView(R.id.sp_fragment_carrier_status)
-    private Spinner spStatus;
+    @InjectView(R.id.v_bg)
+    private View v_bg;
 
-    @InjectView(R.id.sp_fragment_carrier_need)
-    private Spinner spNeed;
-
-    private List<String> spStatusData;
-    private List<String> spNeedData;
+    private ViewList viewStatus;
+    private ViewList viewNeed;
+    private ArrayList<View> mViewArray = new ArrayList<>();
+    private String[] statusItems = {"不限", "待租", "待售", "已租", "已售"};
+    private String[] statusItemsVaule = {"0", "1", "2", "3", "4"};
+    private String[] needItems = {"不限", "出租", "出售", "合作"};
+    private String[] needItemsVaule = {"0", "1", "2", "3"};
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -48,28 +48,63 @@ public class FragmentCarrier extends BaseFragment implements View.OnClickListene
     }
 
     private void init() {
-        spStatusData = new ArrayList<>();
-        spStatusData.add("不限");
-        spStatusData.add("待租");
-        spStatusData.add("待售");
-        spStatusData.add("已租");
-        spStatusData.add("已售");
-        spNeedData = new ArrayList<>();
-        spNeedData.add("不限");
-        spNeedData.add("出租");
-        spNeedData.add("出售");
-        spNeedData.add("合作");
-        ArrayAdapter<String> adapterStatus = new ArrayAdapter<>(getActivity(), R.layout.spinner_dropdown_item, spStatusData);
-        adapterStatus.setDropDownViewResource(R.layout.spinner_dropdown_item);
-        ArrayAdapter<String> adapterNeed = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item,spNeedData);
-        adapterNeed.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spStatus.setAdapter(adapterStatus);
-        spNeed.setAdapter(adapterNeed);
+
+        viewStatus = new ViewList(getActivity(), statusItems, statusItemsVaule, 0);
+        viewNeed = new ViewList(getActivity(), needItems, needItemsVaule, 0);
+        mViewArray.add(viewStatus);
+        mViewArray.add(viewNeed);
+        ArrayList<String> mTextArray = new ArrayList<>();
+        mTextArray.add("状态");
+        mTextArray.add("意向");
+        expandTabView.setValue(mTextArray, mViewArray, v_bg);
 
     }
 
     private void setOCL() {
-        btnAdd.setOnClickListener(this);
+        viewStatus.setOnSelectListener(new ViewList.OnSelectListener() {
+
+            @Override
+            public void getValue(String distance, String showText) {
+                v_bg.setVisibility(View.GONE);
+                onRefresh(viewStatus, showText);
+            }
+        });
+
+        viewNeed.setOnSelectListener(new ViewList.OnSelectListener() {
+
+            @Override
+            public void getValue(String distance, String showText) {
+                v_bg.setVisibility(View.GONE);
+                onRefresh(viewNeed, showText);
+            }
+        });
+
+    }
+
+    /**
+     * 更新自定义ToggleButton上的文字
+     *
+     * @param view
+     * @param showText
+     */
+    private void onRefresh(View view, String showText) {
+
+        expandTabView.onPressBack();
+        int position = getPositon(view);
+        if (position >= 0 && !expandTabView.getTitle(position).equals(showText)) {
+            expandTabView.setTitle(showText, position);
+        }
+//		Use.showToast(mContext, showText);
+
+    }
+
+    private int getPositon(View tView) {
+        for (int i = 0; i < mViewArray.size(); i++) {
+            if (mViewArray.get(i) == tView) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     @Override

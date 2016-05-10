@@ -204,7 +204,7 @@ public class ActivityCarrierImportOther extends BaseActivity implements View.OnC
             } else {
                 btnDelContact.setBackgroundDrawable(getResources().getDrawable(R.drawable.whitebuttonselector));
             }
-            btnDelContact.setId(R.id.btn_activity_carrier_import_del_contact);
+            btnDelContact.setId(R.id.btn_activity_import_del_contact);
             btnDelContact.setText("删除联系人");
             btnDelContact.setTextSize(17);
             btnDelContact.setTextColor(getResources().getColor(R.color.myRed));
@@ -256,7 +256,7 @@ public class ActivityCarrierImportOther extends BaseActivity implements View.OnC
                 //增加一个联系人
                 addContact();
                 break;
-            case R.id.btn_activity_carrier_import_del_contact:
+            case R.id.btn_activity_import_del_contact:
                 //删除联系人
                 delContact(view);
                 break;

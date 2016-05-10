@@ -1,14 +1,15 @@
 package com.mms.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.SimpleAdapter;
 
 import com.mms.R;
 import com.mms.base.BaseActivity;
-import com.mms.base.BaseSwipeActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -24,7 +25,7 @@ import roboguice.inject.InjectView;
  */
 
 @ContentView(R.layout.layout_activity_item_import)
-public class ActivityItemImport extends BaseActivity implements View.OnClickListener {
+public class ActivityItemImport extends BaseActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
     @InjectView(R.id.gv_activity_itemimport)
     private GridView gvItemImport;
@@ -56,6 +57,7 @@ public class ActivityItemImport extends BaseActivity implements View.OnClickList
 
     private void setOCL() {
         btnBack.setOnClickListener(this);
+        gvItemImport.setOnItemClickListener(this);
 
     }
 
@@ -72,11 +74,22 @@ public class ActivityItemImport extends BaseActivity implements View.OnClickList
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.btn_activity_itemimport_back:
                 finish();
                 break;
 
+        }
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        Intent intent = null;
+        switch (i) {
+            case 0:
+                intent = new Intent(this,ActivityItemImportTudi.class);
+                startActivity(intent);
+                break;
         }
     }
 }

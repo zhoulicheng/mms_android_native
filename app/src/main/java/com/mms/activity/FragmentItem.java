@@ -2,7 +2,6 @@ package com.mms.activity;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
@@ -21,6 +20,7 @@ import android.widget.TextView;
 
 import com.mms.R;
 import com.mms.base.BaseFragment;
+import com.mms.util.Utils;
 
 import java.util.ArrayList;
 import java.util.HashMap;

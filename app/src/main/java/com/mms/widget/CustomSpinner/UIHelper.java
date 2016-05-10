@@ -11,7 +11,7 @@ public class UIHelper {
      * Set whether this window is touch modal or if outside touches will be sent
      * to
      * other windows behind it.
-     * ����ⲿ����,��������ʧ,���ǵ���¼����������activity����
+     *
      */
     public static void setPopupWindowTouchModal(PopupWindow popupWindow,
             boolean touchModal) {

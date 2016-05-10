@@ -137,8 +137,8 @@ public class TextAdapter extends ArrayAdapter<String> {
 			holder.vDivider.setVisibility(View.GONE);
 		}
 		
-		if (mString.contains("����"))
-			holder.tvContent.setText("����");
+		if (mString.contains("这是啥"))
+			holder.tvContent.setText("这是啥");
 		else
 			holder.tvContent.setText(mString);
 		if(textSize!=0){
@@ -153,10 +153,10 @@ public class TextAdapter extends ArrayAdapter<String> {
 			}else{
 				holder.vLine.setVisibility(View.GONE);
 			}
-			convertView.setBackgroundResource(selectedDrawble);//����ѡ�еı���ͼƬ
+			convertView.setBackgroundResource(selectedDrawble);
 		}else{
 			holder.vLine.setVisibility(View.GONE);
-			convertView.setBackgroundResource(normalDrawbleId);//����δѡ��״̬����ͼƬ
+			convertView.setBackgroundResource(normalDrawbleId);
 		}
 		if(type==3&&mArrayData != null
 				&&mArrayData.length>0&&(position == mArrayData.length-1)){

@@ -69,9 +69,14 @@
             >
         </activity>
         <activity
-            android:name=".activity.ActivityCarrierInfo"
-            >
-        </activity>
+        android:name=".activity.ActivityCarrierInfo"
+        >
+    </activity>
+        <activity
+        android:name=".activity.ActivityItemImportTudi"
+        >
+    </activity>
+
     </application>
 
 </manifest>

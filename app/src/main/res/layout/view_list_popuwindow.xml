@@ -2,44 +2,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="5dp"
-    android:layout_marginRight="5dp"
     android:baselineAligned="false"
     android:background="@color/transparent"
     android:orientation="vertical" >
-	<LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
-
-        <ImageView
-            android:id="@+id/ivUpOne"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@color/transparent" />
-
-        <ImageView
-            android:id="@+id/ivUpTwo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@color/transparent" />
-
-        <ImageView
-            android:id="@+id/ivUpThree"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@color/transparent" />
-
-        <ImageView
-            android:id="@+id/ivUpFour"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/icon_popuwindow_up" />
-    </LinearLayout>
     <ListView
         android:id="@+id/list"
         android:layout_width="match_parent"

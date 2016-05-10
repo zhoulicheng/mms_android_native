@@ -31,4 +31,7 @@
     <color name="app_shade_bg">#7f000000</color>
     <color name="transparent">#00000000</color>
 
+
+    <color name="province_line_border">#C7C7C7</color>
+
 </resources>

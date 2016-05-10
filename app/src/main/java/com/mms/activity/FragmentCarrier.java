@@ -5,9 +5,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.mms.R;
 import com.mms.base.BaseFragment;
+import com.mms.util.Utils;
 import com.mms.widget.CustomSpinner.ExpandTabView;
 import com.mms.widget.CustomSpinner.ViewList;
 
@@ -19,6 +21,9 @@ import roboguice.inject.InjectView;
  * Created by Tanikawa on 2016/4/12.
  */
 public class FragmentCarrier extends BaseFragment implements View.OnClickListener {
+
+    @InjectView(R.id.btn_fragment_carrier_import)
+    private Button btnImport;
 
     @InjectView(R.id.expandtabTab)
     private ExpandTabView expandTabView;
@@ -49,35 +54,35 @@ public class FragmentCarrier extends BaseFragment implements View.OnClickListene
 
     private void init() {
 
-        viewStatus = new ViewList(getActivity(), statusItems, statusItemsVaule, 0);
-        viewNeed = new ViewList(getActivity(), needItems, needItemsVaule, 0);
+        viewStatus = new ViewList(getActivity(), statusItems, statusItemsVaule);
+        viewNeed = new ViewList(getActivity(), needItems, needItemsVaule);
         mViewArray.add(viewStatus);
         mViewArray.add(viewNeed);
         ArrayList<String> mTextArray = new ArrayList<>();
         mTextArray.add("状态");
         mTextArray.add("意向");
         expandTabView.setValue(mTextArray, mViewArray, v_bg);
-
     }
 
     private void setOCL() {
         viewStatus.setOnSelectListener(new ViewList.OnSelectListener() {
-
             @Override
             public void getValue(String distance, String showText) {
                 v_bg.setVisibility(View.GONE);
-                onRefresh(viewStatus, showText);
+                refreshToggleButtonText(viewStatus, showText);
+                Utils.showToast(getActivity(),distance);
             }
         });
-
         viewNeed.setOnSelectListener(new ViewList.OnSelectListener() {
-
             @Override
             public void getValue(String distance, String showText) {
                 v_bg.setVisibility(View.GONE);
-                onRefresh(viewNeed, showText);
+                refreshToggleButtonText(viewNeed, showText);
+                //这里的distance刚好对应数据库里的值
+                Utils.showToast(getActivity(),distance);
             }
         });
+        btnImport.setOnClickListener(this);
 
     }
 
@@ -87,14 +92,13 @@ public class FragmentCarrier extends BaseFragment implements View.OnClickListene
      * @param view
      * @param showText
      */
-    private void onRefresh(View view, String showText) {
+    private void refreshToggleButtonText(View view, String showText) {
 
         expandTabView.onPressBack();
         int position = getPositon(view);
         if (position >= 0 && !expandTabView.getTitle(position).equals(showText)) {
             expandTabView.setTitle(showText, position);
         }
-//		Use.showToast(mContext, showText);
 
     }
 
@@ -109,7 +113,7 @@ public class FragmentCarrier extends BaseFragment implements View.OnClickListene
 
     @Override
     public void onClick(View view) {
-        Intent intent = null;
+        Intent intent ;
         switch (view.getId()) {
             case R.id.btn_fragment_carrier_import:
                 intent = new Intent(getActivity(), ActivityCarrierImport.class);
@@ -117,4 +121,5 @@ public class FragmentCarrier extends BaseFragment implements View.OnClickListene
                 break;
         }
     }
+
 }

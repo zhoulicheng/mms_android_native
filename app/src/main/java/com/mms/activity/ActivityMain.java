@@ -73,7 +73,7 @@ public class ActivityMain extends RoboFragmentActivity {
 
     private void initView() {
         // TODO Auto-generated method stub
-        fragments = new ArrayList<BaseFragment>();
+        fragments = new ArrayList<>();
         fragments.add(new FragmentMain());
         fragments.add(new FragmentItem());
         fragments.add(new FragmentCarrier());
@@ -102,6 +102,7 @@ public class ActivityMain extends RoboFragmentActivity {
         new FragmentTabAdapter(this, fragments, R.id.tab_content, radioGroup);
 
     }
+
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="ContactView">
+    <declare-styleable name="ClickableRowView">
+        <attr name="name" format="string" />
         <!--<attr name="editTextSize" format="dimension" />-->
         <!--<attr name="hintColor" format="color" />-->
         <!--<attr name="editColor" format="color" />-->

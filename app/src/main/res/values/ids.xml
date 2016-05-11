@@ -2,5 +2,6 @@
 <resources>
     <item name="btn_activity_import_del_contact" type="id" />
     <item name="btn_activity_import_del_district" type="id" />
+    <item name="btn_activity_import_del_industry" type="id" />
     <item name="position" type="id">false</item>
 </resources>

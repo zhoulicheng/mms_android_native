@@ -328,6 +328,11 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/divide_line"
+                android:background="@color/divideLineGray" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_line"
                 android:layout_marginTop="20dp"
                 android:background="@color/divideLineGray" />
 
@@ -385,6 +390,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/divide_line"
+                android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
                 android:background="@color/divideLineGray" />
 
             <RelativeLayout
@@ -435,6 +441,7 @@
 
             <View
                 android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
                 android:layout_height="@dimen/divide_line"
                 android:background="@color/divideLineGray" />
 
@@ -486,6 +493,7 @@
             </RelativeLayout>
 
             <View
+                android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/divide_line"
                 android:background="@color/divideLineGray" />

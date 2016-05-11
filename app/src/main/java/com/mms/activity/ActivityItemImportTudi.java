@@ -1,11 +1,11 @@
 package com.mms.activity;
 
-import android.content.res.AssetManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
@@ -14,24 +14,11 @@ import com.mms.base.BaseActivity;
 import com.mms.dialog.MessageDialog;
 import com.mms.dialog.SelectDialog;
 import com.mms.widget.CancelableEditView;
+import com.mms.widget.ClickableRowView;
 import com.mms.widget.ContactView;
-import com.mms.widget.DistrictView;
-import com.mms.widget.kankanWheelView.CityModel;
-import com.mms.widget.kankanWheelView.DistrictModel;
-import com.mms.widget.kankanWheelView.OnWheelChangedListener;
-import com.mms.widget.kankanWheelView.ProvinceModel;
-import com.mms.widget.kankanWheelView.WheelView;
-import com.mms.widget.kankanWheelView.XmlParserHandler;
-import com.mms.widget.kankanWheelView.adapters.ArrayWheelAdapter;
 
-import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
 
 import roboguice.inject.ContentView;
 import roboguice.inject.InjectView;
@@ -40,7 +27,7 @@ import roboguice.inject.InjectView;
  * Created by Tanikawa on 2016/5/10.
  */
 @ContentView(R.layout.layout_activity_item_import_tudi)
-public class ActivityItemImportTudi extends BaseActivity implements View.OnClickListener{
+public class ActivityItemImportTudi extends BaseActivity implements View.OnClickListener {
 
     @InjectView(R.id.btn_activity_item_import_tudi_back)
     private Button btnBack;
@@ -69,10 +56,39 @@ public class ActivityItemImportTudi extends BaseActivity implements View.OnClick
     @InjectView(R.id.btn_activity_item_import_tudi_contacts_add_contact)
     private Button btnAddContact;
 
+    @InjectView(R.id.cb_activity_item_import_tudi_need_zulin)
+    private CheckBox cbZulin;
+
+    @InjectView(R.id.cb_activity_item_import_tudi_need_gouzhi)
+    private CheckBox cbGouzhi;
+
+    @InjectView(R.id.cb_activity_item_import_tudi_need_cooperation)
+    private CheckBox cbCooperRAtion;
+
+    @InjectView(R.id.rl_activity_item_import_tudi_land_type)
+    private RelativeLayout rlLandType;
+
+    @InjectView(R.id.et_activity_item_import_tudi_area_min)
+    private EditText etAreaMin;
+
+    @InjectView(R.id.et_activity_item_import_tudi_area_max)
+    private EditText etAreaMax;
+
+    @InjectView(R.id.ll_activity_item_import_tudi_industrys)
+    private LinearLayout llIndustrys;
+
+    @InjectView(R.id.ll_activity_item_import_tudi_industrys_add_and_del)
+    private LinearLayout llIndustrysAddAndDel;
+
+    @InjectView(R.id.btn_activity_item_import_tudi_industrys_add_industry)
+    private Button btnAddIndustry;
+
     private boolean hasBtnDelDistrict = false;
     private boolean hasBtnDelContact = false;
+    private boolean hasBtnDelIndustry = false;
 
-    private List<DistrictView> districtViews;
+    private List<ClickableRowView> districtViews;
+    private List<ClickableRowView> industryViews;
     private List<ContactView> contactViews;
     private LinearLayout.LayoutParams LP_FW;
 
@@ -91,9 +107,17 @@ public class ActivityItemImportTudi extends BaseActivity implements View.OnClick
                 LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
         //动态添加自定义DistrictView
         districtViews = new ArrayList<>();
-        DistrictView district1 = new DistrictView(this);
+        ClickableRowView district1 = new ClickableRowView(this);
+        district1.setName("意向区域");
         llDistricts.addView(district1, LP_FW);
         districtViews.add(district1);
+
+        //动态添加自定义IndustryView
+        industryViews = new ArrayList<>();
+        ClickableRowView industry1 = new ClickableRowView(this);
+        industry1.setName("产业分类");
+        llIndustrys.addView(industry1,LP_FW);
+        industryViews.add(industry1);
 
         //动态添加自定义ContactView相关
         contactViews = new ArrayList<>();
@@ -102,11 +126,13 @@ public class ActivityItemImportTudi extends BaseActivity implements View.OnClick
         contactViews.add(contact1);
 
     }
+
     private void setOCL() {
         btnBack.setOnClickListener(this);
         rlLevel.setOnClickListener(this);
         btnAddContact.setOnClickListener(this);
         btnAddDistrict.setOnClickListener(this);
+        btnAddIndustry.setOnClickListener(this);
     }
 
     private void addContact() {
@@ -146,7 +172,8 @@ public class ActivityItemImportTudi extends BaseActivity implements View.OnClick
     }
 
     private void addDistrict() {
-        DistrictView districtView = new DistrictView(this);
+        ClickableRowView districtView = new ClickableRowView(this);
+        districtView.setName("意向区域");
         districtViews.add(districtView);
         llDistricts.addView(districtView, LP_FW);
         if (districtViews.size() > 1 && !hasBtnDelDistrict) {
@@ -181,6 +208,43 @@ public class ActivityItemImportTudi extends BaseActivity implements View.OnClick
         }
     }
 
+    private void addIndustry() {
+        ClickableRowView industryView = new ClickableRowView(this);
+        industryView.setName("产业分类");
+        industryViews.add(industryView);
+        llIndustrys.addView(industryView, LP_FW);
+        if (industryViews.size() > 1 && !hasBtnDelIndustry) {
+            Button btnDelIndustry = new Button(this);
+            LinearLayout.LayoutParams LP_BTN = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT);
+            LP_BTN.weight = 1;
+            if (Build.VERSION.SDK_INT >= 16 && Build.VERSION.SDK_INT < 21) {
+                btnDelIndustry.setBackground(getResources().getDrawable(R.drawable.whitebuttonselector));
+            } else if (Build.VERSION.SDK_INT >= 21) {
+                btnDelIndustry.setBackground(getResources().getDrawable(R.drawable.whitebuttonselector, null));
+            } else {
+                btnDelIndustry.setBackgroundDrawable(getResources().getDrawable(R.drawable.whitebuttonselector));
+            }
+            btnDelIndustry.setId(R.id.btn_activity_import_del_industry);
+            btnDelIndustry.setText("删除产业分类");
+            btnDelIndustry.setTextSize(17);
+            btnDelIndustry.setTextColor(getResources().getColor(R.color.myRed));
+            btnDelIndustry.setOnClickListener(this);
+            llIndustrysAddAndDel.addView(btnDelIndustry, LP_BTN);
+            hasBtnDelIndustry = true;
+        }
+    }
+
+    private void delIndustry(View view) {
+        if (industryViews.size() > 1) {
+            llIndustrys.removeView(industryViews.get(industryViews.size() - 1));
+            industryViews.remove(industryViews.get(industryViews.size() - 1));
+            if (industryViews.size() == 1) {
+                llIndustrysAddAndDel.removeView(view);
+                hasBtnDelIndustry = false;
+            }
+        }
+    }
+
     @Override
     public void onClick(View view) {
         SelectDialog selectDialog;
@@ -204,12 +268,20 @@ public class ActivityItemImportTudi extends BaseActivity implements View.OnClick
                 break;
 
             case R.id.btn_activity_item_import_tudi_districts_add_district:
-                //增加一个联系人
+                //增加一个意向区域
                 addDistrict();
                 break;
             case R.id.btn_activity_import_del_district:
-                //删除联系人
+                //删除意向区域
                 delDistrict(view);
+                break;
+            case R.id.btn_activity_item_import_tudi_industrys_add_industry:
+                //增加一个产业分类
+                addIndustry();
+                break;
+            case R.id.btn_activity_import_del_industry:
+                //删除产业分类
+                delIndustry(view);
                 break;
             case R.id.btn_activity_item_import_tudi_contacts_add_contact:
                 //增加一个联系人

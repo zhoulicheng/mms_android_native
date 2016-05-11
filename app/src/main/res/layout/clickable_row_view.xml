@@ -21,15 +21,16 @@
 
 
         <TextView
+            android:id="@+id/tv_clickable_row_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:text="意向区域"
+            android:text="名字"
             android:textColor="@color/black"
             android:textSize="@dimen/fragment_my_item_left_text_size" />
 
         <TextView
-            android:id="@+id/tv_activity_item_import_district"
+            android:id="@+id/tv_clickable_row_text"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"

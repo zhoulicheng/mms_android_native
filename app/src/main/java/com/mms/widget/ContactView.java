@@ -46,7 +46,7 @@ public class ContactView extends LinearLayout {
     private void initAttrs(AttributeSet attrs) {
         if (attrs != null) {
             TypedArray typedArray = getContext().obtainStyledAttributes(attrs,
-                    R.styleable.ContactView);
+                    R.styleable.ClickableRowView);
         }
     }
 

@@ -191,10 +191,232 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/divide_line"
+                android:background="@color/divideLineGray" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_line"
                 android:layout_marginTop="20dp"
                 android:background="@color/divideLineGray" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fragment_my_item_height"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/fragment_my_item_padding_left">
 
+                <TextView
+                    android:layout_width="@dimen/fragment_my_item_left_tv_width"
+                    android:layout_height="wrap_content"
+                    android:text="需求方式"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:paddingLeft="20dp">
+
+                    <CheckBox
+                        android:id="@+id/cb_activity_item_import_tudi_need_zulin"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="租赁"
+                        android:textColor="@color/filterTextGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <CheckBox
+                        android:id="@+id/cb_activity_item_import_tudi_need_gouzhi"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="购置 "
+                        android:textColor="@color/filterTextGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <CheckBox
+                        android:id="@+id/cb_activity_item_import_tudi_need_cooperation"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="合作"
+                        android:textColor="@color/filterTextGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
+
+                android:layout_height="@dimen/divide_line"
+                android:background="@color/divideLineGray" />
+
+            <RelativeLayout
+                android:id="@+id/rl_activity_item_import_tudi_land_type"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fragment_my_item_height"
+                android:background="@drawable/whitebuttonselector"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/fragment_my_item_padding_left">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="土地类型"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                <TextView
+                    android:id="@+id/tv_activity_item_import_tudi_land_type"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="100dp"
+                    android:background="@null"
+                    android:text="请选择"
+                    android:textColor="@color/hintGray"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                <Button
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="17dp"
+                    android:background="@drawable/right" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
+
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_line"
+                android:background="@color/divideLineGray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fragment_my_item_height"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/fragment_my_item_padding_left">
+
+                <TextView
+                    android:id="@+id/null_tv_activity_carrier_import_factory_area"
+                    android:layout_width="@dimen/fragment_my_item_left_tv_width"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="面积"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                <LinearLayout
+                    android:id="@+id/ll_activity_item_import_tudi_area"
+                    android:layout_width="240dp"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@id/null_tv_activity_carrier_import_factory_area"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/et_activity_item_import_tudi_area_min"
+                        android:layout_width="110dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:hint="0"
+                        android:inputType="number"
+                        android:paddingLeft="20dp"
+                        android:singleLine="true">
+
+                    </EditText>
+
+                    <View
+                        android:layout_width="10dp"
+                        android:layout_height="1.5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@color/divideLineGray" />
+
+                    <EditText
+                        android:id="@+id/et_activity_item_import_tudi_area_max"
+                        android:layout_width="90dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:hint="0"
+                        android:inputType="number"
+                        android:singleLine="true">
+
+                    </EditText>
+
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="16dp"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:text="亩"
+                    android:textColor="@color/hintGray"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_activity_item_import_tudi_industrys"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_line"
+                android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
+                android:background="@color/divideLineGray" />
+
+            <LinearLayout
+                android:id="@+id/ll_activity_item_import_tudi_industrys_add_and_del"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fragment_my_item_height"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_activity_item_import_tudi_industrys_add_industry"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/whitebuttonselector"
+                    android:text="增加产业分类"
+                    android:textColor="@color/textBlue"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_line"
+                android:background="@color/divideLineGray" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_line"
+                android:layout_marginTop="20dp"
+                android:background="@color/divideLineGray" />
 
         </LinearLayout>
     </ScrollView>

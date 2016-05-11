@@ -4,7 +4,6 @@ import android.os.Bundle;
 
 import com.mms.R;
 import com.mms.base.BaseActivity;
-import com.mms.base.BaseSwipeActivity;
 
 import roboguice.inject.ContentView;
 

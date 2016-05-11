@@ -8,7 +8,6 @@ import android.widget.SimpleAdapter;
 
 import com.mms.R;
 import com.mms.base.BaseActivity;
-import com.mms.base.BaseSwipeActivity;
 
 import java.util.ArrayList;
 import java.util.HashMap;

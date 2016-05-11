@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 import com.mms.R;
 import com.mms.base.BaseActivity;
-import com.mms.base.BaseSwipeActivity;
 
 import roboguice.inject.ContentView;
 import roboguice.inject.InjectView;

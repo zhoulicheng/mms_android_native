@@ -47,5 +47,8 @@ dependencies {
     //roboGuice
     compile 'org.roboguice:roboguice:2.0'
     //nineoldandroids
-    compile 'com.nineoldandroids:library:2.4.0'
+//    compile 'com.nineoldandroids:library:2.4.0'
+
+    //greenDao
+    compile 'de.greenrobot:greendao:2.1.0'
 }

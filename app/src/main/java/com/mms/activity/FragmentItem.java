@@ -81,6 +81,9 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener ,
     @InjectView(R.id.rl_Fragment_item_progress)
     private RelativeLayout rlProgress;
 
+    @InjectView(R.id.v_fragment_item_cover)
+    private View vCover;
+
     private boolean isOpenPop = false;
     private boolean isOpenWhitePop = false;
     private PopupWindow window;
@@ -138,6 +141,7 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener ,
             case R.id.rl_Fragment_item_from:
                 if (isOpenWhitePop) {
                     ivFrom.setBackgroundResource(R.drawable.up_gray);
+                    tvFrom.setTextColor(getResources().getColor(R.color.textBlue));
                     popWhiteWindow(v);
 
                 } else {
@@ -151,6 +155,7 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener ,
             case R.id.rl_Fragment_item_level:
                 if (isOpenWhitePop) {
                     ivLevel.setBackgroundResource(R.drawable.up_gray);
+                    tvLevel.setTextColor(getResources().getColor(R.color.textBlue));
                     popWhiteWindow(v);
 
                 } else {
@@ -165,6 +170,7 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener ,
             case R.id.rl_Fragment_item_progress:
                 if (isOpenWhitePop) {
                     ivProgress.setBackgroundResource(R.drawable.up_gray);
+                    tvProgress.setTextColor(getResources().getColor(R.color.textBlue));
                     popWhiteWindow(v);
 
                 } else {
@@ -178,6 +184,7 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener ,
             case R.id.rl_Fragment_item_state:
                 if (isOpenWhitePop) {
                     ivState.setBackgroundResource(R.drawable.up_gray);
+                    tvState.setTextColor(getResources().getColor(R.color.textBlue));
                     popWhiteWindow(v);
 
                 } else {
@@ -221,6 +228,7 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener ,
                 // TODO Auto-generated method stub
                 isOpenPop = false;
                 ivTop.setBackgroundResource(R.drawable.down_white);
+                vCover.setVisibility(View.INVISIBLE);
             }
         });
         window.update();
@@ -233,6 +241,7 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener ,
 
         window.showAtLocation(parent, Gravity.CENTER_HORIZONTAL | Gravity.TOP,
                 0, (int) getResources().getDimension(R.dimen.pop_layout_gray_y));
+        vCover.setVisibility(View.VISIBLE);
 
     }
 
@@ -284,11 +293,15 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener ,
                         ivState.setBackgroundResource(R.drawable.down_gray);
                         break;
                 }
+                vCover.setVisibility(View.INVISIBLE);
+                resetTextColor();
             }
+
         });
         window.update();
         window.setAnimationStyle(R.style.AnimationFade);
         window.showAsDropDown(parent, 0,0);
+        vCover.setVisibility(View.VISIBLE);
 //        window.showAtLocation(parent, Gravity.CENTER_HORIZONTAL | Gravity.TOP,
 //                0, (int) getResources().getDimension(R.dimen.pop_layout_white_y));
 
@@ -472,43 +485,72 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener ,
 
         switch (flag) {
             case "土地项目":
-                tvTopTitle.setText(map.get(KEY) + "");
+                if (i==0){
+                    tvTopTitle.setText("项目");
+                }else {
+                    tvTopTitle.setText(map.get(KEY) + "");
+                }
                 if (window != null) {
                     window.dismiss();
                     window=null;
                 }
                 break;
             case "选哪儿推送":
-                tvFrom.setText(map.get(KEY) + "");
+                if (i==0){
+                    tvFrom.setText("来源");
+                }else {
+                    tvFrom.setText(map.get(KEY) + "");
+
+                }
                 if (window != null) {
                     window.dismiss();
                     window=null;
                 }
                 break;
             case "重点接洽":
-                tvState.setText(map.get(KEY) + "");
+                if (i==0){
+                    tvState.setText("状态");
+                }else {
+                    tvState.setText(map.get(KEY) + "");
+                }
                 if (window != null) {
                     window.dismiss();
                     window=null;
                 }
                 break;
             case "★":
-                tvLevel.setText(map.get(KEY) + "");
+                if (i==0){
+                    tvLevel.setText("等级");
+                }else {
+                    tvLevel.setText(map.get(KEY) + "");
+
+                }
                 if (window != null) {
                     window.dismiss();
                     window=null;
                 }
                 break;
             case "▋":
-                tvProgress.setText(map.get(KEY) + "");
+                if (i==0){
+                    tvProgress.setText("进度");
+                }else {
+                    tvProgress.setText(map.get(KEY) + "");
+
+                }
                 if (window != null) {
                     window.dismiss();
                     window=null;
                 }
                 break;
-
-
         }
+
+    }
+
+    private void resetTextColor(){
+        tvFrom.setTextColor(getResources().getColor(R.color.filterTextGray));
+        tvState.setTextColor(getResources().getColor(R.color.filterTextGray));
+        tvLevel.setTextColor(getResources().getColor(R.color.filterTextGray));
+        tvProgress.setTextColor(getResources().getColor(R.color.filterTextGray));
 
     }
 

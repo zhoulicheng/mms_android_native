@@ -7,7 +7,7 @@
     <dimen name="pop_gray_y">325dp</dimen>
 
     <dimen name="pop_white_x">200dp</dimen>
-    <dimen name="pop_white_y">300dp</dimen>
+    <dimen name="pop_white_y">230dp</dimen>
 
     <dimen name="fragment_my_item_padding_left">16dp</dimen>
     <dimen name="fragment_my_item_height">44dp</dimen>

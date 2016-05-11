@@ -227,11 +227,20 @@
                     />
             </LinearLayout>
         </RelativeLayout>
+
+
     </LinearLayout>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="@dimen/divide_line"
         android:background="@color/divideLineGray"
         />
+
+    <View
+        android:id="@+id/v_fragment_item_cover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_shade_bg"
+        android:visibility="invisible"/>
 
 </LinearLayout>

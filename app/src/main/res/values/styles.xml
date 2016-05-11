@@ -11,8 +11,10 @@
     <style name="AnimationFade">
 
         <!-- PopupWindow左右弹出的效果 -->
-        <item name="android:windowEnterAnimation">@anim/inuptodown</item>
-        <item name="android:windowExitAnimation">@anim/outdowntoup</item>
+        <!--<item name="android:windowEnterAnimation">@anim/inuptodown</item>-->
+        <!--<item name="android:windowExitAnimation">@anim/outdowntoup</item>-->
+        <item name="android:windowEnterAnimation">@anim/popshow_anim</item>
+        <item name="android:windowExitAnimation">@anim/pophidden_anim</item>
     </style>
 
     <!--透明无边框dialog样式-->

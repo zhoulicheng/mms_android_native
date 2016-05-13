@@ -18,12 +18,12 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:text="土地项目录入"
+            android:text="其他项目录入"
             android:textColor="@color/white"
             android:textSize="20sp" />
 
         <Button
-            android:id="@+id/btn_activity_item_import_tudi_back"
+            android:id="@+id/btn_activity_item_import_other_back"
             android:layout_width="@dimen/backButtonWidth"
             android:layout_height="@dimen/backButtonHeight"
             android:layout_alignParentLeft="true"
@@ -49,7 +49,7 @@
                 android:background="@color/divideLineGray" />
 
             <LinearLayout
-                android:id="@+id/rl_activity_item_import_tudi_title"
+                android:id="@+id/rl_activity_item_import_other_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
@@ -65,7 +65,7 @@
                     android:textSize="@dimen/fragment_my_item_left_text_size" />
 
                 <com.mms.widget.CancelableEditView
-                    android:id="@+id/et_activity_item_import_tudi_title"
+                    android:id="@+id/et_activity_item_import_other_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
@@ -89,7 +89,7 @@
                 android:background="@color/divideLineGray" />
 
             <RelativeLayout
-                android:id="@+id/rl_activity_item_import_tudi_level"
+                android:id="@+id/rl_activity_item_import_other_level"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/fragment_my_item_height"
                 android:background="@drawable/whitebuttonselector"
@@ -106,7 +106,7 @@
                     android:textSize="@dimen/fragment_my_item_left_text_size" />
 
                 <TextView
-                    android:id="@+id/tv_activity_item_import_tudi_level"
+                    android:id="@+id/tv_activity_item_import_other_level"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -127,7 +127,7 @@
             </RelativeLayout>
 
             <LinearLayout
-                android:id="@+id/ll_activity_item_import_tudi_districts"
+                android:id="@+id/ll_activity_item_import_other_districts"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -141,13 +141,13 @@
                 android:background="@color/divideLineGray" />
 
             <LinearLayout
-                android:id="@+id/ll_activity_item_import_tudi_districts_add_and_del"
+                android:id="@+id/ll_activity_item_import_other_districts_add_and_del"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/fragment_my_item_height"
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/btn_activity_item_import_tudi_districts_add_district"
+                    android:id="@+id/btn_activity_item_import_other_districts_add_district"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -164,7 +164,7 @@
                 android:background="@color/divideLineGray" />
 
             <LinearLayout
-                android:id="@+id/ll_activity_item_import_tudi_contacts"
+                android:id="@+id/ll_activity_item_import_other_contacts"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -172,13 +172,13 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/ll_activity_item_import_tudi_contacts_add_and_del"
+                android:id="@+id/ll_activity_item_import_other_contacts_add_and_del"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/fragment_my_item_height"
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/btn_activity_item_import_tudi_contacts_add_contact"
+                    android:id="@+id/btn_activity_item_import_other_contacts_add_contact"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -193,62 +193,6 @@
                 android:layout_height="@dimen/divide_line"
                 android:background="@color/divideLineGray" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/divide_line"
-                android:layout_marginTop="20dp"
-                android:background="@color/divideLineGray" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/fragment_my_item_height"
-                android:background="@color/white"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                android:paddingLeft="@dimen/fragment_my_item_padding_left">
-
-                <TextView
-                    android:layout_width="@dimen/fragment_my_item_left_tv_width"
-                    android:layout_height="wrap_content"
-                    android:text="需求方式"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/fragment_my_item_left_text_size" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:paddingLeft="20dp">
-
-                    <CheckBox
-                        android:id="@+id/cb_activity_item_import_tudi_need_zulin"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="租赁"
-                        android:textColor="@color/filterTextGray"
-                        android:textSize="@dimen/fragment_my_item_left_text_size" />
-
-                    <CheckBox
-                        android:id="@+id/cb_activity_item_import_tudi_need_gouzhi"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="购置 "
-                        android:textColor="@color/filterTextGray"
-                        android:textSize="@dimen/fragment_my_item_left_text_size" />
-
-                    <CheckBox
-                        android:id="@+id/cb_activity_item_import_tudi_need_cooperation"
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:text="合作"
-                        android:textColor="@color/filterTextGray"
-                        android:textSize="@dimen/fragment_my_item_left_text_size" />
-
-                </LinearLayout>
-            </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
@@ -257,7 +201,7 @@
                 android:background="@color/divideLineGray" />
 
             <RelativeLayout
-                android:id="@+id/rl_activity_item_import_tudi_land_type"
+                android:id="@+id/rl_activity_item_import_other_land_type"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/fragment_my_item_height"
                 android:background="@drawable/whitebuttonselector"
@@ -274,7 +218,7 @@
                     android:textSize="@dimen/fragment_my_item_left_text_size" />
 
                 <TextView
-                    android:id="@+id/tv_activity_item_import_tudi_land_type"
+                    android:id="@+id/tv_activity_item_import_other_land_type"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -294,89 +238,8 @@
 
             </RelativeLayout>
 
-            <View
-                android:layout_width="match_parent"
-
-                android:layout_height="@dimen/divide_line"
-                android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
-                android:background="@color/divideLineGray" />
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/fragment_my_item_height"
-                android:background="@color/white"
-                android:gravity="center_vertical"
-                android:paddingLeft="@dimen/fragment_my_item_padding_left">
-
-                <TextView
-                    android:id="@+id/null_tv_activity_carrier_import_factory_area"
-                    android:layout_width="@dimen/fragment_my_item_left_tv_width"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="面积"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/fragment_my_item_left_text_size" />
-
-                <LinearLayout
-                    android:id="@+id/ll_activity_item_import_tudi_area"
-                    android:layout_width="240dp"
-                    android:layout_height="match_parent"
-                    android:layout_toRightOf="@id/null_tv_activity_carrier_import_factory_area"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
-
-                    <EditText
-                        android:id="@+id/et_activity_item_import_tudi_area_min"
-                        android:layout_width="110dp"
-                        android:layout_height="match_parent"
-                        android:background="@color/white"
-                        android:gravity="center"
-                        android:hint="0"
-                        android:inputType="number"
-                        android:paddingLeft="20dp"
-                        android:singleLine="true">
-
-                    </EditText>
-
-                    <View
-                        android:layout_width="10dp"
-                        android:layout_height="1.5dp"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="5dp"
-                        android:background="@color/divideLineGray" />
-
-                    <EditText
-                        android:id="@+id/et_activity_item_import_tudi_area_max"
-                        android:layout_width="90dp"
-                        android:layout_height="match_parent"
-                        android:background="@color/white"
-                        android:gravity="center"
-                        android:hint="0"
-                        android:inputType="number"
-                        android:singleLine="true">
-
-                    </EditText>
-
-
-                </LinearLayout>
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="16dp"
-                    android:background="@null"
-                    android:gravity="center_vertical"
-                    android:text="亩"
-                    android:textColor="@color/filterTextGray"
-                    android:textSize="@dimen/fragment_my_item_left_text_size" />
-
-            </RelativeLayout>
-
             <LinearLayout
-                android:id="@+id/ll_activity_item_import_tudi_industrys"
+                android:id="@+id/ll_activity_item_import_other_industrys"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -390,13 +253,13 @@
                 android:background="@color/divideLineGray" />
 
             <LinearLayout
-                android:id="@+id/ll_activity_item_import_tudi_industrys_add_and_del"
+                android:id="@+id/ll_activity_item_import_other_industrys_add_and_del"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/fragment_my_item_height"
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/btn_activity_item_import_tudi_industrys_add_industry"
+                    android:id="@+id/btn_activity_item_import_other_industrys_add_industry"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -418,7 +281,7 @@
                 android:background="@color/divideLineGray" />
 
             <RelativeLayout
-                android:id="@+id/rl_activity_item_import_tudi_item_from"
+                android:id="@+id/rl_activity_item_import_other_item_from"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/fragment_my_item_height"
                 android:background="@drawable/whitebuttonselector"
@@ -435,7 +298,7 @@
                     android:textSize="@dimen/fragment_my_item_left_text_size" />
 
                 <TextView
-                    android:id="@+id/tv_activity_item_import_tudi_item_from"
+                    android:id="@+id/tv_activity_item_import_other_item_from"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -462,7 +325,7 @@
                 android:background="@color/divideLineGray" />
 
             <LinearLayout
-                android:id="@+id/rl_activity_item_import_tudi_comname"
+                android:id="@+id/rl_activity_item_import_other_comname"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/fragment_my_item_height"
                 android:background="@color/white"
@@ -478,7 +341,7 @@
                     android:textSize="@dimen/fragment_my_item_left_text_size" />
 
                 <com.mms.widget.CancelableEditView
-                    android:id="@+id/et_activity_item_import_tudi_comname"
+                    android:id="@+id/et_activity_item_import_other_comname"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="20dp"
@@ -497,7 +360,7 @@
 
 
             <RelativeLayout
-                android:id="@+id/rl_activity_item_import_tudi_comtype"
+                android:id="@+id/rl_activity_item_import_other_comtype"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/fragment_my_item_height"
                 android:background="@drawable/whitebuttonselector"
@@ -514,7 +377,7 @@
                     android:textSize="@dimen/fragment_my_item_left_text_size" />
 
                 <TextView
-                    android:id="@+id/tv_activity_item_import_tudi_comtype"
+                    android:id="@+id/tv_activity_item_import_other_comtype"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -541,7 +404,7 @@
                 android:background="@color/divideLineGray" />
 
             <RelativeLayout
-                android:id="@+id/rl_activity_item_import_tudi_comdistrict"
+                android:id="@+id/rl_activity_item_import_other_comdistrict"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/fragment_my_item_height"
                 android:background="@drawable/whitebuttonselector"
@@ -558,7 +421,7 @@
                     android:textSize="@dimen/fragment_my_item_left_text_size" />
 
                 <TextView
-                    android:id="@+id/tv_activity_item_import_tudi_comdistrict"
+                    android:id="@+id/tv_activity_item_import_other_comdistrict"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -585,7 +448,7 @@
                 android:background="@color/divideLineGray" />
 
             <LinearLayout
-                android:id="@+id/rl_activity_item_import_tudi_comadd"
+                android:id="@+id/rl_activity_item_import_other_comadd"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/fragment_my_item_height"
                 android:background="@color/white"
@@ -601,7 +464,7 @@
                     android:textSize="@dimen/fragment_my_item_left_text_size" />
 
                 <com.mms.widget.CancelableEditView
-                    android:id="@+id/et_activity_item_import_tudi_comadd"
+                    android:id="@+id/et_activity_item_import_other_comadd"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="20dp"
@@ -621,7 +484,7 @@
                 android:background="@color/divideLineGray" />
 
             <RelativeLayout
-                android:id="@+id/rl_activity_item_import_tudi_isregister"
+                android:id="@+id/rl_activity_item_import_other_isregister"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/fragment_my_item_height"
                 android:background="@color/white"
@@ -637,7 +500,7 @@
                     android:textSize="17sp" />
 
                 <RadioGroup
-                    android:id="@+id/rg_activity_item_import_tudi_isregister"
+                    android:id="@+id/rg_activity_item_import_other_isregister"
                     android:layout_width="200dp"
                     android:layout_height="match_parent"
                     android:layout_centerVertical="true"
@@ -648,7 +511,7 @@
                     android:paddingTop="5dp">
 
                     <RadioButton
-                        android:id="@+id/rb_activity_item_import_tudi_isregister_yes"
+                        android:id="@+id/rb_activity_item_import_other_isregister_yes"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
@@ -658,7 +521,7 @@
                         android:textSize="17sp" />
 
                     <RadioButton
-                        android:id="@+id/rb_activity_item_import_tudi_isregister_no"
+                        android:id="@+id/rb_activity_item_import_other_isregister_no"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="40dp"
@@ -685,7 +548,7 @@
                 android:paddingLeft="@dimen/fragment_my_item_padding_left">
 
                 <TextView
-                    android:id="@+id/null_tv_activity_item_import_tudi_reg_money"
+                    android:id="@+id/null_tv_activity_item_import_other_reg_money"
                     android:layout_width="@dimen/fragment_my_item_left_tv_width"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -694,11 +557,11 @@
                     android:textSize="@dimen/fragment_my_item_left_text_size" />
 
                 <com.mms.widget.CancelableEditView
-                    android:id="@+id/et_activity_item_import_tudi_reg_money"
+                    android:id="@+id/et_activity_item_import_other_reg_money"
                     android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:layout_centerVertical="true"
-                    android:layout_toRightOf="@id/null_tv_activity_item_import_tudi_reg_money"
+                    android:layout_toRightOf="@id/null_tv_activity_item_import_other_reg_money"
                     android:paddingLeft="20dp"
                     app:cancelIcon="@drawable/chacha"
                     app:editTextSize="@dimen/fragment_my_item_left_text_size"
@@ -710,7 +573,7 @@
 
 
                 <Button
-                    android:id="@+id/btn_activity_item_import_tudi_reg_money_type"
+                    android:id="@+id/btn_activity_item_import_other_reg_money_type"
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:layout_alignParentRight="true"
@@ -739,7 +602,7 @@
                 android:paddingLeft="@dimen/fragment_my_item_padding_left">
 
                 <TextView
-                    android:id="@+id/null_tv_activity_item_import_tudi_invest_money"
+                    android:id="@+id/null_tv_activity_item_import_other_invest_money"
                     android:layout_width="@dimen/fragment_my_item_left_tv_width"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -748,11 +611,11 @@
                     android:textSize="@dimen/fragment_my_item_left_text_size" />
 
                 <com.mms.widget.CancelableEditView
-                    android:id="@+id/et_activity_item_import_tudi_invest_money"
+                    android:id="@+id/et_activity_item_import_other_invest_money"
                     android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:layout_centerVertical="true"
-                    android:layout_toRightOf="@id/null_tv_activity_item_import_tudi_invest_money"
+                    android:layout_toRightOf="@id/null_tv_activity_item_import_other_invest_money"
                     android:paddingLeft="20dp"
                     app:cancelIcon="@drawable/chacha"
                     app:editTextSize="@dimen/fragment_my_item_left_text_size"
@@ -764,7 +627,7 @@
 
 
                 <Button
-                    android:id="@+id/btn_activity_item_import_tudi_invest_money_type"
+                    android:id="@+id/btn_activity_item_import_other_invest_money_type"
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:layout_alignParentRight="true"
@@ -793,7 +656,7 @@
                 android:paddingLeft="@dimen/fragment_my_item_padding_left">
 
                 <TextView
-                    android:id="@+id/null_tv_activity_item_import_tudi_product_money"
+                    android:id="@+id/null_tv_activity_item_import_other_product_money"
                     android:layout_width="@dimen/fragment_my_item_left_tv_width"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -802,11 +665,11 @@
                     android:textSize="@dimen/fragment_my_item_left_text_size" />
 
                 <com.mms.widget.CancelableEditView
-                    android:id="@+id/et_activity_item_import_tudi_product_money"
+                    android:id="@+id/et_activity_item_import_other_product_money"
                     android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:layout_centerVertical="true"
-                    android:layout_toRightOf="@id/null_tv_activity_item_import_tudi_product_money"
+                    android:layout_toRightOf="@id/null_tv_activity_item_import_other_product_money"
                     android:paddingLeft="20dp"
                     app:cancelIcon="@drawable/chacha"
                     app:editTextSize="@dimen/fragment_my_item_left_text_size"
@@ -818,7 +681,7 @@
 
 
                 <Button
-                    android:id="@+id/btn_activity_item_import_tudi_product_money_type"
+                    android:id="@+id/btn_activity_item_import_other_product_money_type"
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:layout_alignParentRight="true"
@@ -847,7 +710,7 @@
                 android:paddingLeft="@dimen/fragment_my_item_padding_left">
 
                 <TextView
-                    android:id="@+id/null_tv_activity_item_import_tudi_tax_money"
+                    android:id="@+id/null_tv_activity_item_import_other_tax_money"
                     android:layout_width="@dimen/fragment_my_item_left_tv_width"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
@@ -856,11 +719,11 @@
                     android:textSize="@dimen/fragment_my_item_left_text_size" />
 
                 <com.mms.widget.CancelableEditView
-                    android:id="@+id/et_activity_item_import_tudi_tax_money"
+                    android:id="@+id/et_activity_item_import_other_tax_money"
                     android:layout_width="180dp"
                     android:layout_height="match_parent"
                     android:layout_centerVertical="true"
-                    android:layout_toRightOf="@id/null_tv_activity_item_import_tudi_tax_money"
+                    android:layout_toRightOf="@id/null_tv_activity_item_import_other_tax_money"
                     android:paddingLeft="20dp"
                     app:cancelIcon="@drawable/chacha"
                     app:editTextSize="@dimen/fragment_my_item_left_text_size"
@@ -872,7 +735,7 @@
 
 
                 <Button
-                    android:id="@+id/btn_activity_item_import_tudi_tax_money_type"
+                    android:id="@+id/btn_activity_item_import_other_tax_money_type"
                     android:layout_width="80dp"
                     android:layout_height="match_parent"
                     android:layout_alignParentRight="true"
@@ -910,7 +773,7 @@
 
 
             <EditText
-                android:id="@+id/et_activity_item_import_tudi_intro"
+                android:id="@+id/et_activity_item_import_other_intro"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:background="@color/white"
@@ -930,7 +793,7 @@
                 android:background="@color/divideLineGray" />
             <!--此button在代码中设置样式-->
             <Button
-                android:id="@+id/btn_activity_item_import_tudi_save"
+                android:id="@+id/btn_activity_item_import_other_save"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:layout_margin="8dp"

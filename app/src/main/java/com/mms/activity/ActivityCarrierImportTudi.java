@@ -174,6 +174,7 @@ public class ActivityCarrierImportTudi extends BaseActivity implements View.OnCl
 //                }
                 level = i + 1;
                 tvLevel.setText(levelList.get(i));
+                tvLevel.setTextColor(getResources().getColor(R.color.filterTextGray));
             }
         };
         statusList = new ArrayList<>();
@@ -201,6 +202,7 @@ public class ActivityCarrierImportTudi extends BaseActivity implements View.OnCl
 //                }
                 status = i + 1;
                 tvStatus.setText(statusList.get(i));
+                tvStatus.setTextColor(getResources().getColor(R.color.filterTextGray));
             }
         };
         typeList = new ArrayList<>();
@@ -232,6 +234,7 @@ public class ActivityCarrierImportTudi extends BaseActivity implements View.OnCl
 //                }
                 tudiType = i + 1;
                 tvTudiType.setText(typeList.get(i));
+                tvTudiType.setTextColor(getResources().getColor(R.color.filterTextGray));
             }
         };
         //动态添加自定义ContactView相关
@@ -310,7 +313,7 @@ public class ActivityCarrierImportTudi extends BaseActivity implements View.OnCl
                 break;
             case R.id.btn_activity_carrier_import_tudi_save:
                 //点击保存按钮
-                if (isLegal()){
+                if (isLegal()) {
                     messageDialog.setTitle("保存");
                     messageDialog.setMessage("确认所填信息无误并保存吗？");
                     messageDialog.setPositiveListener(new View.OnClickListener() {
@@ -453,11 +456,11 @@ public class ActivityCarrierImportTudi extends BaseActivity implements View.OnCl
         return etAddress.getText();
     }
 
-    private int getLevel(){
+    private int getLevel() {
         return level;
     }
 
-    private int getStatus(){
+    private int getStatus() {
         return status;
     }
 

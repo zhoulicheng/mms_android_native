@@ -2,9 +2,12 @@ package com.mms.activity;
 
 import android.content.res.AssetManager;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.mms.R;
 import com.mms.base.BaseActivity;
+import com.mms.util.Utils;
 import com.mms.widget.kankanWheelView.CityModel;
 import com.mms.widget.kankanWheelView.DistrictModel;
 import com.mms.widget.kankanWheelView.OnWheelChangedListener;
@@ -14,6 +17,7 @@ import com.mms.widget.kankanWheelView.XmlParserHandler;
 import com.mms.widget.kankanWheelView.adapters.ArrayWheelAdapter;
 
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -28,7 +32,7 @@ import roboguice.inject.InjectView;
  * Created by Tanikawa on 2016/5/10.
  */
 @ContentView(R.layout.layout_activity_select_district)
-public class ActivitySelectDistrict extends BaseActivity  implements OnWheelChangedListener {
+public class ActivitySelectDistrict extends BaseActivity implements OnWheelChangedListener, View.OnClickListener {
 
     @InjectView(R.id.id_province)
     private WheelView mViewProvince;
@@ -39,6 +43,12 @@ public class ActivitySelectDistrict extends BaseActivity  implements OnWheelChan
     @InjectView(R.id.id_district)
     private WheelView mViewDistrict;
 
+    @InjectView(R.id.btn_activity_select_district_cancel)
+    private Button btnCancel;
+
+    @InjectView(R.id.btn_activity_select_district_ok)
+    private Button btnOk;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,13 +56,15 @@ public class ActivitySelectDistrict extends BaseActivity  implements OnWheelChan
         setUpData();
     }
 
-    private void setOCL(){
+    private void setOCL() {
         // 添加change事件
         mViewProvince.addChangingListener(this);
         // 添加change事件
         mViewCity.addChangingListener(this);
         // 添加change事件
         mViewDistrict.addChangingListener(this);
+        btnCancel.setOnClickListener(this);
+        btnOk.setOnClickListener(this);
     }
 
     private void setUpData() {
@@ -74,24 +86,9 @@ public class ActivitySelectDistrict extends BaseActivity  implements OnWheelChan
         } else if (wheel == mViewCity) {
             updateAreas();
         } else if (wheel == mViewDistrict) {
-            mCurrentDistrictName = mDistrictDatasMap.get(mCurrentCityName)[newValue];
-            mCurrentZipCode = mZipcodeDatasMap.get(mCurrentDistrictName);
+            mCurrentDistrict = mDistrictDatasMap.get(mCurrentCity).get(newValue);
+            mCurrentDistrictCode = mCurrentDistrict.getZipcode();
         }
-    }
-
-    /**
-     * 根据当前的市，更新区WheelView的信息
-     */
-    private void updateAreas() {
-        int pCurrent = mViewCity.getCurrentItem();
-        mCurrentCityName = mCitisDatasMap.get(mCurrentProviceName)[pCurrent];
-        String[] areas = mDistrictDatasMap.get(mCurrentCityName);
-
-        if (areas == null) {
-            areas = new String[] { "" };
-        }
-        mViewDistrict.setViewAdapter(new ArrayWheelAdapter<String>(this, areas));
-        mViewDistrict.setCurrentItem(0);
     }
 
     /**
@@ -99,58 +96,74 @@ public class ActivitySelectDistrict extends BaseActivity  implements OnWheelChan
      */
     private void updateCities() {
         int pCurrent = mViewProvince.getCurrentItem();
-        mCurrentProviceName = mProvinceDatas[pCurrent];
-        String[] cities = mCitisDatasMap.get(mCurrentProviceName);
+
+        mCurrentProvice = mProvinceDatas.get(pCurrent);
+        mCurrentProviceCode = mCurrentProvice.getZipcode();
+        List<CityModel> cities = mCitisDatasMap.get(mCurrentProvice);
         if (cities == null) {
-            cities = new String[] { "" };
+            cities = new ArrayList<>();
         }
-        mViewCity.setViewAdapter(new ArrayWheelAdapter<String>(this, cities));
+        mViewCity.setViewAdapter(new ArrayWheelAdapter<>(this, cities));
         mViewCity.setCurrentItem(0);
         updateAreas();
     }
 
     /**
-     *所有省
+     * 根据当前的市，更新区WheelView的信息
      */
-    protected String[] mProvinceDatas;
+    private void updateAreas() {
+        int pCurrent = mViewCity.getCurrentItem();
+        mCurrentCity = mCitisDatasMap.get(mCurrentProvice).get(pCurrent);
+        mCurrentCityCode = mCurrentCity.getZipcode();
+        List<DistrictModel> areas = mDistrictDatasMap.get(mCurrentCity);
+
+        if (areas == null) {
+            areas = new ArrayList<>();
+        }
+        mViewDistrict.setViewAdapter(new ArrayWheelAdapter<>(this, areas));
+        mViewDistrict.setCurrentItem(0);
+    }
+
+    /**
+     * 所有省
+     */
+    protected List<ProvinceModel> mProvinceDatas;
     /**
      * key 省 value 市
      */
-    protected Map<String, String[]> mCitisDatasMap = new HashMap<String, String[]>();
+    protected Map<ProvinceModel, List<CityModel>> mCitisDatasMap = new HashMap<>();
     /**
      * key 市 values 区
      */
-    protected Map<String, String[]> mDistrictDatasMap = new HashMap<String, String[]>();
+    protected Map<CityModel, List<DistrictModel>> mDistrictDatasMap = new HashMap<>();
 
     /**
      * key 区 values 邮编
      */
-    protected Map<String, String> mZipcodeDatasMap = new HashMap<String, String>();
+    protected Map<DistrictModel, String> mZipcodeDatasMap = new HashMap<>();
 
     /**
-     * 当前省的名字
+     * 当前省
      */
-    protected String mCurrentProviceName;
+    protected ProvinceModel mCurrentProvice;
+    protected String mCurrentProviceCode;
     /**
-     * 当前市的名字
+     * 当前市
      */
-    protected String mCurrentCityName;
-    /**
-     * 当前区的名字
-     */
-    protected String mCurrentDistrictName ="";
+    protected CityModel mCurrentCity;
+    protected String mCurrentCityCode;
 
     /**
-     * 当前区的邮政编码
+     * 当前区
      */
-    protected String mCurrentZipCode ="";
+    protected DistrictModel mCurrentDistrict;
+    protected String mCurrentDistrictCode;
 
     /**
      * 解析省市区的XML数据
      */
 
-    protected void initProvinceDatas()
-    {
+    protected void initProvinceDatas() {
         List<ProvinceModel> provinceList = null;
         AssetManager asset = getAssets();
         try {
@@ -165,42 +178,38 @@ public class ActivitySelectDistrict extends BaseActivity  implements OnWheelChan
             // 获取解析出来的数据
             provinceList = handler.getDataList();
             //初始化默认选中的省、市、区
-            if (provinceList!= null && !provinceList.isEmpty()) {
-                mCurrentProviceName = provinceList.get(0).getName();
+            if (provinceList != null && !provinceList.isEmpty()) {
+                mCurrentProvice = provinceList.get(0);
+                mCurrentProviceCode = mCurrentProvice.getZipcode();
                 List<CityModel> cityList = provinceList.get(0).getCityList();
-                if (cityList!= null && !cityList.isEmpty()) {
-                    mCurrentCityName = cityList.get(0).getName();
+                if (cityList != null && !cityList.isEmpty()) {
+                    mCurrentCity = cityList.get(0);
+                    mCurrentCityCode = mCurrentCity.getZipcode();
                     List<DistrictModel> districtList = cityList.get(0).getDistrictList();
-                    mCurrentDistrictName = districtList.get(0).getName();
-                    mCurrentZipCode = districtList.get(0).getZipcode();
+                    mCurrentDistrict = districtList.get(0);
+                    mCurrentDistrictCode = mCurrentDistrict.getZipcode();
                 }
             }
             //*/
-            mProvinceDatas = new String[provinceList.size()];
-            for (int i=0; i< provinceList.size(); i++) {
+            mProvinceDatas = new ArrayList<>();
+            for (int i = 0; i < provinceList.size(); i++) {
                 // 遍历所有省的数据
-                mProvinceDatas[i] = provinceList.get(i).getName();
+                mProvinceDatas.add(provinceList.get(i));
                 List<CityModel> cityList = provinceList.get(i).getCityList();
                 String[] cityNames = new String[cityList.size()];
-                for (int j=0; j< cityList.size(); j++) {
+                for (int j = 0; j < cityList.size(); j++) {
                     // 遍历省下面的所有市的数据
                     cityNames[j] = cityList.get(j).getName();
                     List<DistrictModel> districtList = cityList.get(j).getDistrictList();
-                    String[] distrinctNameArray = new String[districtList.size()];
-                    DistrictModel[] distrinctArray = new DistrictModel[districtList.size()];
-                    for (int k=0; k<districtList.size(); k++) {
-                        // 遍历市下面所有区/县的数据
-                        DistrictModel districtModel = new DistrictModel(districtList.get(k).getName(), districtList.get(k).getZipcode());
+                    for (int k = 0; k < districtList.size(); k++) {
                         // 区/县对于的邮编，保存到mZipcodeDatasMap
-                        mZipcodeDatasMap.put(districtList.get(k).getName(), districtList.get(k).getZipcode());
-                        distrinctArray[k] = districtModel;
-                        distrinctNameArray[k] = districtModel.getName();
+                        mZipcodeDatasMap.put(districtList.get(k), districtList.get(k).getZipcode());
                     }
                     // 市-区/县的数据，保存到mDistrictDatasMap
-                    mDistrictDatasMap.put(cityNames[j], distrinctNameArray);
+                    mDistrictDatasMap.put(cityList.get(j), districtList);
                 }
                 // 省-市的数据，保存到mCitisDatasMap
-                mCitisDatasMap.put(provinceList.get(i).getName(), cityNames);
+                mCitisDatasMap.put(provinceList.get(i), cityList);
             }
         } catch (Throwable e) {
             e.printStackTrace();
@@ -210,4 +219,15 @@ public class ActivitySelectDistrict extends BaseActivity  implements OnWheelChan
     }
 
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btn_activity_select_district_cancel:
+                finish();
+                break;
+            case R.id.btn_activity_select_district_ok:
+                Utils.showToast(this, mCurrentProviceCode + "_" + mCurrentCityCode + "_" + mCurrentDistrictCode);
+                break;
+        }
+    }
 }

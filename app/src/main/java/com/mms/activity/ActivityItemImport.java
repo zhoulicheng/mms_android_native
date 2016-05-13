@@ -87,7 +87,31 @@ public class ActivityItemImport extends BaseActivity implements View.OnClickList
         Intent intent = null;
         switch (i) {
             case 0:
-                intent = new Intent(this,ActivityItemImportTudi.class);
+                intent = new Intent(this, ActivityItemImportTudi.class);
+                startActivity(intent);
+                break;
+            case 1:
+                intent = new Intent(this, ActivityItemImportTudi.class);
+                startActivity(intent);
+                break;
+            case 2:
+                intent = new Intent(this, ActivityItemImportTudi.class);
+                startActivity(intent);
+                break;
+            case 3:
+                intent = new Intent(this, ActivityItemImportTudi.class);
+                startActivity(intent);
+                break;
+            case 4:
+                intent = new Intent(this, ActivityItemImportTudi.class);
+                startActivity(intent);
+                break;
+            case 5:
+                intent = new Intent(this, ActivityItemImportTudi.class);
+                startActivity(intent);
+                break;
+            case 6:
+                intent = new Intent(this, ActivityItemImportOther.class);
                 startActivity(intent);
                 break;
         }

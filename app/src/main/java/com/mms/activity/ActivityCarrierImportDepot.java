@@ -247,6 +247,7 @@ public class ActivityCarrierImportDepot extends BaseActivity implements View.OnC
 //                }
                 level = i + 1;
                 tvLevel.setText(levelList.get(i));
+                tvLevel.setTextColor(getResources().getColor(R.color.filterTextGray));
             }
         };
         statusList = new ArrayList<>();
@@ -274,6 +275,7 @@ public class ActivityCarrierImportDepot extends BaseActivity implements View.OnC
 //                }
                 status = i + 1;
                 tvStatus.setText(statusList.get(i));
+                tvStatus.setTextColor(getResources().getColor(R.color.filterTextGray));
             }
         };
         structureList = new ArrayList<>();
@@ -304,6 +306,7 @@ public class ActivityCarrierImportDepot extends BaseActivity implements View.OnC
 //                }
                 structure = i + 1;
                 tvStructure.setText(statusList.get(i));
+                tvStructure.setTextColor(getResources().getColor(R.color.filterTextGray));
             }
         };
 
@@ -340,6 +343,7 @@ public class ActivityCarrierImportDepot extends BaseActivity implements View.OnC
 //                }
                 fireControlLevel = i + 1;
                 tvFireControlLevel.setText(fireControlLevelList.get(i));
+                tvFireControlLevel.setTextColor(getResources().getColor(R.color.filterTextGray));
             }
         };
 
@@ -364,6 +368,7 @@ public class ActivityCarrierImportDepot extends BaseActivity implements View.OnC
 //                }
                 depotType = i + 1;
                 tvType.setText(depotTypeList.get(i));
+                tvType.setTextColor(getResources().getColor(R.color.filterTextGray));
             }
         };
 
@@ -399,6 +404,7 @@ public class ActivityCarrierImportDepot extends BaseActivity implements View.OnC
 //                }
                 unloadType = i + 1;
                 tvUnloadType.setText(unloadTypeList.get(i));
+                tvUnloadType.setTextColor(getResources().getColor(R.color.filterTextGray));
 
             }
         };

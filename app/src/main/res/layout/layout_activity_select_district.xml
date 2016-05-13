@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <LinearLayout
+        android:id="@+id/null_ll_activity_select_district"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dip"
+        android:layout_alignParentBottom="true"
+        android:background="#DDDDDD"
         android:orientation="horizontal">
 
         <com.mms.widget.kankanWheelView.WheelView
@@ -28,4 +30,33 @@
             android:layout_weight="1"></com.mms.widget.kankanWheelView.WheelView>
     </LinearLayout>
 
-</LinearLayout>
+    <RelativeLayout
+        android:layout_above="@id/null_ll_activity_select_district"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/backGray"
+        android:padding="8dp">
+
+        <Button
+            android:id="@+id/btn_activity_select_district_cancel"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:background="@color/white"
+            android:text="取消"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btn_activity_select_district_ok"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:background="@color/colorPrimary"
+            android:text="确定"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

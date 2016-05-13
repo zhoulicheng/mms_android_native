@@ -20,7 +20,6 @@ import android.widget.TextView;
 
 import com.mms.R;
 import com.mms.base.BaseFragment;
-import com.mms.util.Utils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -31,7 +30,7 @@ import roboguice.inject.InjectView;
 /**
  * Created by Tanikawa on 2016/4/14.
  */
-public class FragmentItem extends BaseFragment implements View.OnClickListener ,AdapterView.OnItemClickListener {
+public class FragmentItem extends BaseFragment implements View.OnClickListener, AdapterView.OnItemClickListener {
 
     @InjectView(R.id.btn_fragment_item_add)
     private Button btnAdd;
@@ -92,6 +91,11 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener ,
     ArrayList<Map<String, Object>> items;
     Context mContext;
 
+    public int isFrom;
+    public int status;
+    public int level;
+    public int progress;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -129,7 +133,7 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener ,
             ivTop.setBackgroundResource(R.drawable.down_white);
             if (window != null) {
                 window.dismiss();
-                window=null;
+                window = null;
             }
         }
     }
@@ -148,7 +152,7 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener ,
                     ivFrom.setBackgroundResource(R.drawable.down_gray);
                     if (window != null) {
                         window.dismiss();
-                        window=null;
+                        window = null;
                     }
                 }
                 break;
@@ -162,7 +166,7 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener ,
                     ivLevel.setBackgroundResource(R.drawable.down_gray);
                     if (window != null) {
                         window.dismiss();
-                        window=null;
+                        window = null;
                     }
                 }
 
@@ -177,7 +181,7 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener ,
                     ivProgress.setBackgroundResource(R.drawable.down_gray);
                     if (window != null) {
                         window.dismiss();
-                        window=null;
+                        window = null;
                     }
                 }
                 break;
@@ -191,7 +195,7 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener ,
                     ivState.setBackgroundResource(R.drawable.down_gray);
                     if (window != null) {
                         window.dismiss();
-                        window=null;
+                        window = null;
                     }
                 }
                 break;
@@ -199,25 +203,21 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener ,
     }
 
     private void popGrayWindow(View parent) {
-//        if (window == null) {
-            LayoutInflater lay = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View v = lay.inflate(R.layout.pop_window_gray, null);
-            list = (ListView) v.findViewById(R.id.pop_window_gray_list);
+        LayoutInflater lay = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View v = lay.inflate(R.layout.pop_window_gray, null);
+        list = (ListView) v.findViewById(R.id.pop_window_gray_list);
 
-            SimpleAdapter adapter = new SimpleAdapter(getActivity(), topCreateData(),
-                    R.layout.pop_window_gray_list_item, new String[]{KEY},
-                    new int[]{R.id.pop_window_gray_item});
-            list.setAdapter(adapter);
-            list.setDivider(getResources().getDrawable(R.drawable.white_back));
-            list.setDividerHeight(1);
-            list.setItemsCanFocus(false);
-            list.setOnItemClickListener(this);
-            // window = new PopupWindow(v, 260, 300);
-            int x = (int) getResources().getDimension(R.dimen.pop_gray_x);
-            int y = (int) getResources().getDimension(R.dimen.pop_gray_y);
-//            int y= tvItem.getLayoutParams().height*5;
-            window = new PopupWindow(v, x, y);
-//        }
+        SimpleAdapter adapter = new SimpleAdapter(getActivity(), topCreateData(),
+                R.layout.pop_window_gray_list_item, new String[]{KEY},
+                new int[]{R.id.pop_window_gray_item});
+        list.setAdapter(adapter);
+        list.setDivider(getResources().getDrawable(R.drawable.white_back));
+        list.setDividerHeight(1);
+        list.setItemsCanFocus(false);
+        list.setOnItemClickListener(this);
+        int x = (int) getResources().getDimension(R.dimen.pop_gray_x);
+        int y = (int) getResources().getDimension(R.dimen.pop_gray_y);
+        window = new PopupWindow(v, x, y);
         window.setBackgroundDrawable(getResources().getDrawable(R.drawable.gray_back));
         window.setFocusable(true);
         window.setOutsideTouchable(false);
@@ -233,12 +233,6 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener ,
         });
         window.update();
         window.setAnimationStyle(R.style.AnimationFade);
-//        if (Build.VERSION.SDK_INT>=19){
-//            window.showAsDropDown(parent, 0,0, Gravity.CENTER_HORIZONTAL | Gravity.TOP);
-//        }else {
-//            window.showAsDropDown(parent, 0,0);
-//        }
-
         window.showAtLocation(parent, Gravity.CENTER_HORIZONTAL | Gravity.TOP,
                 0, (int) getResources().getDimension(R.dimen.pop_layout_gray_y));
         vCover.setVisibility(View.VISIBLE);
@@ -247,27 +241,24 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener ,
 
     private void popWhiteWindow(final View parent) {
 //        if (window == null) {
-            LayoutInflater lay = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View v = lay.inflate(R.layout.pop_window_white, null);
-            list = (ListView) v.findViewById(R.id.pop_window_white_list);
+        LayoutInflater lay = (LayoutInflater) getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View v = lay.inflate(R.layout.pop_window_white, null);
+        list = (ListView) v.findViewById(R.id.pop_window_white_list);
 
-            SimpleAdapter adapter = new SimpleAdapter(getActivity(), filterCreateData(parent),
-                    R.layout.pop_window_white_list_item, new String[]{KEY},
-                    new int[]{R.id.pop_window_white_item});
+        SimpleAdapter adapter = new SimpleAdapter(getActivity(), filterCreateData(parent),
+                R.layout.pop_window_white_list_item, new String[]{KEY},
+                new int[]{R.id.pop_window_white_item});
 
-            list.setAdapter(adapter);
-            list.setDivider(getResources().getDrawable(R.drawable.gray_back));
-            list.setDividerHeight(1);
-            list.setItemsCanFocus(false);
-            list.setOnItemClickListener(this);
-            // window = new PopupWindow(v, 260, 300);
-//            int x = (int) getResources().getDimension(R.dimen.pop_x);
-            int y = (int) getResources().getDimension(R.dimen.pop_white_y);
-//            int y= tvItem.getLayoutParams().height*5;
-            DisplayMetrics dm = new DisplayMetrics();
-            getActivity().getWindowManager().getDefaultDisplay().getMetrics(dm);
-            int x=dm.widthPixels;
-            window = new PopupWindow(v, x, y);
+        list.setAdapter(adapter);
+        list.setDivider(getResources().getDrawable(R.drawable.gray_back));
+        list.setDividerHeight(1);
+        list.setItemsCanFocus(false);
+        list.setOnItemClickListener(this);
+        int y = (int) getResources().getDimension(R.dimen.pop_white_y);
+        DisplayMetrics dm = new DisplayMetrics();
+        getActivity().getWindowManager().getDefaultDisplay().getMetrics(dm);
+        int x = dm.widthPixels;
+        window = new PopupWindow(v, x, y);
 //        }
         window.setBackgroundDrawable(getResources().getDrawable(R.drawable.white_back));
         window.setFocusable(true);
@@ -300,22 +291,19 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener ,
         });
         window.update();
         window.setAnimationStyle(R.style.AnimationFade);
-        window.showAsDropDown(parent, 0,0);
+        window.showAsDropDown(parent, 0, 0);
         vCover.setVisibility(View.VISIBLE);
-//        window.showAtLocation(parent, Gravity.CENTER_HORIZONTAL | Gravity.TOP,
-//                0, (int) getResources().getDimension(R.dimen.pop_layout_white_y));
 
     }
-
 
 
     public ArrayList<Map<String, Object>> filterCreateData(View v) {
 
         Map<String, Object> map;
-        if (items!=null){
+        if (items != null) {
             items.clear();
-        }else {
-            items= new ArrayList<>();
+        } else {
+            items = new ArrayList<>();
         }
         switch (v.getId()) {
             case R.id.rl_Fragment_item_from:
@@ -415,10 +403,10 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener ,
     public ArrayList<Map<String, Object>> topCreateData() {
 
         Map<String, Object> map;
-        if (items!=null){
+        if (items != null) {
             items.clear();
-        }else {
-            items= new ArrayList<>();
+        } else {
+            items = new ArrayList<>();
         }
 
         map = new HashMap<>();
@@ -471,7 +459,7 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener ,
                 break;
 
             case R.id.btn_fragment_item_add:
-                intent = new Intent(getActivity(),ActivityItemImport.class);
+                intent = new Intent(getActivity(), ActivityItemImport.class);
                 startActivity(intent);
                 break;
 
@@ -480,73 +468,160 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener ,
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
-        String flag = ((Map<String, Object>) parent.getItemAtPosition(1)).get(KEY)+"";
+        String flag = ((Map<String, Object>) parent.getItemAtPosition(1)).get(KEY) + "";
         Map<String, Object> map = (Map<String, Object>) parent.getItemAtPosition(i);
 
         switch (flag) {
             case "土地项目":
-                if (i==0){
-                    tvTopTitle.setText("项目");
-                }else {
-                    tvTopTitle.setText(map.get(KEY) + "");
+                switch (i) {
+                    case 0:
+                        tvTopTitle.setText("全部");
+                        break;
+                    case 1:
+                        tvTopTitle.setText("土地");
+                        break;
+                    case 2:
+                        tvTopTitle.setText("厂房");
+                        break;
+                    case 3:
+                        tvTopTitle.setText("仓库");
+                        break;
+                    case 4:
+                        tvTopTitle.setText("写字楼");
+                        break;
+                    case 5:
+                        tvTopTitle.setText("注册");
+                        break;
+                    case 6:
+                        tvTopTitle.setText("商业");
+                        break;
+                    case 7:
+                        tvTopTitle.setText("其他");
+                        break;
                 }
                 if (window != null) {
                     window.dismiss();
-                    window=null;
+                    window = null;
                 }
                 break;
             case "选哪儿推送":
-                if (i==0){
-                    tvFrom.setText("来源");
-                }else {
-                    tvFrom.setText(map.get(KEY) + "");
-
+                switch (i) {
+                    case 0:
+                        tvFrom.setText("来源");
+                        break;
+                    case 1:
+                        tvFrom.setText("选哪儿");
+                        break;
+                    case 2:
+                        tvFrom.setText("录入");
+                        break;
+                    case 3:
+                        tvFrom.setText("好友");
+                        break;
+                    case 4:
+                        tvFrom.setText("继承");
+                        break;
+                    case 5:
+                        tvFrom.setText("系统");
+                        break;
+                    case 6:
+                        tvFrom.setText("联动");
+                        break;
                 }
                 if (window != null) {
                     window.dismiss();
-                    window=null;
+                    window = null;
                 }
                 break;
             case "重点接洽":
-                if (i==0){
-                    tvState.setText("状态");
-                }else {
-                    tvState.setText(map.get(KEY) + "");
+                switch (i) {
+                    case 0:
+                        tvState.setText("状态");
+                        break;
+                    case 1:
+                        tvState.setText("重点");
+                        break;
+                    case 2:
+                        tvState.setText("接洽");
+                        break;
+                    case 3:
+                        tvState.setText("暂缓");
+                        break;
+                    case 4:
+                        tvState.setText("成功");
+                        break;
+                    case 5:
+                        tvState.setText("回收");
+                        break;
+                    case 6:
+                        tvState.setText("未查看");
+                        break;
+                    case 7:
+                        tvState.setText("未跟进");
+                        break;
                 }
                 if (window != null) {
                     window.dismiss();
-                    window=null;
+                    window = null;
                 }
                 break;
             case "★":
-                if (i==0){
-                    tvLevel.setText("等级");
-                }else {
-                    tvLevel.setText(map.get(KEY) + "");
-
+                switch (i) {
+                    case 0:
+                        tvLevel.setText("等级");
+                        break;
+                    case 1:
+                        tvLevel.setText("一星");
+                        break;
+                    case 2:
+                        tvLevel.setText("二星");
+                        break;
+                    case 3:
+                        tvLevel.setText("三星");
+                        break;
+                    case 4:
+                        tvLevel.setText("四星");
+                        break;
+                    case 5:
+                        tvLevel.setText("五星");
+                        break;
                 }
                 if (window != null) {
                     window.dismiss();
-                    window=null;
+                    window = null;
                 }
                 break;
             case "▋":
-                if (i==0){
-                    tvProgress.setText("进度");
-                }else {
-                    tvProgress.setText(map.get(KEY) + "");
-
+                switch (i) {
+                    case 0:
+                        tvProgress.setText("进度");
+                        break;
+                    case 1:
+                        tvProgress.setText("进度一");
+                        break;
+                    case 2:
+                        tvProgress.setText("进度二");
+                        break;
+                    case 3:
+                        tvProgress.setText("进度三");
+                        break;
+                    case 4:
+                        tvProgress.setText("进度四");
+                        break;
+                    case 5:
+                        tvProgress.setText("进度五");
+                        break;
                 }
                 if (window != null) {
                     window.dismiss();
-                    window=null;
+                    window = null;
                 }
                 break;
         }
 
     }
 
-    private void resetTextColor(){
+    private void resetTextColor() {
         tvFrom.setTextColor(getResources().getColor(R.color.filterTextGray));
         tvState.setTextColor(getResources().getColor(R.color.filterTextGray));
         tvLevel.setTextColor(getResources().getColor(R.color.filterTextGray));

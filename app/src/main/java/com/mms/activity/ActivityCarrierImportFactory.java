@@ -189,6 +189,7 @@ public class ActivityCarrierImportFactory extends BaseActivity implements View.O
 //                }
                 level = i + 1;
                 tvLevel.setText(levelList.get(i));
+                tvLevel.setTextColor(getResources().getColor(R.color.filterTextGray));
             }
         };
         statusList = new ArrayList<>();
@@ -216,6 +217,7 @@ public class ActivityCarrierImportFactory extends BaseActivity implements View.O
 //                }
                 status = i + 1;
                 tvStatus.setText(statusList.get(i));
+                tvStatus.setTextColor(getResources().getColor(R.color.filterTextGray));
             }
         };
         structureList = new ArrayList<>();
@@ -246,6 +248,7 @@ public class ActivityCarrierImportFactory extends BaseActivity implements View.O
 //                }
                 structure = i + 1;
                 tvStructure.setText(structureList.get(i));
+                tvStructure.setTextColor(getResources().getColor(R.color.filterTextGray));
             }
         };
         //动态添加自定义ContactView相关

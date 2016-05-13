@@ -35,124 +35,109 @@ import roboguice.inject.InjectView;
 /**
  * Created by Tanikawa on 2016/5/10.
  */
-@ContentView(R.layout.layout_activity_item_import_tudi)
-public class ActivityItemImportTudi extends BaseActivity implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
+@ContentView(R.layout.layout_activity_item_import_other)
+public class ActivityItemImportOther extends BaseActivity implements View.OnClickListener{
 
-    @InjectView(R.id.btn_activity_item_import_tudi_back)
+    @InjectView(R.id.btn_activity_item_import_other_back)
     private Button btnBack;
 
-    @InjectView(R.id.et_activity_item_import_tudi_title)
+    @InjectView(R.id.et_activity_item_import_other_title)
     private CancelableEditView etTitle;
 
-    @InjectView(R.id.rl_activity_item_import_tudi_level)
+    @InjectView(R.id.rl_activity_item_import_other_level)
     private RelativeLayout rlLevel;
 
-    @InjectView(R.id.tv_activity_item_import_tudi_level)
+    @InjectView(R.id.tv_activity_item_import_other_level)
     private TextView tvLevel;
 
-    @InjectView(R.id.ll_activity_item_import_tudi_districts)
+    @InjectView(R.id.ll_activity_item_import_other_districts)
     private LinearLayout llDistricts;
 
-    @InjectView(R.id.ll_activity_item_import_tudi_districts_add_and_del)
+    @InjectView(R.id.ll_activity_item_import_other_districts_add_and_del)
     private LinearLayout llDistrictsAddAndDel;
 
-    @InjectView(R.id.btn_activity_item_import_tudi_districts_add_district)
+    @InjectView(R.id.btn_activity_item_import_other_districts_add_district)
     private Button btnAddDistrict;
 
-    @InjectView(R.id.ll_activity_item_import_tudi_contacts)
+    @InjectView(R.id.ll_activity_item_import_other_contacts)
     private LinearLayout llContacts;
 
-    @InjectView(R.id.ll_activity_item_import_tudi_contacts_add_and_del)
+    @InjectView(R.id.ll_activity_item_import_other_contacts_add_and_del)
     private LinearLayout llContactsAddAndDel;
 
-    @InjectView(R.id.btn_activity_item_import_tudi_contacts_add_contact)
+    @InjectView(R.id.btn_activity_item_import_other_contacts_add_contact)
     private Button btnAddContact;
 
-    @InjectView(R.id.cb_activity_item_import_tudi_need_zulin)
-    private CheckBox cbZulin;
-
-    @InjectView(R.id.cb_activity_item_import_tudi_need_gouzhi)
-    private CheckBox cbGouzhi;
-
-    @InjectView(R.id.cb_activity_item_import_tudi_need_cooperation)
-    private CheckBox cbCooperation;
-
-    @InjectView(R.id.rl_activity_item_import_tudi_land_type)
+    @InjectView(R.id.rl_activity_item_import_other_land_type)
     private RelativeLayout rlLandType;
 
-    @InjectView(R.id.tv_activity_item_import_tudi_land_type)
+    @InjectView(R.id.tv_activity_item_import_other_land_type)
     private TextView tvLandType;
 
-    @InjectView(R.id.et_activity_item_import_tudi_area_min)
-    private EditText etAreaMin;
-
-    @InjectView(R.id.et_activity_item_import_tudi_area_max)
-    private EditText etAreaMax;
-
-    @InjectView(R.id.ll_activity_item_import_tudi_industrys)
+    @InjectView(R.id.ll_activity_item_import_other_industrys)
     private LinearLayout llIndustrys;
 
-    @InjectView(R.id.ll_activity_item_import_tudi_industrys_add_and_del)
+    @InjectView(R.id.ll_activity_item_import_other_industrys_add_and_del)
     private LinearLayout llIndustrysAddAndDel;
 
-    @InjectView(R.id.btn_activity_item_import_tudi_industrys_add_industry)
+    @InjectView(R.id.btn_activity_item_import_other_industrys_add_industry)
     private Button btnAddIndustry;
 
-    @InjectView(R.id.rl_activity_item_import_tudi_item_from)
+    @InjectView(R.id.rl_activity_item_import_other_item_from)
     private RelativeLayout rlItemFrom;
 
-    @InjectView(R.id.tv_activity_item_import_tudi_item_from)
+    @InjectView(R.id.tv_activity_item_import_other_item_from)
     private TextView tvItemFrom;
 
-    @InjectView(R.id.et_activity_item_import_tudi_comname)
+    @InjectView(R.id.et_activity_item_import_other_comname)
     private CancelableEditView etComname;
 
-    @InjectView(R.id.rl_activity_item_import_tudi_comtype)
+    @InjectView(R.id.rl_activity_item_import_other_comtype)
     private RelativeLayout rlComtype;
 
-    @InjectView(R.id.tv_activity_item_import_tudi_comtype)
+    @InjectView(R.id.tv_activity_item_import_other_comtype)
     private TextView tvComtype;
 
-    @InjectView(R.id.rl_activity_item_import_tudi_comdistrict)
+    @InjectView(R.id.rl_activity_item_import_other_comdistrict)
     private RelativeLayout rlComdistrict;
 
-    @InjectView(R.id.tv_activity_item_import_tudi_comdistrict)
+    @InjectView(R.id.tv_activity_item_import_other_comdistrict)
     private TextView tvComdistrict;
 
-    @InjectView(R.id.et_activity_item_import_tudi_comadd)
+    @InjectView(R.id.et_activity_item_import_other_comadd)
     private CancelableEditView etComadd;
 
-    @InjectView(R.id.rg_activity_item_import_tudi_isregister)
+    @InjectView(R.id.rg_activity_item_import_other_isregister)
     private RadioGroup rgIsregister;
 
-    @InjectView(R.id.et_activity_item_import_tudi_reg_money)
+    @InjectView(R.id.et_activity_item_import_other_reg_money)
     private CancelableEditView etRegMoney;
 
-    @InjectView(R.id.btn_activity_item_import_tudi_reg_money_type)
+    @InjectView(R.id.btn_activity_item_import_other_reg_money_type)
     private Button btnRegMoneyType;
 
-    @InjectView(R.id.et_activity_item_import_tudi_invest_money)
+    @InjectView(R.id.et_activity_item_import_other_invest_money)
     private CancelableEditView etInvestMoney;
 
-    @InjectView(R.id.btn_activity_item_import_tudi_invest_money_type)
+    @InjectView(R.id.btn_activity_item_import_other_invest_money_type)
     private Button btnInvestMoneyType;
 
-    @InjectView(R.id.et_activity_item_import_tudi_product_money)
+    @InjectView(R.id.et_activity_item_import_other_product_money)
     private CancelableEditView etProductMoney;
 
-    @InjectView(R.id.btn_activity_item_import_tudi_product_money_type)
+    @InjectView(R.id.btn_activity_item_import_other_product_money_type)
     private Button btnProductMoneyType;
 
-    @InjectView(R.id.et_activity_item_import_tudi_tax_money)
+    @InjectView(R.id.et_activity_item_import_other_tax_money)
     private CancelableEditView etTaxMoney;
 
-    @InjectView(R.id.btn_activity_item_import_tudi_tax_money_type)
+    @InjectView(R.id.btn_activity_item_import_other_tax_money_type)
     private Button btnTaxMoneyType;
 
-    @InjectView(R.id.et_activity_item_import_tudi_intro)
+    @InjectView(R.id.et_activity_item_import_other_intro)
     private EditText etIntro;
 
-    @InjectView(R.id.btn_activity_item_import_tudi_save)
+    @InjectView(R.id.btn_activity_item_import_other_save)
     private Button btnSave;
 
     private boolean hasBtnDelDistrict = false;
@@ -309,9 +294,6 @@ public class ActivityItemImportTudi extends BaseActivity implements View.OnClick
         rlItemFrom.setOnClickListener(this);
         rlLandType.setOnClickListener(this);
         rlLevel.setOnClickListener(this);
-        cbCooperation.setOnCheckedChangeListener(this);
-        cbZulin.setOnCheckedChangeListener(this);
-        cbGouzhi.setOnCheckedChangeListener(this);
         btnInvestMoneyType.setOnClickListener(this);
         btnProductMoneyType.setOnClickListener(this);
         btnTaxMoneyType.setOnClickListener(this);
@@ -320,7 +302,7 @@ public class ActivityItemImportTudi extends BaseActivity implements View.OnClick
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 isRegister = !isRegister;
-                Utils.showToast(ActivityItemImportTudi.this, "点了");
+                Utils.showToast(ActivityItemImportOther.this, "点了");
             }
         });
         etIntro.setOnTouchListener(etLongTextOnTouchListener);
@@ -440,7 +422,7 @@ public class ActivityItemImportTudi extends BaseActivity implements View.OnClick
     public void onClick(View view) {
         SelectDialog selectDialog;
         switch (view.getId()) {
-            case R.id.btn_activity_item_import_tudi_back:
+            case R.id.btn_activity_item_import_other_back:
                 messageDialog.setMessage("你确定要退出编辑吗？退出后将丢失已经添加或修改的内容。");
                 messageDialog.setTitle("后退");
                 messageDialog.setPositiveListener(new View.OnClickListener() {
@@ -451,59 +433,59 @@ public class ActivityItemImportTudi extends BaseActivity implements View.OnClick
                 });
                 messageDialog.show();
                 break;
-            case R.id.rl_activity_item_import_tudi_level:
+            case R.id.rl_activity_item_import_other_level:
                 //点击等级选择
                 selectDialog = new SelectDialog(this, levelList);
                 selectDialog.setOnItemClickListener(levelListener);
                 selectDialog.show();
                 break;
-            case R.id.rl_activity_item_import_tudi_land_type:
+            case R.id.rl_activity_item_import_other_land_type:
                 //点击土地类型选择
                 selectDialog = new SelectDialog(this, landTypeList);
                 selectDialog.setOnItemClickListener(landTypeListener);
                 selectDialog.show();
                 break;
-            case R.id.rl_activity_item_import_tudi_item_from:
+            case R.id.rl_activity_item_import_other_item_from:
                 //点击信息来源选择
                 selectDialog = new SelectDialog(this, itemFromList);
                 selectDialog.setOnItemClickListener(itemFromListener);
                 selectDialog.show();
                 break;
-            case R.id.rl_activity_item_import_tudi_comtype:
+            case R.id.rl_activity_item_import_other_comtype:
                 //点击企业类型选择
                 selectDialog = new SelectDialog(this, comtypeList);
                 selectDialog.setOnItemClickListener(comtypeListener);
                 selectDialog.show();
                 break;
-            case R.id.btn_activity_item_import_tudi_invest_money_type:
+            case R.id.btn_activity_item_import_other_invest_money_type:
                 if (TextUtils.equals(btnInvestMoneyType.getText().toString(), "万元")) {
                     btnInvestMoneyType.setText("万美元");
                 } else {
                     btnInvestMoneyType.setText("万元");
                 }
                 break;
-            case R.id.btn_activity_item_import_tudi_product_money_type:
+            case R.id.btn_activity_item_import_other_product_money_type:
                 if (TextUtils.equals(btnProductMoneyType.getText().toString(), "万元")) {
                     btnProductMoneyType.setText("万美元");
                 } else {
                     btnProductMoneyType.setText("万元");
                 }
                 break;
-            case R.id.btn_activity_item_import_tudi_reg_money_type:
+            case R.id.btn_activity_item_import_other_reg_money_type:
                 if (TextUtils.equals(btnRegMoneyType.getText().toString(), "万元")) {
                     btnRegMoneyType.setText("万美元");
                 } else {
                     btnRegMoneyType.setText("万元");
                 }
                 break;
-            case R.id.btn_activity_item_import_tudi_tax_money_type:
+            case R.id.btn_activity_item_import_other_tax_money_type:
                 if (TextUtils.equals(btnTaxMoneyType.getText().toString(), "万元")) {
                     btnTaxMoneyType.setText("万美元");
                 } else {
                     btnTaxMoneyType.setText("万元");
                 }
                 break;
-            case R.id.btn_activity_item_import_tudi_districts_add_district:
+            case R.id.btn_activity_item_import_other_districts_add_district:
                 //增加一个意向区域
                 addDistrict();
                 break;
@@ -511,7 +493,7 @@ public class ActivityItemImportTudi extends BaseActivity implements View.OnClick
                 //删除意向区域
                 delDistrict(view);
                 break;
-            case R.id.btn_activity_item_import_tudi_industrys_add_industry:
+            case R.id.btn_activity_item_import_other_industrys_add_industry:
                 //增加一个产业分类
                 addIndustry();
                 break;
@@ -519,7 +501,7 @@ public class ActivityItemImportTudi extends BaseActivity implements View.OnClick
                 //删除产业分类
                 delIndustry(view);
                 break;
-            case R.id.btn_activity_item_import_tudi_contacts_add_contact:
+            case R.id.btn_activity_item_import_other_contacts_add_contact:
                 //增加一个联系人
                 addContact();
                 break;
@@ -527,7 +509,7 @@ public class ActivityItemImportTudi extends BaseActivity implements View.OnClick
                 //删除联系人
                 delContact(view);
                 break;
-            case R.id.btn_activity_item_import_tudi_save:
+            case R.id.btn_activity_item_import_other_save:
                 //点击保存按钮
                 if (isLegal()) {
                     messageDialog.setTitle("保存");
@@ -587,14 +569,6 @@ public class ActivityItemImportTudi extends BaseActivity implements View.OnClick
         return landType;
     }
 
-    private double getArea1() {
-        return Utils.getStringToDouble(etAreaMin.getText().toString());
-    }
-
-    private double getArea2() {
-        return Utils.getStringToDouble(etAreaMax.getText().toString());
-    }
-
     private int getItemFrom() {
         return itemFrom;
     }
@@ -636,39 +610,6 @@ public class ActivityItemImportTudi extends BaseActivity implements View.OnClick
 
     private String getIntro() {
         return etIntro.getText().toString();
-    }
-
-    @Override
-    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-        switch (compoundButton.getId()) {
-            case R.id.cb_activity_item_import_tudi_need_zulin:
-                if (b) {
-                    Utils.showToast(this, "您选择了租赁");
-                    needs.add("1");
-                } else {
-                    Utils.showToast(this, "您取消了租赁");
-                    needs.remove("1");
-                }
-                break;
-            case R.id.cb_activity_item_import_tudi_need_gouzhi:
-                if (b) {
-                    Utils.showToast(this, "您选择了购置");
-                    needs.add("2");
-                } else {
-                    Utils.showToast(this, "您取消了购置");
-                    needs.remove("2");
-                }
-                break;
-            case R.id.cb_activity_item_import_tudi_need_cooperation:
-                if (b) {
-                    Utils.showToast(this, "您选择了合作");
-                    needs.add("3");
-                } else {
-                    Utils.showToast(this, "您取消了合作");
-                    needs.remove("3");
-                }
-                break;
-        }
     }
 
     @Override

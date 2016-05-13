@@ -171,6 +171,7 @@ public class ActivityCarrierImportSoho extends BaseActivity implements View.OnCl
 //                }
                 level = i + 1;
                 tvLevel.setText(levelList.get(i));
+                tvLevel.setTextColor(getResources().getColor(R.color.filterTextGray));
 
             }
         };
@@ -199,6 +200,7 @@ public class ActivityCarrierImportSoho extends BaseActivity implements View.OnCl
 //                }
                 status = i + 1;
                 tvStatus.setText(stateList.get(i));
+                tvStatus.setTextColor(getResources().getColor(R.color.filterTextGray));
             }
         };
 

@@ -154,6 +154,7 @@ public class ActivityCarrierImportBusiness extends BaseActivity implements View.
 //                }
                 level = i + 1;
                 tvLevel.setText(levelList.get(i));
+                tvLevel.setTextColor(getResources().getColor(R.color.filterTextGray));
             }
         };
         statusList = new ArrayList<>();
@@ -181,6 +182,7 @@ public class ActivityCarrierImportBusiness extends BaseActivity implements View.
 //                }
                 status = i + 1;
                 tvStatus.setText(statusList.get(i));
+                tvStatus.setTextColor(getResources().getColor(R.color.filterTextGray));
             }
         };
         //动态添加自定义ContactView相关

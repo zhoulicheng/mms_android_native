@@ -17,6 +17,13 @@ package com.mms.widget.kankanWheelView.adapters;
 
 import android.content.Context;
 
+import com.mms.dao.generate.City;
+import com.mms.widget.kankanWheelView.CityModel;
+import com.mms.widget.kankanWheelView.DistrictModel;
+import com.mms.widget.kankanWheelView.ProvinceModel;
+
+import java.util.List;
+
 /**
  * The simple Array wheel adapter
  * @param <T> the element type
@@ -24,14 +31,15 @@ import android.content.Context;
 public class ArrayWheelAdapter<T> extends AbstractWheelTextAdapter {
     
     // items
-    private T items[];
+//    private T items[];
+    private List<T> items;
 
     /**
      * Constructor
      * @param context the current context
      * @param items the items
      */
-    public ArrayWheelAdapter(Context context, T items[]) {
+    public ArrayWheelAdapter(Context context, List<T> items) {
         super(context);
         
         //setEmptyItemResource(TEXT_VIEW_ITEM_RESOURCE);
@@ -40,18 +48,37 @@ public class ArrayWheelAdapter<T> extends AbstractWheelTextAdapter {
     
     @Override
     public CharSequence getItemText(int index) {
-        if (index >= 0 && index < items.length) {
-            T item = items[index];
-            if (item instanceof CharSequence) {
-                return (CharSequence) item;
+        if (index >= 0 && index < items.size()) {
+            T item = items.get(index);
+            if (item instanceof ProvinceModel) {
+                return ((ProvinceModel) item).getName();
             }
-            return item.toString();
+            if (item instanceof CityModel){
+                return ((CityModel) item).getName();
+            }
+            if (item instanceof DistrictModel){
+                return ((DistrictModel) item).getName();
+            }
+            return "";
+        }
+        return null;
+    }
+
+    public String getItemCode(int index){
+        if (index >= 0 && index < items.size()) {
+            T item = items.get(index);
+            if (item instanceof ProvinceModel) {
+                return ((ProvinceModel) item).getZipcode();
+            }
+            if (item instanceof CityModel){
+                return ((CityModel) item).getZipcode();
+            }
         }
         return null;
     }
 
     @Override
     public int getItemsCount() {
-        return items.length;
+        return items.size();
     }
 }

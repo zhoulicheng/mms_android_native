@@ -1,5 +1,6 @@
 package com.mms.activity;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -70,6 +71,9 @@ public class ActivityCarrierImportOther extends BaseActivity implements View.OnC
     @InjectView(R.id.btn_activity_carrier_import_other_save)
     private Button btnSave;
 
+    @InjectView(R.id.rl_activity_carrier_import_other_district)
+    private RelativeLayout rlDistrict;
+
 
     private boolean hasBtnDelContact = false;
     private int level = -1;
@@ -133,6 +137,7 @@ public class ActivityCarrierImportOther extends BaseActivity implements View.OnC
 //                }
                 level = i + 1;
                 tvLevel.setText(levelList.get(i));
+                tvLevel.setTextColor(getResources().getColor(R.color.filterTextGray));
             }
         };
         statusList = new ArrayList<>();
@@ -160,6 +165,7 @@ public class ActivityCarrierImportOther extends BaseActivity implements View.OnC
 //                }
                 status = i + 1;
                 tvStatus.setText(statusList.get(i));
+                tvStatus.setTextColor(getResources().getColor(R.color.filterTextGray));
             }
         };
         //动态添加自定义ContactView相关
@@ -186,6 +192,7 @@ public class ActivityCarrierImportOther extends BaseActivity implements View.OnC
         btnAddContact.setOnClickListener(this);
         etIntro.setOnTouchListener(etLongTextOnTouchListener);
         btnSave.setOnClickListener(this);
+        rlDistrict.setOnClickListener(this);
 
     }
 
@@ -228,6 +235,7 @@ public class ActivityCarrierImportOther extends BaseActivity implements View.OnC
     @Override
     public void onClick(View view) {
         SelectDialog selectDialog;
+        Intent intent;
         switch (view.getId()) {
             case R.id.btn_activity_carrier_import_other_back:
                 messageDialog.setMessage("你确定要退出编辑吗？退出后将丢失已经添加或修改的内容。");
@@ -274,6 +282,10 @@ public class ActivityCarrierImportOther extends BaseActivity implements View.OnC
                     messageDialog.show();
                 }
                 break;
+            case R.id.rl_activity_carrier_import_other_district:
+                //选择地区
+                intent = new Intent(this,ActivitySelectDistrict.class);
+                startActivityForResult(intent,100);
 
         }
     }

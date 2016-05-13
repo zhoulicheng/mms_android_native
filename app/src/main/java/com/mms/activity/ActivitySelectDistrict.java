@@ -71,9 +71,9 @@ public class ActivitySelectDistrict extends BaseActivity implements OnWheelChang
         initProvinceDatas();
         mViewProvince.setViewAdapter(new ArrayWheelAdapter<>(this, mProvinceDatas));
         // 设置可见条目数量
-        mViewProvince.setVisibleItems(7);
-        mViewCity.setVisibleItems(7);
-        mViewDistrict.setVisibleItems(7);
+        mViewProvince.setVisibleItems(5);
+        mViewCity.setVisibleItems(5);
+        mViewDistrict.setVisibleItems(5);
         updateCities();
         updateAreas();
     }

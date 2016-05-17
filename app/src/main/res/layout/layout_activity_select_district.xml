@@ -6,7 +6,7 @@
     <LinearLayout
         android:id="@+id/null_ll_activity_select_district"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         android:layout_alignParentBottom="true"
         android:background="#DDDDDD"
         android:orientation="horizontal">
@@ -14,19 +14,19 @@
         <com.mms.widget.kankanWheelView.WheelView
             android:id="@+id/id_province"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"></com.mms.widget.kankanWheelView.WheelView>
 
         <com.mms.widget.kankanWheelView.WheelView
             android:id="@+id/id_city"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"></com.mms.widget.kankanWheelView.WheelView>
 
         <com.mms.widget.kankanWheelView.WheelView
             android:id="@+id/id_district"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"></com.mms.widget.kankanWheelView.WheelView>
     </LinearLayout>
 

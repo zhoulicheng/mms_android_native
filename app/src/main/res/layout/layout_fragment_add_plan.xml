@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backGray"
+    android:orientation="vertical">
+
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/fragment_my_item_padding_left">
+
+                <TextView
+                    android:layout_width="@dimen/fragment_my_item_left_tv_width"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="时间"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="明天"
+                    android:textColor="@color/textGray"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_fragment_add_plan_plans"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_fragment_add_plan_add_and_del"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:layout_weight="1"
+                    android:background="@drawable/whitebuttonselector"
+                    android:text="添加计划"
+                    android:textColor="@color/textBlue"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_activity_carrier_import_factory_save"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_margin="8dp"
+                android:text="保    存"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>

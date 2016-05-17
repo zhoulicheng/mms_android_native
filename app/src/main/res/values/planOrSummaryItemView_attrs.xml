@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PlanOrSummaryView">
+        <attr name="type" format="enum">
+            <enum name="plan" value="1" />
+            <enum name="summary" value="2" />
+        </attr>
+    </declare-styleable>
+</resources>

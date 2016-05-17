@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backGray"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/titleBarHeight"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_activity_search_condition_back"
+            android:layout_width="@dimen/backButtonWidth"
+            android:layout_height="@dimen/backButtonHeight"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/backarrow_gray" />
+
+        <LinearLayout
+            android:layout_width="270dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:orientation="vertical"
+            android:paddingBottom="6dp"
+            android:paddingLeft="6dp"
+            android:paddingTop="6dp">
+
+            <LinearLayout
+                android:id="@+id/ll_activity_search_condition_search_back"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="6dp">
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:background="@drawable/search_icon" />
+
+                <EditText
+                    android:id="@+id/et_activity_search_condition_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:hint="请输入搜索条件"
+                    android:textColor="@color/textGray"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+
+            android:id="@+id/btn_activity_search_condition_ok"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:text="搜索"
+            android:textColor="#555555"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/qianGray" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fragment_my_item_height"
+        android:layout_marginTop="15dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/fragment_my_item_padding_left">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="历史搜索"
+            android:textColor="@color/filterTextGray"
+            android:textSize="16sp" />
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divide_line"
+        android:background="@color/divideLineGray" />
+
+    <ListView
+        android:id="@+id/lv_activity_search_condition_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/divideLineGray"
+        android:dividerHeight="@dimen/divide_line"></ListView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divide_line"
+        android:background="@color/divideLineGray" />
+
+    <Button
+        android:id="@+id/btn_activity_search_condition_clear"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fragment_my_item_height"
+        android:background="@drawable/whitebuttonselector"
+        android:text="清空搜索历史"
+        android:textColor="@color/filterTextGray"
+        android:textSize="14sp" />
+
+</LinearLayout>

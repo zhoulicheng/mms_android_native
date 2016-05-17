@@ -1,5 +1,6 @@
 package com.mms.activity;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -51,6 +52,12 @@ public class ActivityCarrierImportBusiness extends BaseActivity implements View.
     @InjectView(R.id.tv_activity_carrier_import_business_level)
     private TextView tvLevel;
 
+    @InjectView(R.id.rl_activity_carrier_import_business_district)
+    private RelativeLayout rlDistrict;
+
+    @InjectView(R.id.tv_activity_carrier_import_business_district)
+    private TextView tvDistrict;
+
     @InjectView(R.id.rl_activity_carrier_import_business_status)
     private RelativeLayout rlStatus;
 
@@ -93,6 +100,7 @@ public class ActivityCarrierImportBusiness extends BaseActivity implements View.
     private boolean hasBtnDelContact = false;
     private int level = -1;
     private int status = -1;
+    private String districtCode;
     private List<String> needs;
 
     private List<ContactView> contactViews;
@@ -212,6 +220,7 @@ public class ActivityCarrierImportBusiness extends BaseActivity implements View.
         cbSell.setOnCheckedChangeListener(this);
         etIntro.setOnTouchListener(etLongTextOnTouchListener);
         btnSave.setOnClickListener(this);
+        rlDistrict.setOnClickListener(this);
 
     }
 
@@ -305,6 +314,11 @@ public class ActivityCarrierImportBusiness extends BaseActivity implements View.
                 selectDialog.setOnItemClickListener(levelListener);
                 selectDialog.show();
                 break;
+            case R.id.rl_activity_carrier_import_business_district:
+                //选择地区
+                Intent intent = new Intent(this, ActivitySelectDistrict.class);
+                startActivityForResult(intent, ActivitySelectDistrict.SELECTDISTRICT);
+                break;
             case R.id.rl_activity_carrier_import_business_status:
                 //点击状态选择
                 selectDialog = new SelectDialog(this, statusList);
@@ -334,6 +348,7 @@ public class ActivityCarrierImportBusiness extends BaseActivity implements View.
                 }
                 break;
 
+
         }
     }
 
@@ -353,6 +368,9 @@ public class ActivityCarrierImportBusiness extends BaseActivity implements View.
         if (needs.size() == 0) {
             Utils.showToast(this, "请选择意向");
             return false;
+        }
+        if (TextUtils.isEmpty(districtCode)) {
+            Utils.showToast(this, "请选择地区");
         }
         return true;
     }
@@ -399,6 +417,13 @@ public class ActivityCarrierImportBusiness extends BaseActivity implements View.
 
     }
 
+    private String getDistrictCode() {
+        if (!TextUtils.isEmpty(districtCode)) {
+            return districtCode;
+        }
+        return "";
+    }
+
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
 
@@ -416,6 +441,25 @@ public class ActivityCarrierImportBusiness extends BaseActivity implements View.
 
         } else {
             return super.onKeyDown(keyCode, event);
+        }
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            case ActivitySelectDistrict.SELECTDISTRICT:
+                if (resultCode == RESULT_OK) {
+                    tvDistrict.setText(data.getStringExtra(ActivitySelectDistrict.SELECTDISTRICT_RESULT_STRING));
+                    tvDistrict.setTextColor(getResources().getColor(R.color.filterTextGray));
+                    districtCode = data.getStringExtra(ActivitySelectDistrict.SELECTDISTRICT_RESULT_CODE);
+                    Utils.showToast(this,districtCode);
+                }else {
+                    tvDistrict.setText("请选择");
+                    tvDistrict.setTextColor(getResources().getColor(R.color.hintGray));
+                }
+                break;
         }
 
     }

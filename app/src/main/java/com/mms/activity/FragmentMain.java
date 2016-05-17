@@ -11,6 +11,8 @@ import android.widget.RelativeLayout;
 
 import com.mms.R;
 import com.mms.base.BaseFragment;
+import com.mms.widget.TitlePopup.ActionItem;
+import com.mms.widget.TitlePopup.TitlePopup;
 
 import roboguice.inject.InjectView;
 
@@ -40,6 +42,9 @@ public class FragmentMain extends BaseFragment implements View.OnClickListener {
     @InjectView(R.id.rl_fragment_main_item_book)
     private RelativeLayout rlItemBook;
 
+    //定义标题栏弹窗
+    private TitlePopup titlePopup;
+
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.layout_fragment_main, container,
@@ -55,6 +60,10 @@ public class FragmentMain extends BaseFragment implements View.OnClickListener {
     }
 
     private void setOCL() {
+        //实例化标题栏弹窗
+        titlePopup = new TitlePopup(getActivity(), ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        titlePopup.addAction(new ActionItem(getActivity(), "添加项目", R.drawable.add_item));
+        titlePopup.addAction(new ActionItem(getActivity(), "添加载体", R.drawable.add_carrier));
         btnAdd.setOnClickListener(this);
         rlItemBook.setOnClickListener(this);
         rlItemNew.setOnClickListener(this);
@@ -62,6 +71,22 @@ public class FragmentMain extends BaseFragment implements View.OnClickListener {
         rlItemTodoAite.setOnClickListener(this);
         rlOnlineOffice.setOnClickListener(this);
         rlSystemMessage.setOnClickListener(this);
+        titlePopup.setItemOnClickListener(new TitlePopup.OnItemOnClickListener(){
+            @Override
+            public void onItemClick(ActionItem item, int position) {
+                Intent intent;
+                switch (position){
+                    case 0:
+                        intent = new Intent(getActivity(),ActivityItemImport.class);
+                        startActivity(intent);
+                        break;
+                    case 1:
+                        intent = new Intent(getActivity(),ActivityCarrierImport.class);
+                        startActivity(intent);
+                        break;
+                }
+            }
+        });
     }
 
     @Override
@@ -69,7 +94,7 @@ public class FragmentMain extends BaseFragment implements View.OnClickListener {
         Intent intent = null;
         switch (view.getId()) {
             case R.id.btn_fragment_main_add:
-
+                titlePopup.show(view);
                 break;
             case R.id.rl_fragment_main_system_message:
                 break;

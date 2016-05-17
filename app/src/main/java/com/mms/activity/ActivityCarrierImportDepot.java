@@ -1,5 +1,6 @@
 package com.mms.activity;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -51,6 +52,12 @@ public class ActivityCarrierImportDepot extends BaseActivity implements View.OnC
 
     @InjectView(R.id.tv_activity_carrier_import_depot_level)
     private TextView tvLevel;
+
+    @InjectView(R.id.rl_activity_carrier_import_depot_district)
+    private RelativeLayout rlDistrict;
+
+    @InjectView(R.id.tv_activity_carrier_import_depot_district)
+    private TextView tvDistrict;
 
     @InjectView(R.id.rl_activity_carrier_import_depot_status)
     private RelativeLayout rlStatus;
@@ -175,6 +182,7 @@ public class ActivityCarrierImportDepot extends BaseActivity implements View.OnC
     private int status = -1;
     private int structure = -1;
     private int depotType = -1;
+    private String districtCode;
     //下边这俩先暂时不加判断，需要加的时候直接在isLegal()中加个判断就行
     private int fireControlLevel = -1;
     private int unloadType = -1;
@@ -465,6 +473,7 @@ public class ActivityCarrierImportDepot extends BaseActivity implements View.OnC
             }
         });
         btnSave.setOnClickListener(this);
+        rlDistrict.setOnClickListener(this);
 
     }
 
@@ -598,7 +607,7 @@ public class ActivityCarrierImportDepot extends BaseActivity implements View.OnC
                 break;
             case R.id.btn_activity_carrier_import_depot_save:
                 //点击保存按钮
-                if (isLegal()){
+                if (isLegal()) {
                     messageDialog.setTitle("保存");
                     messageDialog.setMessage("确认所填信息无误并保存吗？");
                     messageDialog.setPositiveListener(new View.OnClickListener() {
@@ -609,6 +618,11 @@ public class ActivityCarrierImportDepot extends BaseActivity implements View.OnC
                     });
                     messageDialog.show();
                 }
+                break;
+            case R.id.rl_activity_carrier_import_depot_district:
+                //选择地区
+                Intent intent = new Intent(this, ActivitySelectDistrict.class);
+                startActivityForResult(intent, ActivitySelectDistrict.SELECTDISTRICT);
                 break;
 
         }
@@ -635,9 +649,12 @@ public class ActivityCarrierImportDepot extends BaseActivity implements View.OnC
             Utils.showToast(this, "请选择建筑结构");
             return false;
         }
-        if (depotType==-1){
+        if (depotType == -1) {
             Utils.showToast(this, "请选择仓库类型");
             return false;
+        }
+        if (TextUtils.isEmpty(districtCode)) {
+            Utils.showToast(this, "请选择地区");
         }
         return true;
     }
@@ -685,11 +702,11 @@ public class ActivityCarrierImportDepot extends BaseActivity implements View.OnC
         return etAddress.getText();
     }
 
-    private int getLevel(){
+    private int getLevel() {
         return level;
     }
 
-    private int getStatus(){
+    private int getStatus() {
         return status;
     }
 
@@ -755,6 +772,32 @@ public class ActivityCarrierImportDepot extends BaseActivity implements View.OnC
 
     public String getSPrice() {
         return etSPrice.getText();
+    }
+
+    private String getDistrictCode() {
+        if (!TextUtils.isEmpty(districtCode)) {
+            return districtCode;
+        }
+        return "";
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            case ActivitySelectDistrict.SELECTDISTRICT:
+                if (resultCode == RESULT_OK) {
+                    tvDistrict.setText(data.getStringExtra(ActivitySelectDistrict.SELECTDISTRICT_RESULT_STRING));
+                    tvDistrict.setTextColor(getResources().getColor(R.color.filterTextGray));
+                    districtCode = data.getStringExtra(ActivitySelectDistrict.SELECTDISTRICT_RESULT_CODE);
+                    Utils.showToast(this, districtCode);
+                } else {
+                    tvDistrict.setText("请选择");
+                    tvDistrict.setTextColor(getResources().getColor(R.color.hintGray));
+                }
+                break;
+        }
+
     }
 
 }

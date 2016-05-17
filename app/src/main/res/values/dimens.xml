@@ -14,8 +14,8 @@
     <dimen name="fragment_my_item_left_tv_width">80dp</dimen>
     <dimen name="fragment_my_item_left_text_size">17sp</dimen>
     <dimen name="titleBarHeight">45dp</dimen>
-    <dimen name="backButtonWidth">18dp</dimen>
-    <dimen name="backButtonHeight">18dp</dimen>
+    <dimen name="backButtonWidth">20dp</dimen>
+    <dimen name="backButtonHeight">20dp</dimen>
     <dimen name="chachaWidth">16dp</dimen>
     <dimen name="chachaHeight">16dp</dimen>
 
@@ -23,8 +23,6 @@
     <dimen name="divide_line">0.5dp</dimen>
 
     <dimen name="pop_layout_gray_y">65dp</dimen>
-    <dimen name="pop_layout_white_y">107dp</dimen>
-
 
     <dimen name="app_cus_popuwindow_item_h">43dp</dimen>
 </resources>

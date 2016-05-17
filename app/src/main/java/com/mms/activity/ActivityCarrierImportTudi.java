@@ -1,5 +1,6 @@
 package com.mms.activity;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -51,6 +52,12 @@ public class ActivityCarrierImportTudi extends BaseActivity implements View.OnCl
 
     @InjectView(R.id.tv_activity_carrier_import_tudi_level)
     private TextView tvLevel;
+
+    @InjectView(R.id.rl_activity_carrier_import_tudi_district)
+    private RelativeLayout rlDistrict;
+
+    @InjectView(R.id.tv_activity_carrier_import_tudi_district)
+    private TextView tvDistrict;
 
     @InjectView(R.id.rl_activity_carrier_import_tudi_status)
     private RelativeLayout rlStatus;
@@ -112,6 +119,7 @@ public class ActivityCarrierImportTudi extends BaseActivity implements View.OnCl
     private int status = -1;
     private int tudiType = -1;
     private List<String> transforType;
+    private String districtCode;
 
     private List<ContactView> contactViews;
     private LinearLayout.LayoutParams LP_FW;
@@ -267,6 +275,7 @@ public class ActivityCarrierImportTudi extends BaseActivity implements View.OnCl
         rlType.setOnClickListener(this);
         btnSave.setOnClickListener(this);
         etIntro.setOnTouchListener(etLongTextOnTouchListener);
+        rlDistrict.setOnClickListener(this);
 
     }
 
@@ -325,6 +334,11 @@ public class ActivityCarrierImportTudi extends BaseActivity implements View.OnCl
                     messageDialog.show();
                 }
                 break;
+            case R.id.rl_activity_carrier_import_tudi_district:
+                //选择地区
+                Intent intent = new Intent(this, ActivitySelectDistrict.class);
+                startActivityForResult(intent, ActivitySelectDistrict.SELECTDISTRICT);
+                break;
 
         }
     }
@@ -348,6 +362,9 @@ public class ActivityCarrierImportTudi extends BaseActivity implements View.OnCl
         }
         if (tudiType == -1) {
             Utils.showToast(this, "请选择建筑结构");
+        }
+        if (TextUtils.isEmpty(districtCode)) {
+            Utils.showToast(this, "请选择地区");
         }
         return true;
     }
@@ -492,6 +509,12 @@ public class ActivityCarrierImportTudi extends BaseActivity implements View.OnCl
         return s.substring(0, s.length() - 1);
 
     }
+    private String getDistrictCode() {
+        if (!TextUtils.isEmpty(districtCode)) {
+            return districtCode;
+        }
+        return "";
+    }
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
@@ -514,5 +537,23 @@ public class ActivityCarrierImportTudi extends BaseActivity implements View.OnCl
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            case ActivitySelectDistrict.SELECTDISTRICT:
+                if (resultCode == RESULT_OK) {
+                    tvDistrict.setText(data.getStringExtra(ActivitySelectDistrict.SELECTDISTRICT_RESULT_STRING));
+                    tvDistrict.setTextColor(getResources().getColor(R.color.filterTextGray));
+                    districtCode = data.getStringExtra(ActivitySelectDistrict.SELECTDISTRICT_RESULT_CODE);
+                    Utils.showToast(this,districtCode);
+                }else {
+                    tvDistrict.setText("请选择");
+                    tvDistrict.setTextColor(getResources().getColor(R.color.hintGray));
+                }
+                break;
+        }
+
+    }
 
 }

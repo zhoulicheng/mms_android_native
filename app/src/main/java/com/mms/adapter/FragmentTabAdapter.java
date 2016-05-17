@@ -30,6 +30,18 @@ public class FragmentTabAdapter implements OnCheckedChangeListener {
 		defaultTab(currentTab);
 	}
 
+	public FragmentTabAdapter(FragmentActivity fragmentActivity,
+							  List<BaseFragment> fragments, int fragmentContentId,
+							  RadioGroup radioGroup,int defaultTab) {
+		this.fragmentActivity = fragmentActivity;
+		this.fragments = fragments;
+		this.fragmentContentId = fragmentContentId;
+		this.radioGroup = radioGroup;
+		this.currentTab = defaultTab;
+		setListener();
+		defaultTab(currentTab);
+	}
+
 
 	private void setListener() {
 		// TODO Auto-generated method stub
@@ -45,8 +57,8 @@ public class FragmentTabAdapter implements OnCheckedChangeListener {
 			transaction.add(fragmentContentId, fragment);
 			transaction.hide(fragment);
 		}
+		transaction.show(getCurrentFragment());
 		transaction.commit();
-		transaction.show(getCurrentFragment());// Ĭ����ʾ��һҳ
 	}
 
 	@Override
@@ -56,15 +68,17 @@ public class FragmentTabAdapter implements OnCheckedChangeListener {
 			if (radioGroup.getChildAt(i).getId() == checkedId) {
 				Fragment fragment = fragments.get(i);
 				FragmentTransaction ft = obtainFragmentTransaction(i);
-
-				getCurrentFragment().onPause();
-				if (fragment.isAdded()) {
-					fragment.onResume();
-				} else {
-					ft.add(fragmentContentId, fragment);
+				if (!fragment.equals(getCurrentFragment())){
+					getCurrentFragment().onPause();
+					if (fragment.isAdded()) {
+						fragment.onResume();
+					} else {
+						ft.add(fragmentContentId, fragment);
+					}
+					showTab(i);
+					ft.commit();
 				}
-				showTab(i);
-				ft.commit();
+
 			}
 		}
 

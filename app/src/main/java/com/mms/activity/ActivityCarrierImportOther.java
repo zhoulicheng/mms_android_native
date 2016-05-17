@@ -50,6 +50,12 @@ public class ActivityCarrierImportOther extends BaseActivity implements View.OnC
     @InjectView(R.id.tv_activity_carrier_import_other_level)
     private TextView tvLevel;
 
+    @InjectView(R.id.rl_activity_carrier_import_other_district)
+    private RelativeLayout rlDistrict;
+
+    @InjectView(R.id.tv_activity_carrier_import_other_district)
+    private TextView tvDistrict;
+
     @InjectView(R.id.rl_activity_carrier_import_other_status)
     private RelativeLayout rlStatus;
 
@@ -71,13 +77,10 @@ public class ActivityCarrierImportOther extends BaseActivity implements View.OnC
     @InjectView(R.id.btn_activity_carrier_import_other_save)
     private Button btnSave;
 
-    @InjectView(R.id.rl_activity_carrier_import_other_district)
-    private RelativeLayout rlDistrict;
-
-
     private boolean hasBtnDelContact = false;
     private int level = -1;
     private int status = -1;
+    private String districtCode;
 
     private List<ContactView> contactViews;
     private LinearLayout.LayoutParams LP_FW;
@@ -284,8 +287,9 @@ public class ActivityCarrierImportOther extends BaseActivity implements View.OnC
                 break;
             case R.id.rl_activity_carrier_import_other_district:
                 //选择地区
-                intent = new Intent(this,ActivitySelectDistrict.class);
-                startActivityForResult(intent,100);
+                intent = new Intent(this, ActivitySelectDistrict.class);
+                startActivityForResult(intent, ActivitySelectDistrict.SELECTDISTRICT);
+                break;
 
         }
     }
@@ -302,6 +306,9 @@ public class ActivityCarrierImportOther extends BaseActivity implements View.OnC
         if (status == -1) {
             Utils.showToast(this, "请选择载体状态");
             return false;
+        }
+        if (TextUtils.isEmpty(districtCode)) {
+            Utils.showToast(this, "请选择地区");
         }
         return true;
     }
@@ -327,6 +334,13 @@ public class ActivityCarrierImportOther extends BaseActivity implements View.OnC
         return status;
     }
 
+    private String getDistrictCode() {
+        if (!TextUtils.isEmpty(districtCode)) {
+            return districtCode;
+        }
+        return "";
+    }
+
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
 
@@ -348,5 +362,22 @@ public class ActivityCarrierImportOther extends BaseActivity implements View.OnC
 
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            case ActivitySelectDistrict.SELECTDISTRICT:
+                if (resultCode == RESULT_OK) {
+                    tvDistrict.setText(data.getStringExtra(ActivitySelectDistrict.SELECTDISTRICT_RESULT_STRING));
+                    tvDistrict.setTextColor(getResources().getColor(R.color.filterTextGray));
+                    districtCode = data.getStringExtra(ActivitySelectDistrict.SELECTDISTRICT_RESULT_CODE);
+                    Utils.showToast(this,districtCode);
+                }else {
+                    tvDistrict.setText("请选择");
+                    tvDistrict.setTextColor(getResources().getColor(R.color.hintGray));
+                }
+                break;
+        }
 
+    }
 }

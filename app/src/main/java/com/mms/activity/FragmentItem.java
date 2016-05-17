@@ -1,8 +1,11 @@
 package com.mms.activity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -19,10 +22,15 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
 import com.mms.R;
+import com.mms.adapter.CarrierAdapter;
 import com.mms.base.BaseFragment;
+import com.mms.util.DrawableUtils;
+import com.mms.util.Utils;
+import com.mms.widget.rlrView.view.RLRView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import roboguice.inject.InjectView;
@@ -31,6 +39,8 @@ import roboguice.inject.InjectView;
  * Created by Tanikawa on 2016/4/14.
  */
 public class FragmentItem extends BaseFragment implements View.OnClickListener, AdapterView.OnItemClickListener {
+
+    private final int SEARCH_CONDITION = 1;
 
     @InjectView(R.id.btn_fragment_item_add)
     private Button btnAdd;
@@ -80,8 +90,20 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener, 
     @InjectView(R.id.rl_Fragment_item_progress)
     private RelativeLayout rlProgress;
 
+    @InjectView(R.id.tv_fragment_item_search)
+    private TextView tvSearch;
+
+    @InjectView(R.id.rlrview_fragment_item)
+    private RLRView rlrView;
+
     @InjectView(R.id.v_fragment_item_cover)
     private View vCover;
+
+    @InjectView(R.id.ll_fragment_item_search)
+    private LinearLayout llSearch;
+
+    private CarrierAdapter adapter;
+    private List<Map<String,String>> carriers;
 
     private boolean isOpenPop = false;
     private boolean isOpenWhitePop = false;
@@ -91,10 +113,12 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener, 
     ArrayList<Map<String, Object>> items;
     Context mContext;
 
-    public int isFrom;
-    public int status;
-    public int level;
-    public int progress;
+    private int isFrom;
+    private int status;
+    private int level;
+    private int progress;
+
+    private String condition;
 
 
     @Override
@@ -108,7 +132,20 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener, 
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         mContext = getActivity();
+        carriers = new ArrayList<>();
+        //加假数据
+        addSomething();
+        initView();
         setOCL();
+        setRLRView();
+    }
+
+    private void initView(){
+        if (Build.VERSION.SDK_INT>=16){
+            llSearch.setBackground(DrawableUtils.getDrawable(15,getResources().getColor(R.color.white),2,getResources().getColor(R.color.qianGray)));
+        }else {
+            llSearch.setBackgroundDrawable(DrawableUtils.getDrawable(15,getResources().getColor(R.color.white),2,getResources().getColor(R.color.qianGray)));
+        }
 
     }
 
@@ -119,8 +156,93 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener, 
         rlLevel.setOnClickListener(this);
         rlProgress.setOnClickListener(this);
         rlState.setOnClickListener(this);
+        tvSearch.setOnClickListener(this);
     }
 
+    private void setRLRView() {
+        adapter = new CarrierAdapter(getActivity());
+        rlrView.setAdapter(adapter);
+        rlrView.setOnItemClickListener(adapter);
+        rlrView.setOnRefreshListener(new RLRView.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                loadData(true);
+            }
+        });
+        rlrView.setOnLoadListener(new RLRView.OnLoadListener() {
+            @Override
+            public void onLoad() {
+                loadData(false);
+            }
+        });
+    }
+
+    private void loadData(final boolean isRefresh) {
+//        safeFindCallback = new SafeFindCallback<Flight>(this) {
+//            @Override
+//            public void findResult(List<Flight> objects, AVException e) {
+//                if (e == null) {
+                    if (isRefresh)
+                        rlrView.resetData(carriers);
+                    else rlrView.addData(carriers);
+//                } else {//有错
+//                    rlrView.rlError();
+//                }
+                rlrView.stopRL();//结束刷新加载
+//            }
+//        };
+//        getMainQuery().findInBackground(safeFindCallback);//查询
+    }
+
+    @Override
+    public void onClick(View view) {
+        Intent intent = null;
+        switch (view.getId()) {
+            case R.id.ll_fragment_item_title:
+                changGrayPopState(view);
+                break;
+            case R.id.rl_Fragment_item_from:
+                changWhitePopState(view);
+                break;
+            case R.id.rl_Fragment_item_level:
+                changWhitePopState(view);
+                break;
+            case R.id.rl_Fragment_item_progress:
+                changWhitePopState(view);
+                break;
+            case R.id.rl_Fragment_item_state:
+                changWhitePopState(view);
+                break;
+            case R.id.btn_fragment_item_add:
+                intent = new Intent(getActivity(), ActivityItemImport.class);
+                startActivity(intent);
+                break;
+            case R.id.tv_fragment_item_search:
+                intent = new Intent(getActivity(),ActivitySearchCondition.class);
+                startActivityForResult(intent,SEARCH_CONDITION);
+                break;
+
+        }
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode){
+            case SEARCH_CONDITION:
+                if (resultCode== Activity.RESULT_OK){
+                    condition = data.getStringExtra("condition");
+                    if (TextUtils.isEmpty(condition)){
+                        tvSearch.setText("搜索");
+                    }else {
+                        tvSearch.setText(condition);
+                    }
+                }else {
+                    Utils.showToast(getActivity(),"您取消了搜索");
+                }
+                break;
+        }
+    }
 
     public void changGrayPopState(View v) {
 
@@ -137,6 +259,8 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener, 
             }
         }
     }
+
+
 
     public void changWhitePopState(View v) {
 
@@ -291,11 +415,10 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener, 
         });
         window.update();
         window.setAnimationStyle(R.style.AnimationFade);
-        window.showAsDropDown(parent, 0, 0);
+        window.showAsDropDown(parent, 0, 2);
         vCover.setVisibility(View.VISIBLE);
 
     }
-
 
     public ArrayList<Map<String, Object>> filterCreateData(View v) {
 
@@ -438,33 +561,6 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener, 
 
     }
 
-    @Override
-    public void onClick(View view) {
-        Intent intent = null;
-        switch (view.getId()) {
-            case R.id.ll_fragment_item_title:
-                changGrayPopState(view);
-                break;
-            case R.id.rl_Fragment_item_from:
-                changWhitePopState(view);
-                break;
-            case R.id.rl_Fragment_item_level:
-                changWhitePopState(view);
-                break;
-            case R.id.rl_Fragment_item_progress:
-                changWhitePopState(view);
-                break;
-            case R.id.rl_Fragment_item_state:
-                changWhitePopState(view);
-                break;
-
-            case R.id.btn_fragment_item_add:
-                intent = new Intent(getActivity(), ActivityItemImport.class);
-                startActivity(intent);
-                break;
-
-        }
-    }
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int i, long l) {
@@ -627,6 +723,71 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener, 
         tvLevel.setTextColor(getResources().getColor(R.color.filterTextGray));
         tvProgress.setTextColor(getResources().getColor(R.color.filterTextGray));
 
+    }
+
+    private void addSomething(){
+        Map<String, String> map;
+        map = new HashMap<>();
+        map.put(KEY, "1");
+        carriers.add(map);
+        map = new HashMap<>();
+        map.put(KEY, "2");
+        carriers.add(map);
+        map = new HashMap<>();
+        map.put(KEY, "3");
+        carriers.add(map);
+        map = new HashMap<>();
+        map.put(KEY, "3");
+        carriers.add(map);
+        map = new HashMap<>();
+        map.put(KEY, "4");
+        carriers.add(map);
+        map = new HashMap<>();
+        map.put(KEY, "5");
+        carriers.add(map);
+        map = new HashMap<>();
+        map.put(KEY, "6");
+        carriers.add(map);
+        map.put(KEY, "1");
+        carriers.add(map);
+        map = new HashMap<>();
+        map.put(KEY, "2");
+        carriers.add(map);
+        map = new HashMap<>();
+        map.put(KEY, "3");
+        carriers.add(map);
+        map = new HashMap<>();
+        map.put(KEY, "3");
+        carriers.add(map);
+        map = new HashMap<>();
+        map.put(KEY, "4");
+        carriers.add(map);
+        map = new HashMap<>();
+        map.put(KEY, "5");
+        carriers.add(map);
+        map = new HashMap<>();
+        map.put(KEY, "6");
+        carriers.add(map);
+        map.put(KEY, "1");
+        carriers.add(map);
+        map = new HashMap<>();
+        map.put(KEY, "2");
+        carriers.add(map);
+        map = new HashMap<>();
+        map.put(KEY, "3");
+        carriers.add(map);
+        map = new HashMap<>();
+        map.put(KEY, "3");
+        carriers.add(map);
+        map = new HashMap<>();
+        map.put(KEY, "4");
+        carriers.add(map);
+        map = new HashMap<>();
+        map.put(KEY, "5");
+        carriers.add(map);
+        map = new HashMap<>();
+        map.put(KEY, "6");
+        carriers.add(map);
     }
 
 }

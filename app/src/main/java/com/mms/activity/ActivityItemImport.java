@@ -46,7 +46,7 @@ public class ActivityItemImport extends BaseActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setOCL();
 
-        data_list = new ArrayList<Map<String, Object>>();
+        data_list = new ArrayList<>();
         getData();
         String[] from = {"image", "text"};
         int[] to = {R.id.image, R.id.text};
@@ -63,7 +63,7 @@ public class ActivityItemImport extends BaseActivity implements View.OnClickList
 
     public List<Map<String, Object>> getData() {
         for (int i = 0; i < icon.length; i++) {
-            Map<String, Object> map = new HashMap<String, Object>();
+            Map<String, Object> map = new HashMap<>();
             map.put("image", icon[i]);
             map.put("text", iconName[i]);
             data_list.add(map);
@@ -84,7 +84,7 @@ public class ActivityItemImport extends BaseActivity implements View.OnClickList
 
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        Intent intent = null;
+        Intent intent ;
         switch (i) {
             case 0:
                 intent = new Intent(this, ActivityItemImportTudi.class);

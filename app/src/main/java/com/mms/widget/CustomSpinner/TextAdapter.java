@@ -29,7 +29,7 @@ public class TextAdapter extends ArrayAdapter<String> {
 
 
 	public TextAdapter(Context context, List<String> listData, int sId, int nId, int type) {
-		super(context, R.string.no_data, listData);
+		super(context, R.layout.empty_data_view, listData);
 		mContext = context;
 		mListData = listData;
 		this.type = type;
@@ -39,9 +39,9 @@ public class TextAdapter extends ArrayAdapter<String> {
 		normalDrawbleId = nId;
 		init();
 	}
-	
+
 	public TextAdapter(Context context, String[] arrayData, int sId, int nId, int type) {
-		super(context, R.string.no_data, arrayData);
+		super(context, R.layout.empty_data_view, arrayData);
 		mContext = context;
 		mArrayData = arrayData;
 		this.type = type;
@@ -51,6 +51,18 @@ public class TextAdapter extends ArrayAdapter<String> {
 		normalDrawbleId = nId;
 		init();
 	}
+
+//	public TextAdapter(Context context, String[] arrayData, int sId, int nId, int type) {
+//		super(context, R.string.no_data, arrayData);
+//		mContext = context;
+//		mArrayData = arrayData;
+//		this.type = type;
+//		if(sId!=0){
+//			selectedDrawble = sId;
+//		}
+//		normalDrawbleId = nId;
+//		init();
+//	}
 	
 	private void init(){
 		onClickListener = new OnClickListener() {

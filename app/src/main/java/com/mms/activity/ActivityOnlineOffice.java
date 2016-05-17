@@ -1,7 +1,9 @@
 package com.mms.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.SimpleAdapter;
@@ -22,7 +24,7 @@ import roboguice.inject.InjectView;
  * 在线办公主界面
  */
 @ContentView(R.layout.layout_activity_onlineoffice)
-public class ActivityOnlineOffice extends BaseActivity implements View.OnClickListener {
+public class ActivityOnlineOffice extends BaseActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
     @InjectView(R.id.gv_activity_onlineoffice)
     private GridView gvOnlineOffice;
@@ -33,10 +35,10 @@ public class ActivityOnlineOffice extends BaseActivity implements View.OnClickLi
     private List<Map<String, Object>> data_list;
     private SimpleAdapter sim_adapter;
 
-    private int[] icon = { R.drawable.icon_rizhi, R.drawable.icon_yongche,
+    private int[] icon = {R.drawable.icon_rizhi, R.drawable.icon_yongche,
             R.drawable.icon_waichu, R.drawable.icon_qingjia, R.drawable.icon_jiaban,
             R.drawable.icon_chuchai, R.drawable.icon_gaizhang, R.drawable.icon_zizhishiyong};
-    private String[] iconName = { "日志", "用车", "外出", "请假", "加班", "出差", "盖章",
+    private String[] iconName = {"日志", "用车", "外出", "请假", "加班", "出差", "盖章",
             "资质使用"};
 
 
@@ -45,22 +47,23 @@ public class ActivityOnlineOffice extends BaseActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setOCL();
 
-        data_list = new ArrayList<Map<String, Object>>();
+        data_list = new ArrayList<>();
         getData();
-        String [] from ={"image","text"};
-        int [] to = {R.id.image,R.id.text};
+        String[] from = {"image", "text"};
+        int[] to = {R.id.image, R.id.text};
         sim_adapter = new SimpleAdapter(this, data_list, R.layout.gridview_item, from, to);
         gvOnlineOffice.setAdapter(sim_adapter);
 
     }
 
-    private void setOCL(){
+    private void setOCL() {
         btnBack.setOnClickListener(this);
+        gvOnlineOffice.setOnItemClickListener(this);
 
     }
 
-    public List<Map<String, Object>> getData(){
-        for(int i=0;i<icon.length;i++){
+    public List<Map<String, Object>> getData() {
+        for (int i = 0; i < icon.length; i++) {
             Map<String, Object> map = new HashMap<String, Object>();
             map.put("image", icon[i]);
             map.put("text", iconName[i]);
@@ -71,11 +74,22 @@ public class ActivityOnlineOffice extends BaseActivity implements View.OnClickLi
 
     @Override
     public void onClick(View view) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.btn_activity_onlineoffice_back:
                 finish();
                 break;
 
+        }
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        Intent intent = null;
+        switch (i) {
+            case 0:
+                intent = new Intent(this, ActivityOnlineOfficeWorkLog.class);
+                startActivity(intent);
+                break;
         }
     }
 }

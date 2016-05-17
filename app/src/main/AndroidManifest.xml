@@ -15,9 +15,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.ActivityAbout">
-
-        </activity>
+        <activity android:name=".activity.ActivityAbout"></activity>
         <activity android:name=".activity.ActivityAgreement"></activity>
         <activity android:name=".activity.ActivitySetPrivacy"></activity>
         <activity android:name=".activity.ActivityFeedBack"></activity>
@@ -31,10 +29,14 @@
         <activity android:name=".activity.ActivityCarrierImportOther"></activity>
         <activity android:name=".activity.ActivityCarrierImportSoho"></activity>
         <activity android:name=".activity.ActivityCarrierInfo"></activity>
-        <activity android:name=".activity.ActivitySelectDistrict"
+        <activity
+            android:name=".activity.ActivitySelectDistrict"
             android:theme="@style/translucent"></activity>
         <activity android:name=".activity.ActivityItemImportTudi"></activity>
         <activity android:name=".activity.ActivityItemImportOther"></activity>
+        <activity android:name=".activity.ActivityOnlineOfficeWorkLog"></activity>
+        <activity android:name=".activity.ActivityWorkLogImport"></activity>
+        <activity android:name=".activity.ActivitySearchCondition"></activity>
 
 
     </application>

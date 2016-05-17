@@ -11,7 +11,7 @@ import com.mms.dao.generate.DaoSession;
  */
 public class DaoManager {
 
-    private static final String DB_NAME = "group_db";
+    private static final String DB_NAME = "mms_db";
 
     private static DaoSession daoSession;
 

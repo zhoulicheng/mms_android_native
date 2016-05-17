@@ -135,7 +135,7 @@
                 android:background="@color/divideLineGray" />
 
             <RelativeLayout
-                android:id="@+id/rl_activity_carrier_import_soho_diqu"
+                android:id="@+id/rl_activity_carrier_import_soho_district"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/fragment_my_item_height"
                 android:background="@drawable/whitebuttonselector"
@@ -152,7 +152,7 @@
                     android:textSize="@dimen/fragment_my_item_left_text_size" />
 
                 <TextView
-                    android:id="@+id/tv_activity_carrier_import_soho_diqu"
+                    android:id="@+id/tv_activity_carrier_import_soho_district"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"

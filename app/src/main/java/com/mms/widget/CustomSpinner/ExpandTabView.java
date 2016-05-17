@@ -253,8 +253,8 @@ public class ExpandTabView extends LinearLayout implements OnDismissListener {
 
     @Override
     public void onDismiss() {
-        showPopup(selectPosition);
         popupWindow.setOnDismissListener(null);
+        showPopup(selectPosition);
         Utils.showToast(mContext,"窗体消失了");
 
     }

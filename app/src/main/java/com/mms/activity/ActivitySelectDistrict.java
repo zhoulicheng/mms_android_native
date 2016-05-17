@@ -1,5 +1,6 @@
 package com.mms.activity;
 
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.view.View;
@@ -7,7 +8,6 @@ import android.widget.Button;
 
 import com.mms.R;
 import com.mms.base.BaseActivity;
-import com.mms.util.Utils;
 import com.mms.widget.kankanWheelView.CityModel;
 import com.mms.widget.kankanWheelView.DistrictModel;
 import com.mms.widget.kankanWheelView.OnWheelChangedListener;
@@ -33,6 +33,10 @@ import roboguice.inject.InjectView;
  */
 @ContentView(R.layout.layout_activity_select_district)
 public class ActivitySelectDistrict extends BaseActivity implements OnWheelChangedListener, View.OnClickListener {
+
+    public static final int SELECTDISTRICT = 120;
+    public static final String SELECTDISTRICT_RESULT_STRING = "string";
+    public static final String SELECTDISTRICT_RESULT_CODE = "code";
 
     @InjectView(R.id.id_province)
     private WheelView mViewProvince;
@@ -88,6 +92,7 @@ public class ActivitySelectDistrict extends BaseActivity implements OnWheelChang
         } else if (wheel == mViewDistrict) {
             mCurrentDistrict = mDistrictDatasMap.get(mCurrentCity).get(newValue);
             mCurrentDistrictCode = mCurrentDistrict.getZipcode();
+            mCurrentDistrictName = mCurrentDistrict.getName();
         }
     }
 
@@ -99,6 +104,7 @@ public class ActivitySelectDistrict extends BaseActivity implements OnWheelChang
 
         mCurrentProvice = mProvinceDatas.get(pCurrent);
         mCurrentProviceCode = mCurrentProvice.getZipcode();
+        mCurrentProviceName = mCurrentProvice.getName();
         List<CityModel> cities = mCitisDatasMap.get(mCurrentProvice);
         if (cities == null) {
             cities = new ArrayList<>();
@@ -115,6 +121,7 @@ public class ActivitySelectDistrict extends BaseActivity implements OnWheelChang
         int pCurrent = mViewCity.getCurrentItem();
         mCurrentCity = mCitisDatasMap.get(mCurrentProvice).get(pCurrent);
         mCurrentCityCode = mCurrentCity.getZipcode();
+        mCurrentCityName = mCurrentCity.getName();
         List<DistrictModel> areas = mDistrictDatasMap.get(mCurrentCity);
 
         if (areas == null) {
@@ -147,17 +154,20 @@ public class ActivitySelectDistrict extends BaseActivity implements OnWheelChang
      */
     protected ProvinceModel mCurrentProvice;
     protected String mCurrentProviceCode;
+    protected String mCurrentProviceName;
     /**
      * 当前市
      */
     protected CityModel mCurrentCity;
     protected String mCurrentCityCode;
+    protected String mCurrentCityName;
 
     /**
      * 当前区
      */
     protected DistrictModel mCurrentDistrict;
     protected String mCurrentDistrictCode;
+    protected String mCurrentDistrictName;
 
     /**
      * 解析省市区的XML数据
@@ -181,13 +191,16 @@ public class ActivitySelectDistrict extends BaseActivity implements OnWheelChang
             if (provinceList != null && !provinceList.isEmpty()) {
                 mCurrentProvice = provinceList.get(0);
                 mCurrentProviceCode = mCurrentProvice.getZipcode();
+                mCurrentProviceName = mCurrentProvice.getName();
                 List<CityModel> cityList = provinceList.get(0).getCityList();
                 if (cityList != null && !cityList.isEmpty()) {
                     mCurrentCity = cityList.get(0);
                     mCurrentCityCode = mCurrentCity.getZipcode();
+                    mCurrentCityName = mCurrentCity.getName();
                     List<DistrictModel> districtList = cityList.get(0).getDistrictList();
                     mCurrentDistrict = districtList.get(0);
                     mCurrentDistrictCode = mCurrentDistrict.getZipcode();
+                    mCurrentDistrictName = mCurrentDistrict.getName();
                 }
             }
             //*/
@@ -226,8 +239,30 @@ public class ActivitySelectDistrict extends BaseActivity implements OnWheelChang
                 finish();
                 break;
             case R.id.btn_activity_select_district_ok:
-                Utils.showToast(this, mCurrentProviceCode + "_" + mCurrentCityCode + "_" + mCurrentDistrictCode);
+                Intent intent = new Intent();
+                intent.putExtra(SELECTDISTRICT_RESULT_STRING, getResultString());
+                intent.putExtra(SELECTDISTRICT_RESULT_CODE, getResultCode());
+                setResult(RESULT_OK, intent);
+                finish();
                 break;
         }
     }
+
+    private String getResultString() {
+        if (mCurrentProviceName.equals("全部")) {
+            return mCurrentProviceName;
+        }
+        if (mCurrentCityName.equals("全部")) {
+            return mCurrentProviceName + " 全部";
+        }
+        if (mCurrentDistrictName.equals("全部")) {
+            return mCurrentProviceName + " " + mCurrentCityName + " 全部";
+        }
+        return mCurrentProviceName + " " + mCurrentCityName + " " + mCurrentDistrictName;
+    }
+
+    private String getResultCode() {
+        return mCurrentProviceCode + "_" + mCurrentCityCode + "_" + mCurrentDistrictCode;
+    }
+
 }

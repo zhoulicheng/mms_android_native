@@ -14,6 +14,9 @@
 
     <color name="filterTextGray">#333333</color>
     <color name="hintGray">#AAAAAA</color>
+    <!--比较浅的灰色-->
+    <color name="qianGray">#DDDDDD</color>
+
 
     <color name="colorPrimary">#2768AC</color>
     <color name="colorPrimaryDark">#303F9F</color>
@@ -28,7 +31,7 @@
     <color name="app_custom_popup_view_plate_text">#616161</color>
     <color name="app_custom_popup_view_list_text">#333333</color>
     <!-- 遮罩层背景 -->
-    <color name="app_shade_bg">#7f000000</color>
+    <color name="app_shade_bg">#80000000</color>
     <color name="transparent">#00000000</color>
     <!--透明样式Activity背景-->
     <color name="translucent_background">#80000000</color>

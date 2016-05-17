@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/titleBarHeight"
+        android:background="@color/colorPrimary"
+        >
+
+        <Button
+            android:id="@+id/btn_activity_worklog_import_back"
+            android:layout_width="@dimen/backButtonWidth"
+            android:layout_height="@dimen/backButtonHeight"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:background="@drawable/backarrowselector" />
+
+        <RadioGroup
+            android:id="@+id/rg_activity_worklog_import"
+            android:layout_width="130dp"
+            android:layout_height="25dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:padding="1.5dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_activity_worklog_import_plan"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="计划"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp" />
+
+            <RadioButton
+                android:id="@+id/rb_activity_worklog_import_summary"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:button="@null"
+                android:gravity="center"
+                android:text="总结"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+        </RadioGroup>
+
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/activity_worklog_tab_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backGray" />
+
+</LinearLayout>

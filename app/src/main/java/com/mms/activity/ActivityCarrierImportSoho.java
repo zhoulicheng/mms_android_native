@@ -1,5 +1,6 @@
 package com.mms.activity;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -51,6 +52,12 @@ public class ActivityCarrierImportSoho extends BaseActivity implements View.OnCl
 
     @InjectView(R.id.tv_activity_carrier_import_soho_level)
     private TextView tvLevel;
+
+    @InjectView(R.id.rl_activity_carrier_import_soho_district)
+    private RelativeLayout rlDistrict;
+
+    @InjectView(R.id.tv_activity_carrier_import_soho_district)
+    private TextView tvDistrict;
 
     @InjectView(R.id.rl_activity_carrier_import_soho_status)
     private RelativeLayout rlStatus;
@@ -110,6 +117,7 @@ public class ActivityCarrierImportSoho extends BaseActivity implements View.OnCl
     private int deco = 0;
     private int level = -1;
     private int status = -1;
+    private String districtCode;
     private List<String> needs;
 
     private List<ContactView> contactViews;
@@ -237,6 +245,7 @@ public class ActivityCarrierImportSoho extends BaseActivity implements View.OnCl
             }
         });
         btnSave.setOnClickListener(this);
+        rlDistrict.setOnClickListener(this);
 
     }
 
@@ -358,6 +367,11 @@ public class ActivityCarrierImportSoho extends BaseActivity implements View.OnCl
                     messageDialog.show();
                 }
                 break;
+            case R.id.rl_activity_carrier_import_soho_district:
+                //选择地区
+                Intent intent = new Intent(this, ActivitySelectDistrict.class);
+                startActivityForResult(intent, ActivitySelectDistrict.SELECTDISTRICT);
+                break;
 
         }
     }
@@ -378,6 +392,9 @@ public class ActivityCarrierImportSoho extends BaseActivity implements View.OnCl
         if (needs.size() == 0) {
             Utils.showToast(this, "请选择意向");
             return false;
+        }
+        if (TextUtils.isEmpty(districtCode)) {
+            Utils.showToast(this, "请选择地区");
         }
         return true;
     }
@@ -440,6 +457,13 @@ public class ActivityCarrierImportSoho extends BaseActivity implements View.OnCl
         return deco;
     }
 
+    private String getDistrictCode() {
+        if (!TextUtils.isEmpty(districtCode)) {
+            return districtCode;
+        }
+        return "";
+    }
+
     private String getNeed() {
         String s = "";
         for (String str : needs) {
@@ -466,6 +490,24 @@ public class ActivityCarrierImportSoho extends BaseActivity implements View.OnCl
 
         } else {
             return super.onKeyDown(keyCode, event);
+        }
+
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            case ActivitySelectDistrict.SELECTDISTRICT:
+                if (resultCode == RESULT_OK) {
+                    tvDistrict.setText(data.getStringExtra(ActivitySelectDistrict.SELECTDISTRICT_RESULT_STRING));
+                    tvDistrict.setTextColor(getResources().getColor(R.color.filterTextGray));
+                    districtCode = data.getStringExtra(ActivitySelectDistrict.SELECTDISTRICT_RESULT_CODE);
+                    Utils.showToast(this,districtCode);
+                }else {
+                    tvDistrict.setText("请选择");
+                    tvDistrict.setTextColor(getResources().getColor(R.color.hintGray));
+                }
+                break;
         }
 
     }

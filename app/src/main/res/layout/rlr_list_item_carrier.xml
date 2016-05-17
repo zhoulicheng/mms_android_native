@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingLeft="15dp"
+    android:paddingTop="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/rlr_list_item_carrier_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="这是一个载体"
+            android:textColor="@color/black"
+            android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="12dp"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rlr_list_item_carrier_info"
+                android:text="时间：2016-4-14  面积：1234㎡  录入人：周立成"
+                android:textColor="@color/textGray"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

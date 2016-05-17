@@ -2,14 +2,17 @@ package com.mms.activity;
 
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.RelativeLayout;
 
 import com.mms.R;
 import com.mms.base.BaseFragment;
+import com.mms.util.DrawableUtils;
 
 import roboguice.inject.InjectView;
 
@@ -42,6 +45,9 @@ public class FragmentMy extends BaseFragment implements View.OnClickListener {
     @InjectView(R.id.rl_fragment_my_about)
     private RelativeLayout rlAbout;
 
+    @InjectView(R.id.btn_fragment_my_logout)
+    private Button btnLogout;
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.layout_fragment_my, container,
                 false);
@@ -50,8 +56,17 @@ public class FragmentMy extends BaseFragment implements View.OnClickListener {
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        this.setOCL();
+        initView();
+        setOCL();
 
+    }
+
+    private void initView(){
+        if (Build.VERSION.SDK_INT>=16) {
+            btnLogout.setBackground(DrawableUtils.getDrawable(15, getResources().getColor(R.color.myRed)));
+        }else {
+            btnLogout.setBackgroundDrawable(DrawableUtils.getDrawable(15, getResources().getColor(R.color.myRed)));
+        }
     }
 
     private void setOCL() {

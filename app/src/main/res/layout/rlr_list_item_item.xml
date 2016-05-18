@@ -13,10 +13,10 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/rlr_list_item_carrier_title"
+            android:id="@+id/rlr_list_item_item_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="这是一个载体"
+            android:text="这是一个项目"
             android:textColor="@color/black"
             android:textSize="@dimen/fragment_my_item_left_text_size" />
 
@@ -30,7 +30,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/rlr_list_item_carrier_info"
+                android:id="@+id/rlr_list_item_item_info"
                 android:text="时间：2016-4-14  面积：1234㎡  录入人：周立成"
                 android:textColor="@color/textGray"
                 android:textSize="12sp" />

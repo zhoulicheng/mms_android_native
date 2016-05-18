@@ -1,7 +1,6 @@
 package com.mms.widget.CustomSpinner;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
@@ -80,7 +79,7 @@ public class CustomToggleButton extends RelativeLayout {
         if (checked) {
             tvTitle.setTextColor(getResources().getColor(R.color.textBlue));
             Drawable drawable = context.getResources().getDrawable(
-                    R.drawable.up_gray);
+                    R.drawable.up_blue);
             if (drawable != null) {
                 drawable.setBounds(0, 0, 40, 40);
                 tvTitle.setCompoundDrawablePadding(3);

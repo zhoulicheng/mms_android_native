@@ -36,7 +36,7 @@ public class CarrierAdapter extends RecyclerViewAdapter<Map<String, String>> imp
 
     @Override
     public RecyclerView.ViewHolder onCreateHolder(ViewGroup parent, int viewType) {
-        return new CarrierViewHolder(layoutInflater.inflate(R.layout.rlr_list_item_carrier, parent, false));
+        return new CarrierViewHolder(layoutInflater.inflate(R.layout.rlr_list_item_item, parent, false));
     }
 
 

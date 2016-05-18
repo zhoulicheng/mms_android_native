@@ -76,7 +76,7 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener, 
     private TextView tvProgress;
 
     @InjectView(R.id.ll_fragment_item_title)
-    private LinearLayout title_layout;
+    private LinearLayout titleLayout;
 
     @InjectView(R.id.rl_Fragment_item_from)
     private RelativeLayout rlFrom;
@@ -151,7 +151,7 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener, 
 
     private void setOCL() {
         btnAdd.setOnClickListener(this);
-        title_layout.setOnClickListener(this);
+        titleLayout.setOnClickListener(this);
         rlFrom.setOnClickListener(this);
         rlLevel.setOnClickListener(this);
         rlProgress.setOnClickListener(this);
@@ -268,7 +268,7 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener, 
         switch (v.getId()) {
             case R.id.rl_Fragment_item_from:
                 if (isOpenWhitePop) {
-                    ivFrom.setBackgroundResource(R.drawable.up_gray);
+                    ivFrom.setBackgroundResource(R.drawable.up_blue);
                     tvFrom.setTextColor(getResources().getColor(R.color.textBlue));
                     popWhiteWindow(v);
 
@@ -282,7 +282,7 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener, 
                 break;
             case R.id.rl_Fragment_item_level:
                 if (isOpenWhitePop) {
-                    ivLevel.setBackgroundResource(R.drawable.up_gray);
+                    ivLevel.setBackgroundResource(R.drawable.up_blue);
                     tvLevel.setTextColor(getResources().getColor(R.color.textBlue));
                     popWhiteWindow(v);
 
@@ -297,7 +297,7 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener, 
                 break;
             case R.id.rl_Fragment_item_progress:
                 if (isOpenWhitePop) {
-                    ivProgress.setBackgroundResource(R.drawable.up_gray);
+                    ivProgress.setBackgroundResource(R.drawable.up_blue);
                     tvProgress.setTextColor(getResources().getColor(R.color.textBlue));
                     popWhiteWindow(v);
 
@@ -311,7 +311,7 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener, 
                 break;
             case R.id.rl_Fragment_item_state:
                 if (isOpenWhitePop) {
-                    ivState.setBackgroundResource(R.drawable.up_gray);
+                    ivState.setBackgroundResource(R.drawable.up_blue);
                     tvState.setTextColor(getResources().getColor(R.color.textBlue));
                     popWhiteWindow(v);
 
@@ -340,7 +340,7 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener, 
         list.setItemsCanFocus(false);
         list.setOnItemClickListener(this);
         int x = (int) getResources().getDimension(R.dimen.pop_gray_x);
-        int y = (int) getResources().getDimension(R.dimen.pop_gray_y);
+        int y = (int) getResources().getDimension(R.dimen.pop_gray_y_item);
         window = new PopupWindow(v, x, y);
         window.setBackgroundDrawable(getResources().getDrawable(R.drawable.gray_back));
         window.setFocusable(true);
@@ -378,7 +378,7 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener, 
         list.setDividerHeight(1);
         list.setItemsCanFocus(false);
         list.setOnItemClickListener(this);
-        int y = (int) getResources().getDimension(R.dimen.pop_white_y);
+        int y = (int) getResources().getDimension(R.dimen.pop_white_y_item);
         DisplayMetrics dm = new DisplayMetrics();
         getActivity().getWindowManager().getDefaultDisplay().getMetrics(dm);
         int x = dm.widthPixels;

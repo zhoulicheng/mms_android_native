@@ -17,7 +17,7 @@ import roboguice.inject.InjectView;
 /**
  * Created by Tanikawa on 2016/5/16.
  */
-@ContentView(R.layout.layout_activity_worklog)
+@ContentView(R.layout.layout_activity_onlineoffice_worklog)
 public class ActivityOnlineOfficeWorkLog extends BaseActivity implements View.OnClickListener {
 
     @InjectView(R.id.btn_activity_worklog_back)

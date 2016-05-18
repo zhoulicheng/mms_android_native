@@ -778,7 +778,7 @@
                 android:layout_height="80dp"
                 android:background="@color/white"
                 android:gravity="top"
-                android:hint="请详细描述你的问题和意见"
+                android:hint="请输入项目介绍"
                 android:paddingBottom="6dp"
                 android:paddingLeft="@dimen/fragment_my_item_padding_left"
                 android:paddingRight="@dimen/fragment_my_item_padding_left"

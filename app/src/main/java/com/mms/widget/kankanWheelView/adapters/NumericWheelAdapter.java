@@ -35,6 +35,9 @@ public class NumericWheelAdapter extends AbstractWheelTextAdapter {
     
     // format
     private String format;
+
+
+
     
     /**
      * Constructor

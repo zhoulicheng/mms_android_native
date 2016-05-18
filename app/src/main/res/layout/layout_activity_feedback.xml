@@ -32,4 +32,72 @@
 
     </RelativeLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divide_line"
+        android:background="@color/divideLineGray" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@null"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/fragment_my_item_padding_left"
+        android:text="介绍"
+        android:textColor="@color/filterTextGray"
+        android:textSize="15sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divide_line"
+        android:background="@color/divideLineGray" />
+
+
+    <EditText
+        android:id="@+id/et_activity_carrier_import_other_intro"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/white"
+        android:gravity="top"
+        android:hint="请详细描述你的问题和意见"
+        android:paddingBottom="6dp"
+        android:paddingLeft="@dimen/fragment_my_item_padding_left"
+        android:paddingRight="@dimen/fragment_my_item_padding_left"
+        android:paddingTop="6dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/hintGray"
+        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divide_line"
+        android:background="@color/divideLineGray" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@null"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/fragment_my_item_padding_left"
+        android:text="图片上传"
+        android:textColor="@color/filterTextGray"
+        android:textSize="15sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divide_line"
+        android:background="@color/divideLineGray" />
+    <!--后续添加上传图片的view-->
+    <com.mms.widget.uploadImagesLayout.OperateImagesLayout
+        android:id="@+id/oil_activity_carrier_import_other"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:padding="13dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/divide_line"
+        android:background="@color/divideLineGray" />
+
 </LinearLayout>

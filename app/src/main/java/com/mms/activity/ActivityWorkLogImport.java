@@ -1,6 +1,5 @@
 package com.mms.activity;
 
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -53,7 +52,7 @@ public class ActivityWorkLogImport extends RoboFragmentActivity implements View.
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.layout_activity_worklog_import);
+        setContentView(R.layout.layout_activity_onlineoffice_worklog_import);
         receiveIntent();
         initView();
         setOCL();

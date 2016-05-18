@@ -16,11 +16,6 @@
 
 package com.mms.widget.kankanWheelView;
 
-/**
- * Wheel adapter interface
- * 
- * @deprecated Use WheelViewAdapter
- */
 public interface WheelAdapter {
 	/**
 	 * Gets items count

@@ -1,6 +1,7 @@
 package com.mms.activity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -25,7 +26,9 @@ import com.mms.util.DrawableUtils;
 import com.mms.util.Utils;
 import com.mms.widget.CancelableEditView;
 import com.mms.widget.ContactView;
+import com.mms.widget.uploadImagesLayout.OperateImagesLayout;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -166,6 +169,9 @@ public class ActivityCarrierImportDepot extends BaseActivity implements View.OnC
 
     @InjectView(R.id.et_activity_carrier_import_depot_sprice)
     private CancelableEditView etSPrice;
+
+    @InjectView(R.id.oil_activity_carrier_import_depot)
+    private OperateImagesLayout imagesLayout;
 
     @InjectView(R.id.et_activity_carrier_import_depot_intro)
     private EditText etIntro;
@@ -794,6 +800,21 @@ public class ActivityCarrierImportDepot extends BaseActivity implements View.OnC
                 } else {
                     tvDistrict.setText("请选择");
                     tvDistrict.setTextColor(getResources().getColor(R.color.hintGray));
+                }
+                break;
+            case OperateImagesLayout.CAMERA_KEY:
+                if (resultCode == RESULT_OK) {
+                    File file = imagesLayout.getCurrentTmpFile();
+                    if (file != null) {
+                        Uri uri = Uri.fromFile(file);
+                        imagesLayout.addImage(uri.toString());
+                    }
+                }
+                break;
+            case  OperateImagesLayout.PHOTO_KEY:
+                if (resultCode == RESULT_OK){
+                    Uri uri = data.getData();
+                    imagesLayout.addImage(uri.toString());
                 }
                 break;
         }

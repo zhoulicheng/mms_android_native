@@ -90,6 +90,10 @@ public class ActivityOnlineOffice extends BaseActivity implements View.OnClickLi
                 intent = new Intent(this, ActivityOnlineOfficeWorkLog.class);
                 startActivity(intent);
                 break;
+            case 2:
+                intent = new Intent(this, ActivityOnlineOfficeOut.class);
+                startActivity(intent);
+                break;
         }
     }
 }

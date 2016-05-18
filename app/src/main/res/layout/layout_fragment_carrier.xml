@@ -1,60 +1,219 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backGray"
-    android:orientation="vertical">
-
-
-    <RelativeLayout
-
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/titleBarHeight"
-        android:background="@color/colorPrimary"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:clickable="true"
-            android:drawableRight="@drawable/downselector"
-            android:paddingLeft="4dp"
-            android:text="全部"
-            android:textColor="@color/white_text_color_selector_for_press"
-            android:textSize="20sp" />
-
-        <Button
-            android:id="@+id/btn_fragment_carrier_import"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="15dp"
-            android:background="@drawable/addselector" />
-
-    </RelativeLayout>
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
 
     <LinearLayout
+        android:id="@+id/null_ll_fragment_carrier_top"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@color/white"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <com.mms.widget.CustomSpinner.ExpandTabView
-            android:id="@+id/expandtabTab"
+        <RelativeLayout
+
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="@dimen/titleBarHeight"
+            android:background="@color/colorPrimary"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/ll_fragment_carrier_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_fragment_carrier_top_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:text="载体"
+                    android:textColor="@color/white_text_color_selector_for_press"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/iv_fragment_carrier_top"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:background="@drawable/down_white"
+
+                    />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_fragment_carrier_import"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/addselector" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/rl_Fragment_carrier_status"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:clickable="true"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_fragment_carrier_status_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="状态"
+                        android:textColor="@color/filterTextGray"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/iv_fragment_carrier_status"
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:background="@drawable/down_gray"
+
+                        />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="@dimen/divide_line"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/divideLineGray" />
+
+            <RelativeLayout
+                android:id="@+id/rl_Fragment_carrier_need"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:clickable="true"
+                android:gravity="center_vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_fragment_carrier_need_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="意向"
+                        android:textColor="@color/filterTextGray"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:id="@+id/iv_fragment_carrier_need"
+                        android:layout_width="14dp"
+                        android:layout_height="14dp"
+                        android:background="@drawable/down_gray"
+
+                        />
+                </LinearLayout>
+            </RelativeLayout>
+
+        </LinearLayout>
 
     </LinearLayout>
 
-    <View
-        android:id="@+id/v_bg"
+    <LinearLayout
+        android:id="@+id/null_ll_fragment_carrier_search"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/null_ll_fragment_carrier_top"
+        android:orientation="vertical"
+        android:paddingBottom="8dp"
+        android:paddingLeft="6dp"
+        android:paddingRight="6dp"
+        android:paddingTop="8dp">
+
+        <LinearLayout
+            android:id="@+id/ll_fragment_carrier_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="5dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="5dp"
+            android:paddingTop="5dp">
+
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/search_icon" />
+
+            <TextView
+                android:id="@+id/tv_fragment_carrier_search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:text="搜索"
+                android:textColor="@color/textGray"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.mms.widget.rlrView.view.RLRView
+        android:id="@+id/rlrview_fragment_carrier"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/app_shade_bg"
-        android:visibility="gone"/>
+        android:layout_below="@id/null_ll_fragment_carrier_search"
+        android:background="@color/white"
+        app:autoRefresh="true"
+        app:canLoadMore="true"
+        app:dividerColor="@color/divideLineGray"
+        app:dividerHeight="@dimen/divide_line"
+        app:emptyView="@layout/empty_data_view">
 
-</LinearLayout>
+    </com.mms.widget.rlrView.view.RLRView>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/null_ll_fragment_carrier_top">
+
+        <View
+            android:id="@+id/v_fragment_carrier_cover"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/app_shade_bg"
+            android:visibility="invisible" />
+    </FrameLayout>
+
+</RelativeLayout>

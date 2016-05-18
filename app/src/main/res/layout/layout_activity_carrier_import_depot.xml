@@ -1647,7 +1647,7 @@
                 android:layout_height="80dp"
                 android:background="@color/white"
                 android:gravity="top"
-                android:hint="请详细描述你的问题和意见"
+                android:hint="请输入载体介绍"
                 android:paddingBottom="6dp"
                 android:paddingLeft="@dimen/fragment_my_item_padding_left"
                 android:paddingRight="@dimen/fragment_my_item_padding_left"
@@ -1677,10 +1677,12 @@
                 android:background="@color/divideLineGray" />
 
             <!--后续添加上传图片的view-->
-            <View
+            <com.mms.widget.uploadImagesLayout.OperateImagesLayout
+                android:id="@+id/oil_activity_carrier_import_depot"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:background="@color/white" />
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:padding="13dp" />
 
             <View
                 android:layout_width="match_parent"

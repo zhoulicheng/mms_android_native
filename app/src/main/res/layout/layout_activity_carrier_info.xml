@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backGray"
-    android:orientation="vertical">
+    android:background="@color/backGray">
 
     <RelativeLayout
+        android:id="@+id/rl_activity_carrier_info_title"
         android:layout_width="match_parent"
         android:layout_height="@dimen/titleBarHeight"
         android:background="@color/colorPrimary"
@@ -22,7 +22,7 @@
             android:textSize="20sp" />
 
         <Button
-            android:id="@+id/btn_activity_feedback_back"
+            android:id="@+id/btn_activity_carrier_info_back"
             android:layout_width="@dimen/backButtonWidth"
             android:layout_height="@dimen/backButtonHeight"
             android:layout_alignParentLeft="true"
@@ -32,4 +32,1866 @@
 
     </RelativeLayout>
 
-</LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_activity_carrier_info_foot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divide_line"
+            android:background="@color/divideLineGray" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_activity_carrier_info_call"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/whitebuttonselector"
+                android:text="拨打电话"
+                android:textColor="#1088D6"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="@dimen/divide_line"
+                android:layout_height="match_parent"
+                android:background="@color/divideLineGray" />
+
+            <Button
+                android:id="@+id/btn_activity_carrier_info_cloud"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/whitebuttonselector"
+                android:text="备注信息"
+                android:textColor="#1088D6"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.mms.widget.ReboundScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/ll_activity_carrier_info_foot"
+        android:layout_below="@id/rl_activity_carrier_info_title">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="20dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingLeft="@dimen/fragment_my_item_padding_left">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:gravity="center_vertical"
+                    android:text="标题"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:padding="10dp"
+                    android:text="一个名字很长的载体一个名字很长的载体一个名字很长的载体"
+                    android:textColor="@color/textGray"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_line"
+                android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
+                android:background="@color/divideLineGray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fragment_my_item_height"
+                android:background="@color/white"
+                android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="编号"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_vertical"
+                    android:text="TDC-8736"
+                    android:textColor="@color/textGray"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_line"
+                android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
+                android:background="@color/divideLineGray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fragment_my_item_height"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="等级"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_vertical"
+                    android:text="★"
+                    android:textColor="@color/textGray"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_line"
+                android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
+                android:background="@color/divideLineGray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fragment_my_item_height"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="地区"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_vertical"
+                    android:text="天津  天津  西青区"
+                    android:textColor="@color/textGray"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_line"
+                android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
+                android:background="@color/divideLineGray" />
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingLeft="@dimen/fragment_my_item_padding_left">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:gravity="center_vertical"
+                    android:text="地址"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                <TextView
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:padding="10dp"
+                    android:text="一个名字很长的地址一个名字很长的地址一个名字很长的地址"
+                    android:textColor="@color/textGray"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_line"
+                android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
+                android:background="@color/divideLineGray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fragment_my_item_height"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="地图"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_vertical"
+                    android:text="查看地图"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_line"
+                android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
+                android:background="@color/divideLineGray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/fragment_my_item_height"
+                android:background="@color/white"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="载体状态"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:gravity="center_vertical"
+                    android:text="待租"
+                    android:textColor="@color/textGray"
+                    android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_line"
+                android:background="@color/divideLineGray" />
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/ll_activity_carrier_info_tudi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="面积"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="7263.00亩"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="出让形式"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="拍卖"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="土地类型"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="工业用地"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="容积率"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="0"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="税收要求"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="7823.00万元/亩"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="价格"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="63492.00万元/亩"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_line"
+                android:background="@color/divideLineGray" />
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/ll_activity_carrier_info_factory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="面积"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="175㎡"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="意向"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="出租"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="建筑结构"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="彩钢"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="院落面积"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="㎡"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="办公面积"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="㎡"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="承重"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="吨"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="高度"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="m"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="跨度"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="m"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="层数"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="12层"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="天车"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="是"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="变压器"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="0kva"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="租金"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="5元/㎡·天"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:layout_marginLeft="@dimen/fragment_my_item_padding_left"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="售价"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="28162元/㎡"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/ll_activity_carrier_info_depot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="面积"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="2831㎡"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="意向"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="出租"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="建筑结构"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="砖混"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="消防等级"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="丙一"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="卸货平台"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="内外混合平台"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="仓库类型"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="高台"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="地面承重"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="12T/㎡"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="住宿"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="无"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="食堂"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="无"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="发电设备"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="无"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="托管配送"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="是"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="售价"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="12元/㎡"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/ll_activity_carrier_info_soho"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="面积"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="2831㎡"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="意向"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="出租"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="所在楼层"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="234层"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="物业费"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="213元/㎡·天"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="免租期"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="123月"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="装修"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="简装"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="租金"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="2元/㎡·天"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="售价"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="23153元/㎡"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/ll_activity_carrier_info_business"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="面积"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="2831㎡"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="意向"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="出租"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/divide_line"
+                    android:background="@color/divideLineGray" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/fragment_my_item_height"
+                    android:background="@color/white"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                    android:paddingRight="@dimen/fragment_my_item_padding_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="售价"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center_vertical"
+                        android:text="276453元/㎡"
+                        android:textColor="@color/textGray"
+                        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_line"
+                android:background="@color/divideLineGray" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                android:text="介绍"
+                android:textColor="@color/filterTextGray"
+                android:textSize="15sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_line"
+                android:background="@color/divideLineGray" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:minLines="3"
+                android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                android:paddingTop="10dp"
+                android:text="这里应该有介绍"
+                android:textColor="@color/filterTextGray"
+                android:textSize="15sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_line"
+                android:background="@color/divideLineGray" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                android:text="录入人"
+                android:textColor="@color/filterTextGray"
+                android:textSize="15sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_line"
+                android:background="@color/divideLineGray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingBottom="10dp"
+                android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                android:paddingRight="@dimen/fragment_my_item_padding_left"
+                android:paddingTop="12dp">
+
+                <ImageView
+                    android:id="@+id/iv_activity_carrier_info_lururen"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:background="@drawable/ic_launcher" />
+
+                <TextView
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/iv_activity_carrier_info_lururen"
+                    android:gravity="center_horizontal"
+                    android:paddingTop="5dp"
+                    android:text="周立成"
+                    android:textColor="@color/textGray"
+                    android:textSize="13dp" />
+
+                <TextView
+                    android:id="@+id/tv_activity_carrier_info_lurushijian"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/iv_activity_carrier_info_lururen"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:text="录入时间：2016-5-19"
+                    android:textColor="@color/textGray"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_activity_carrier_info_lurushijian"
+                    android:layout_toRightOf="@id/iv_activity_carrier_info_lururen"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:text="选哪儿官方"
+                    android:textColor="@color/black"
+                    android:textSize="14dp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_line"
+                android:background="@color/divideLineGray" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                android:text="所在单位"
+                android:textColor="@color/filterTextGray"
+                android:textSize="15sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/divide_line"
+                android:background="@color/divideLineGray" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:paddingBottom="12dp"
+                android:paddingLeft="@dimen/fragment_my_item_padding_left"
+                android:paddingRight="@dimen/fragment_my_item_padding_left"
+                android:paddingTop="12dp">
+
+                <ImageView
+                    android:id="@+id/iv_activity_carrier_info_danwei"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:background="@drawable/ic_launcher" />
+
+                <TextView
+                    android:id="@+id/tv_activity_carrier_info_lurushijian2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/iv_activity_carrier_info_danwei"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:text="录入时间：2016-5-19"
+                    android:textColor="@color/textGray"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_activity_carrier_info_lurushijian2"
+                    android:layout_toRightOf="@id/iv_activity_carrier_info_danwei"
+                    android:paddingLeft="5dp"
+                    android:paddingTop="5dp"
+                    android:text="选哪儿官方"
+                    android:textColor="@color/black"
+                    android:textSize="14dp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_marginBottom="20dp"
+                android:layout_height="@dimen/divide_line"
+                android:background="@color/divideLineGray" />
+        </LinearLayout>
+    </com.mms.widget.ReboundScrollView>
+
+
+</RelativeLayout>

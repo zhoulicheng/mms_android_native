@@ -23,6 +23,7 @@ import android.widget.TextView;
 
 import com.mms.R;
 import com.mms.adapter.CarrierAdapter;
+import com.mms.adapter.ItemAdapter;
 import com.mms.base.BaseFragment;
 import com.mms.util.DrawableUtils;
 import com.mms.util.Utils;
@@ -102,7 +103,7 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener, 
     @InjectView(R.id.ll_fragment_item_search)
     private LinearLayout llSearch;
 
-    private CarrierAdapter adapter;
+    private ItemAdapter adapter;
     private List<Map<String,String>> carriers;
 
     private boolean isOpenPop = false;
@@ -160,7 +161,7 @@ public class FragmentItem extends BaseFragment implements View.OnClickListener, 
     }
 
     private void setRLRView() {
-        adapter = new CarrierAdapter(getActivity());
+        adapter = new ItemAdapter(getActivity());
         rlrView.setAdapter(adapter);
         rlrView.setOnItemClickListener(adapter);
         rlrView.setOnRefreshListener(new RLRView.OnRefreshListener() {

@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.mms.R;
 import com.mms.activity.ActivityCarrierInfo;
+import com.mms.activity.ActivityItemInfo;
 import com.mms.widget.rlrView.adapter.RecyclerViewAdapter;
 import com.mms.widget.rlrView.view.LoadMoreRecyclerView;
 
@@ -18,9 +19,9 @@ import java.util.Map;
 /**
  * Created by zlc on 2016/4/4.
  */
-public class CarrierAdapter extends RecyclerViewAdapter<Map<String, String>> implements LoadMoreRecyclerView.OnItemClickListener {
+public class ItemAdapter extends RecyclerViewAdapter<Map<String, String>> implements LoadMoreRecyclerView.OnItemClickListener {
 
-    public CarrierAdapter(Context context) {
+    public ItemAdapter(Context context) {
         super(context);
     }
 
@@ -28,7 +29,7 @@ public class CarrierAdapter extends RecyclerViewAdapter<Map<String, String>> imp
     public void onHolderBind(RecyclerView.ViewHolder holder, int position) {
         if (holder != null) {
             Map<String, String> map = getDataItem(position);
-            CarrierViewHolder viewHolder = (CarrierViewHolder) holder;
+            ItemViewHolder viewHolder = (ItemViewHolder) holder;
 //            viewHolder.tvTitle.setText("" + flight.getLowPrice());
 //            viewHolder.tvInfo.setText("" + flight.getLowPrice());
         }
@@ -36,7 +37,7 @@ public class CarrierAdapter extends RecyclerViewAdapter<Map<String, String>> imp
 
     @Override
     public RecyclerView.ViewHolder onCreateHolder(ViewGroup parent, int viewType) {
-        return new CarrierViewHolder(layoutInflater.inflate(R.layout.rlr_list_carrier_item, parent, false));
+        return new ItemViewHolder(layoutInflater.inflate(R.layout.rlr_list_item_item, parent, false));
     }
 
 
@@ -44,7 +45,7 @@ public class CarrierAdapter extends RecyclerViewAdapter<Map<String, String>> imp
     public void onItemClick(int position) {
 
         //跳转到详情页
-        Intent intent = new Intent(context, ActivityCarrierInfo.class);
+        Intent intent = new Intent(context, ActivityItemInfo.class);
         intent.putExtra("type", "tudi");
         context.startActivity(intent);
 
@@ -57,15 +58,17 @@ public class CarrierAdapter extends RecyclerViewAdapter<Map<String, String>> imp
         return s;
     }
 
-    public class CarrierViewHolder extends RecyclerView.ViewHolder {
+    public class ItemViewHolder extends RecyclerView.ViewHolder {
 
         TextView tvTitle;
         TextView tvInfo;
+        TextView tvTime;
 
-        public CarrierViewHolder(View itemView) {
+        public ItemViewHolder(View itemView) {
             super(itemView);
-            tvTitle = (TextView) itemView.findViewById(R.id.rlr_list_item_carrier_title);
-            tvInfo = (TextView) itemView.findViewById(R.id.rlr_list_item_carrier_info);
+            tvTitle = (TextView) itemView.findViewById(R.id.rlr_list_item_item_title);
+            tvInfo = (TextView) itemView.findViewById(R.id.rlr_list_item_item_info);
+            tvTime = (TextView) itemView.findViewById(R.id.rlr_list_item_item_time);
         }
     }
 

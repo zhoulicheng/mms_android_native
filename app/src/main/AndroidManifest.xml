@@ -60,6 +60,8 @@
         <activity android:name=".activity.ActivitySearchCondition"></activity>
         <activity android:name=".activity.ActivityOnlineOfficeOut"></activity>
         <activity android:name=".activity.BigBitmapActivity"></activity>
+        <activity android:name=".activity.ActivityItemInfo"></activity>
+        <activity android:name=".activity.ActivityCarrierCloud"></activity>
 
 
     </application>

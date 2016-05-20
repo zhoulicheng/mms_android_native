@@ -43,7 +43,7 @@
         android:background="@null"
         android:gravity="center_vertical"
         android:paddingLeft="@dimen/fragment_my_item_padding_left"
-        android:text="介绍"
+        android:text="问题和意见"
         android:textColor="@color/filterTextGray"
         android:textSize="15sp" />
 
@@ -54,7 +54,7 @@
 
 
     <EditText
-        android:id="@+id/et_activity_carrier_import_other_intro"
+        android:id="@+id/et_activity_feed_back_intro"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:background="@color/white"
@@ -79,7 +79,7 @@
         android:background="@null"
         android:gravity="center_vertical"
         android:paddingLeft="@dimen/fragment_my_item_padding_left"
-        android:text="图片上传"
+        android:text="图片（选填，提供问题截图）"
         android:textColor="@color/filterTextGray"
         android:textSize="15sp" />
 
@@ -89,7 +89,7 @@
         android:background="@color/divideLineGray" />
     <!--后续添加上传图片的view-->
     <com.mms.widget.uploadImagesLayout.OperateImagesLayout
-        android:id="@+id/oil_activity_carrier_import_other"
+        android:id="@+id/oil_activity_feed_back"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/white"
@@ -99,5 +99,39 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/divide_line"
         android:background="@color/divideLineGray" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@null"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/fragment_my_item_padding_left"
+        android:text="QQ/邮箱"
+        android:textColor="@color/filterTextGray"
+        android:textSize="15sp" />
+    <EditText
+        android:id="@+id/et_activity_feed_back_contact"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fragment_my_item_height"
+        android:background="@color/white"
+        android:gravity="top"
+        android:hint="（选填，方便我们联系你）"
+        android:paddingBottom="6dp"
+        android:paddingLeft="@dimen/fragment_my_item_padding_left"
+        android:paddingRight="@dimen/fragment_my_item_padding_left"
+        android:paddingTop="6dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/hintGray"
+        android:textSize="@dimen/fragment_my_item_left_text_size" />
+
+    <!--此button在代码中设置样式-->
+    <Button
+        android:id="@+id/btn_activity_feed_back_sub"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_margin="8dp"
+        android:text="提    交"
+        android:textColor="@color/white"
+        android:textSize="20sp" />
 
 </LinearLayout>

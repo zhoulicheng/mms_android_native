@@ -81,7 +81,7 @@ public class BigBitmapFragment extends BaseViewPagerFragment {
             @Override
             public void onLoadingComplete(ImageView imageView, String imgUrl, Bitmap loadedImage) {
                 super.onLoadingComplete(imageView, imgUrl, loadedImage);
-                //要根据图片大小决定iv大小
+                //要根据图片大、、、、、、、、、、、、、、小决定iv大小
                 adjustImageView(loadedImage);
             }
 

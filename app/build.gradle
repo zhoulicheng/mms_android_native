@@ -35,13 +35,14 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
+    compile 'com.android.support:cardview-v7:23.1.1'
     compile 'com.google.protobuf:protobuf-java:2.6.1'
     //volley
     compile 'com.mcxiaoke.volley:library:1.0.6'
     //gson
-    compile 'com.google.code.gson:gson:2.3'
+    compile 'com.google.code.gson:gson:2.4'
     //imageLoader
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
     //roboGuice
@@ -51,4 +52,6 @@ dependencies {
 
     //greenDao
     compile 'de.greenrobot:greendao:2.1.0'
+    //更改刷新样式
+    compile 'com.sch.rfview:AnimRefreshRecyclerView:1.0.6@aar'
 }

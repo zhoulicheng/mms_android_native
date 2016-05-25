@@ -16,8 +16,8 @@
     <dimen name="fragment_my_item_left_tv_width">80dp</dimen>
     <dimen name="fragment_my_item_left_text_size">17sp</dimen>
     <dimen name="titleBarHeight">45dp</dimen>
-    <dimen name="backButtonWidth">20dp</dimen>
-    <dimen name="backButtonHeight">20dp</dimen>
+    <dimen name="backButtonWidth">40dp</dimen>
+    <dimen name="backButtonHeight">40dp</dimen>
     <dimen name="chachaWidth">16dp</dimen>
     <dimen name="chachaHeight">16dp</dimen>
 

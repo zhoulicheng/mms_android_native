@@ -1,5 +1,6 @@
 package com.mms.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
@@ -86,6 +87,8 @@ public class FragmentMy extends BaseFragment implements View.OnClickListener {
         Intent intent = null;
         switch (view.getId()) {
             case R.id.rl_fragment_my_person:
+                intent = new Intent(getActivity(), ActivityUserInfo.class);
+                startActivity(intent);
                 break;
             case R.id.rl_fragment_my_accountandpassword:
                 break;

@@ -62,6 +62,9 @@
         <activity android:name=".activity.BigBitmapActivity"></activity>
         <activity android:name=".activity.ActivityItemInfo"></activity>
         <activity android:name=".activity.ActivityCarrierCloud"></activity>
+        <activity android:name=".activity.ActivityUserInfo"
+            android:windowSoftInputMode="stateHidden"
+            ></activity>
 
 
     </application>

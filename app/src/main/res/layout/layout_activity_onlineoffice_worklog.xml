@@ -27,7 +27,6 @@
             android:layout_height="@dimen/backButtonHeight"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="15dp"
             android:background="@drawable/backarrowselector" />
 
         <Button
